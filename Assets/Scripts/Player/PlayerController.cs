@@ -103,9 +103,9 @@ namespace Player
 
         private void GroundCheck()
         {
-            Vector2 groundedOrigin = new Vector2(_groundCollider.bounds.center.x, _groundCollider.bounds.min.y);
-            Vector2 groundedSize = new Vector2(_groundCollider.bounds.size.x, _groundedCheckLength);
-            var _groundHit = Physics2D.BoxCast(groundedOrigin, groundedSize, 0f, Vector2.down, _groundedCheckLength, _groundLayer | _platformLayer);
+            Vector2 groundedOrigin = _groundCollider.bounds.center;
+            Vector2 groundedSize = _groundCollider.bounds.size;
+            var _groundHit = Physics2D.BoxCast(groundedOrigin, groundedSize, transform.rotation.z,Vector2.down, _groundedCheckLength, _groundLayer | _platformLayer);
             _grounded = _groundHit.collider != null;
             if (_grounded)
             {
@@ -115,8 +115,15 @@ namespace Player
 
             if (_groundedLastFrame && !_grounded)
             {
+                Debug.Log("Just left the ground. Starting coyote timer.");
                 _coyotetimer = _stats.CoyoteDuration;
             }
+            
+            if (!_groundedLastFrame && _grounded)
+            {
+                Debug.Log("Just became grounded.");
+            }
+            
             _groundedLastFrame = _grounded;
         }
 

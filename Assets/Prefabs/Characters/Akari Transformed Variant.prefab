@@ -220,6 +220,10 @@ PrefabInstance:
       propertyPath: _platformLayer.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 7176458406142186475, guid: f77ce4b4acf404b49954968a68d851d4, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7302259469686370379, guid: f77ce4b4acf404b49954968a68d851d4, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 3050539666212720785, guid: 734ce81c4363056469a6e9956a2d4b88, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3081186961942962055, guid: 734ce81c4363056469a6e9956a2d4b88, type: 3}
       propertyPath: m_Sprite
       value: 
