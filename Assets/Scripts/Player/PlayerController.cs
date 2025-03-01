@@ -33,7 +33,6 @@ namespace Player
         private bool _wallJumpUnlocked => ServiceLocator.Instance.SaveManager.UnlockedWallJump;
         private bool _walled;
 
-
         private bool _canDoubleJump => _doubleJumpUnlocked && !_hasDoubleJumped;
         private bool _canTripleJump => _tripleJumpUnlocked && !_hasTripleJumped;
         private bool _canWallJump => !_grounded && _wallJumpUnlocked && _walled;
@@ -295,6 +294,11 @@ namespace Player
             }
         }
 
+        public void Respawn()
+        {
+            Die();
+        }
+        
         public void Die()
         {
             ServiceLocator.Instance.GameManager.OnPlayerDied?.Invoke();

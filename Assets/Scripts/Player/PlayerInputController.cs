@@ -10,11 +10,13 @@ namespace Player
 
         private InputAction _moveAction;
         private InputAction _jumpAction;
+        private InputAction _respawnAction;
 
         private void Start()
         {
             _moveAction = InputSystem.actions.FindAction("Move");
             _jumpAction = InputSystem.actions.FindAction("Jump");
+            _respawnAction = InputSystem.actions.FindAction("Respawn");
         }
 
         private void Update()
@@ -24,6 +26,11 @@ namespace Player
             bool jumpReleased = _jumpAction.WasReleasedThisFrame();
 
             _playerController.OnUpdate(jumpTriggered, jumpReleased, _moveAction.ReadValue<Vector2>().x);
+
+            if (_respawnAction.triggered)
+            {
+                _playerController.Respawn();
+            }
         }
 
         private void FixedUpdate()
