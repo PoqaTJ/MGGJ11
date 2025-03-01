@@ -121,6 +121,8 @@ namespace Game
 
         public void Collect(string id)
         {
+            Debug.Log("Collected " + id);
+
             if (HasBeenCollected(id))
             {
                 Debug.LogError("Attempting to collect collectable that has already been collected.");
@@ -244,7 +246,7 @@ namespace Game
         private static bool DebugResetCollectablesValidate()
         {
             Menu.SetChecked("Save/ResetCollectablesOnPlay", _resetOnPlay);
-            return EditorApplication.isPlaying;
+            return true;
         }
 #endif
     }

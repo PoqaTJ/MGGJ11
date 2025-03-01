@@ -20,9 +20,10 @@ namespace Game
             context.titleLocString = "dialog-powerup-double-jump-title";
             context.bodyLocString = "dialog-powerup-double-jump-body";
             context.buttonLocString = "dialog-powerup-double-jump-button";
+            ServiceLocator.Instance.MenuManager.Show(MenuType.PopupOneButton, context);
             
             ServiceLocator.Instance.GameManager.UnlockDoubleJump();
-            ServiceLocator.Instance.MenuManager.Show(MenuType.PopupOneButton, context);
+
             base.OnContact();
         }
     }

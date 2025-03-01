@@ -139,6 +139,18 @@ MonoBehaviour:
     m_Key: dialog-powerup-wall-jump-button
     m_Metadata:
       m_Items: []
+  - m_Id: 7335827190538240
+    m_Key: dialog-powerup-break-hazards-title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7335890180595712
+    m_Key: dialog-powerup-break-hazards-body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7335972233764864
+    m_Key: dialog-powerup-break-hazards-button
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
