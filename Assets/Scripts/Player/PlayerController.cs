@@ -13,6 +13,7 @@ namespace Player
         // ground check
         [SerializeField] private BoxCollider2D _groundCollider;
         [SerializeField] private LayerMask _groundLayer;
+        [SerializeField] private LayerMask _platformLayer;
         [SerializeField] private float _groundedCheckLength = 0.1f;
         
         // wall check
@@ -104,7 +105,7 @@ namespace Player
         {
             Vector2 groundedOrigin = new Vector2(_groundCollider.bounds.center.x, _groundCollider.bounds.min.y);
             Vector2 groundedSize = new Vector2(_groundCollider.bounds.size.x, _groundedCheckLength);
-            var _groundHit = Physics2D.BoxCast(groundedOrigin, groundedSize, 0f, Vector2.down, _groundedCheckLength, _groundLayer);
+            var _groundHit = Physics2D.BoxCast(groundedOrigin, groundedSize, 0f, Vector2.down, _groundedCheckLength, _groundLayer | _platformLayer);
             _grounded = _groundHit.collider != null;
             if (_grounded)
             {
