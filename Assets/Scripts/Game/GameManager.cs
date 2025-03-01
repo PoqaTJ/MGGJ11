@@ -18,10 +18,11 @@ namespace Game
         public Action OnPlayerDied;
         public Action OnPlayerTakeDamage;
         public Action<PlayerController> OnPlayerSpawn;
-
+        public Action OnPlayerHeal;
         #endregion
         
         public State CurrentState { get; private set; }
+
 
         private PlayerController _player;
 

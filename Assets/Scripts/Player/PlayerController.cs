@@ -269,6 +269,12 @@ namespace Player
             }
         }
 
+        public void Heal(int health)
+        {
+            _currentHealth = Mathf.Min(_currentHealth + health, _maxHealth);
+            ServiceLocator.Instance.GameManager.OnPlayerHeal?.Invoke();
+        }
+
         public void TakeDamage(int dmg, Vector2 location)
         {
             if (_blockMove)
