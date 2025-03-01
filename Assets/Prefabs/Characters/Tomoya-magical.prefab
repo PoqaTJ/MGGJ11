@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3093281970764237645, guid: 734ce81c4363056469a6e9956a2d4b88, type: 3}
+      propertyPath: _platformLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 3122919962803180982, guid: 734ce81c4363056469a6e9956a2d4b88, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
