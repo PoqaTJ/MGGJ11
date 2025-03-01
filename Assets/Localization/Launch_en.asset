@@ -134,6 +134,14 @@ MonoBehaviour:
     m_Localized: Back
     m_Metadata:
       m_Items: []
+  - m_Id: 7245291301593088
+    m_Localized: You can now jump off of walls that you are facing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7245865375981568
+    m_Localized: Neat!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
