@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 259019839489102516, guid: e5de6c04a0dc774448b9d107e016e5a5, type: 3}
       propertyPath: m_Name
-      value: Ledge-1 Variant
+      value: Ledge-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146736386961035405, guid: e5de6c04a0dc774448b9d107e016e5a5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7146736386961035405, guid: e5de6c04a0dc774448b9d107e016e5a5, type: 3}
       propertyPath: m_LocalPosition.x
