@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Services;
 using UnityEditor;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Game
     {
         private SaveGame _save;
         private static readonly string _playerPrefsKey = "save_game_alpha_1";
+        private HashSet<string> _collected = new ();
 
         private void Awake()
         {
@@ -22,12 +24,28 @@ namespace Game
                 {
                     string stringSave = PlayerPrefs.GetString(_playerPrefsKey);
                     _save = JsonUtility.FromJson<SaveGame>(stringSave);
+#if UNITY_EDITOR
+                    if (_resetOnPlay)
+                    {
+                        _save.Collected.Clear();
+                    }
+#endif
+                    UnpackCollections();
                 }
                 catch (Exception e)
                 {
                     Debug.LogError($"Unable to parse save. {e}");
                     _save = new SaveGame();
                 }
+            }
+        }
+
+        private void UnpackCollections()
+        {
+            _collected.Clear();
+            foreach (var id in _save.Collected)
+            {
+                _collected.Add(id);
             }
         }
 
@@ -89,6 +107,34 @@ namespace Game
                 _save.Level = value;
                 Save();
             }
+        }
+
+        public bool UnlockedBreakHazard
+        {
+            get => _save.UnlockedBreakHazard;
+            set
+            {
+                _save.UnlockedBreakHazard = value;
+                Save();
+            }
+        }
+
+        public void Collect(string id)
+        {
+            if (HasBeenCollected(id))
+            {
+                Debug.LogError("Attempting to collect collectable that has already been collected.");
+                return;
+            }
+
+            _collected.Add(id);
+            _save.Collected.Add(id);
+            Save();
+        }
+        
+        public bool HasBeenCollected(string id)
+        {
+            return _collected.Contains(id);
         }
         
         public void Save()
@@ -164,6 +210,41 @@ namespace Game
                 return true;
             }
             return false;
+        }
+        
+        [MenuItem("Save/EnableBreakHazard")]
+        private static void DebugEnableBreakHazard()
+        {
+            ServiceLocator.Instance.SaveManager.UnlockedBreakHazard = !ServiceLocator.Instance.SaveManager.UnlockedBreakHazard;
+        }
+        
+        [MenuItem("Save/EnableBreakHazard", true)]
+        private static bool DebugEnableBreakHazardValidate()
+        {
+            if (EditorApplication.isPlaying)
+            {
+                Menu.SetChecked("Save/EnableBreakHazard", ServiceLocator.Instance.SaveManager.UnlockedBreakHazard);
+                return true;
+            }
+            return false;
+        }
+        
+        private static bool _resetOnPlay {
+            get => EditorPrefs.GetBool("EditorResetOnPlay");
+            set => EditorPrefs.SetBool("EditorResetOnPlay", value);
+        }
+
+        [MenuItem("Save/ResetCollectablesOnPlay")]
+        private static void DebugResetCollectables()
+        {
+            _resetOnPlay = !_resetOnPlay;
+        }
+        
+        [MenuItem("Save/ResetCollectablesOnPlay", true)]
+        private static bool DebugResetCollectablesValidate()
+        {
+            Menu.SetChecked("Save/ResetCollectablesOnPlay", _resetOnPlay);
+            return EditorApplication.isPlaying;
         }
 #endif
     }

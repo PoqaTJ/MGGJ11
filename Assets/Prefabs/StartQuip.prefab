@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 4855492642516127664}
   - component: {fileID: 4286366633316568710}
   - component: {fileID: 8736222047251092722}
+  - component: {fileID: 7965780361784971162}
   m_Layer: 0
   m_Name: StartQuip
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -41,7 +42,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3161933393887225431}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -134,3 +135,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _quip: {fileID: 11400000, guid: 19739e3ebc2b91443b6f6ce415b2b4bc, type: 2}
+  _collected: {fileID: 7965780361784971162}
+--- !u!114 &7965780361784971162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3161933393887225431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd28e6f78ae4264b067116ede712c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefix: Quip

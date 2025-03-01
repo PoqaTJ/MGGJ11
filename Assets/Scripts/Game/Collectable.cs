@@ -11,13 +11,12 @@ namespace Game
             if (col.tag == "Player")
             {
                 OnContact();
-                Destroy(gameObject);                
             }
         }
 
         protected virtual void OnContact()
         {
-            
+            Destroy(gameObject);
         }
     }
 }
