@@ -62,7 +62,7 @@ namespace Game
             _player = playerObject.GetComponent<PlayerController>();
             var input = playerObject.GetComponent<PlayerInputController>();
             input.enabled = false;
-            _player.transform.position = new Vector3(spawner.transform.position.x, spawner.transform.position.y + 1,
+            _player.transform.position = new Vector3(spawner.transform.position.x, spawner.transform.position.y + 0.2f,
                 _player.transform.position.z);
             FocusCameraOn(_player.transform);
             yield return new WaitForSeconds(1f);

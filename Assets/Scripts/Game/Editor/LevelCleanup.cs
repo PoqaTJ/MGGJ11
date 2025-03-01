@@ -6,6 +6,37 @@ namespace Game.Editor
 {
     public class LevelCleanup
     {
+        [MenuItem("Level/PrefabifyGround")]
+        private static void PrefabifyGround()
+        {
+            GameObject root = GameObject.Find("Level");
+            if (root == null)
+            {
+                Debug.LogError("Couldn't find level root.");
+                return;
+            }
+
+            int count = 0;
+            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Level/Ground/Ground.prefab");
+            for (int i = 0; i < root.transform.childCount; i++)
+            {
+                GameObject c = root.transform.GetChild(i).gameObject;
+                if (c.gameObject.name == "Ground" || c.gameObject.name.StartsWith("Right") ||
+                    c.gameObject.name.StartsWith("Left") || c.gameObject.name.StartsWith("Top"))
+                {
+                    count++;
+                    var go = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+                    go.transform.SetParent(root.transform);
+                    go.transform.position = c.transform.position;
+                    go.transform.rotation = c.transform.rotation;
+                    go.transform.localScale = c.transform.localScale;
+                    GameObject.DestroyImmediate(c);
+                }
+            }
+            
+            Debug.Log($"Prefabified {count} instances.");
+        }
+        
         [MenuItem("Level/PrefabifySpawners")]
         private static void PrefabifySpawners()
         {
