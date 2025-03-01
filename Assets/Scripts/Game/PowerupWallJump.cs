@@ -23,6 +23,7 @@ namespace Game
             
             ServiceLocator.Instance.GameManager.UnlockWallJump();
             ServiceLocator.Instance.MenuManager.Show(MenuType.PopupOneButton, context);
+            base.OnContact();
         }
     }
 }

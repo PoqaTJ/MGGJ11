@@ -10344,19 +10344,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6711110717137365287, guid: 79a1e4f78154356469d3ffdd753b78aa, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9772126
       objectReference: {fileID: 0}
     - target: {fileID: 6711110717137365287, guid: 79a1e4f78154356469d3ffdd753b78aa, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6711110717137365287, guid: 79a1e4f78154356469d3ffdd753b78aa, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6711110717137365287, guid: 79a1e4f78154356469d3ffdd753b78aa, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.21226302
       objectReference: {fileID: 0}
     - target: {fileID: 6711110717137365287, guid: 79a1e4f78154356469d3ffdd753b78aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10368,7 +10368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6711110717137365287, guid: 79a1e4f78154356469d3ffdd753b78aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -24.51
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11534,7 +11534,7 @@ Transform:
   m_GameObject: {fileID: 1616593295}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.022929914, y: 0.055619955, z: -10}
+  m_LocalPosition: {x: 0, y: -2.0500002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15556,21 +15556,13 @@ PrefabInstance:
       value: Virtual Camera
       objectReference: {fileID: 0}
     - target: {fileID: 5847043159489775212, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
-      propertyPath: m_TrackedObjectOffset.y
-      value: 2
+      propertyPath: m_ScreenX
+      value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6355062397067886317, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
-      propertyPath: m_Follow
-      value: 
+    - target: {fileID: 5847043159489775212, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
+      propertyPath: m_ScreenY
+      value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 6355062397067886317, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
-      propertyPath: m_Lens.OrthographicSize
-      value: 5.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7120123340131847126, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
-      propertyPath: m_BoundingShape2D
-      value: 
-      objectReference: {fileID: 691693064}
     - target: {fileID: 7645643926280979448, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
