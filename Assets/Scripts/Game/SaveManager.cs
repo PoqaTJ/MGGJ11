@@ -179,6 +179,17 @@ namespace Game
             return _collected.Contains(id);
         }
         
+        
+        public bool FoundAkari
+        {
+            get => _save.FoundAkari;
+            set
+            {
+                _save.FoundAkari = value;
+                Save();
+            }
+        }
+
         public int McGuffinCount => _save.McGuffinsCollected.Count;
 
         public void Save()
@@ -239,6 +250,23 @@ namespace Game
             return false;
         }
         
+        [MenuItem("Save/SavedAkari")]
+        private static void DebugEnableSavedAkari()
+        {
+            ServiceLocator.Instance.SaveManager.FoundAkari = !ServiceLocator.Instance.SaveManager.FoundAkari;
+        }
+        
+        [MenuItem("Save/SavedAkari", true)]
+        private static bool DebugEnableSavedAkariValidate()
+        {
+            if (EditorApplication.isPlaying)
+            {
+                Menu.SetChecked("Save/SavedAkari", ServiceLocator.Instance.SaveManager.FoundAkari);
+                return true;
+            }
+            return false;
+        }
+        
         [MenuItem("Save/EnableTripleJump")]
         private static void DebugEnableTripleJump()
         {
@@ -277,8 +305,6 @@ namespace Game
             get => EditorPrefs.GetBool("EditorResetOnPlay");
             set => EditorPrefs.SetBool("EditorResetOnPlay", value);
         }
-
-
 
         [MenuItem("Save/ResetCollectablesOnPlay")]
         private static void DebugResetCollectables()

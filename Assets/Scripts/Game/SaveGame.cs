@@ -17,5 +17,6 @@ namespace Game
         public List<string> McGuffinsCollected = new List<string>();
         public List<string> QuipsCollected = new List<string>();
         public List<string> HazardsBroken = new List<string>();
+        public bool FoundAkari;
     }
 }
