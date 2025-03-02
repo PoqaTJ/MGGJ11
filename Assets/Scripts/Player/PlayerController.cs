@@ -38,6 +38,7 @@ namespace Player
         private bool _canWallJump => !_grounded && _wallJumpUnlocked && _walled;
         private bool _wallJumping => Time.timeSinceLevelLoad < _wallJumpEndTime;
         private bool _canCoyoteJump => _coyotetimer > 0 && !_grounded && !_hasDoubleJumped && !_hasTripleJumped;
+        public int CurrentHealth => _currentHealth;
 
         private float _coyotetimer;
         

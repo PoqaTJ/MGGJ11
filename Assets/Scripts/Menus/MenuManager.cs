@@ -9,6 +9,8 @@ namespace Menus
         [SerializeField] private RectTransform _menuRoot;
         [SerializeField] private List<GameObject> _prefabList = new();
         [SerializeField] private RectTransform _clickBlocker;
+        [SerializeField] private GameObject _healthUI;
+        [SerializeField] private GameObject _collectableUI;
         
         private Dictionary<MenuType, GameObject> _prefabDict = new();
         
@@ -54,6 +56,26 @@ namespace Menus
             Time.timeScale = 0;
         }
 
+        public void ShowHealthUI()
+        {
+            _healthUI.SetActive(true);
+        }
+
+        public void ShowCollectablesUI()
+        {
+            _collectableUI.SetActive(true);
+        }
+
+        public void HideHealthUI()
+        {
+            _healthUI.SetActive(false);            
+        }
+
+        public void HideCollectableUI()
+        {
+            _collectableUI.SetActive(false);
+        }
+        
         public void HideTop()
         {
             MenuController menu = _menus.Pop();
