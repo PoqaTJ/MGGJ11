@@ -14,6 +14,8 @@ namespace Game
         public bool UnlockedDoubleJump;
         public bool UnlockedTripleJump;
         public bool UnlockedBreakHazard;
-        public List<string> Collected = new List<string>();
+        public List<string> McGuffinsCollected = new List<string>();
+        public List<string> QuipsCollected = new List<string>();
+        public List<string> HazardsBroken = new List<string>();
     }
 }

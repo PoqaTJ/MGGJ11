@@ -20,17 +20,14 @@ namespace Game
         public Action OnPlayerTakeDamage;
         public Action<PlayerController> OnPlayerSpawn;
         public Action OnPlayerHeal;
+        public Action OnMcGuffinFound;
         #endregion
         
         public State CurrentState { get; private set; }
 
-        public int PlayerHealth
-        {
-            get
-            {
-                return _player.CurrentHealth;
-            }
-        }
+        public int PlayerHealth => _player.CurrentHealth;
+
+        public int McGuffinCount => ServiceLocator.Instance.SaveManager.McGuffinCount;
 
 
         private PlayerController _player;
@@ -108,6 +105,11 @@ namespace Game
             StartCoroutine(SetStateRoutine(state));
         }
 
+        public void FindMecGuffin()
+        {
+            OnMcGuffinFound?.Invoke();
+        }
+        
         private IEnumerator SetStateRoutine(State state)
         {
             Debug.Log($"Setting state to {state}.");
@@ -139,7 +141,6 @@ namespace Game
                     break;
             }
         }
-        
 
         private IEnumerator LoadGameplay(bool transformed)
         {

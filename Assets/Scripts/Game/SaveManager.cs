@@ -27,7 +27,9 @@ namespace Game
 #if UNITY_EDITOR
                     if (_resetOnPlay)
                     {
-                        _save.Collected.Clear();
+                        _save.QuipsCollected.Clear();
+                        _save.McGuffinsCollected.Clear();
+                        _save.HazardsBroken.Clear();
                     }
 #endif
                     UnpackCollections();
@@ -43,7 +45,15 @@ namespace Game
         private void UnpackCollections()
         {
             _collected.Clear();
-            foreach (var id in _save.Collected)
+            foreach (var id in _save.QuipsCollected)
+            {
+                _collected.Add(id);
+            }
+            foreach (var id in _save.McGuffinsCollected)
+            {
+                _collected.Add(id);
+            }
+            foreach (var id in _save.HazardsBroken)
             {
                 _collected.Add(id);
             }
@@ -119,7 +129,7 @@ namespace Game
             }
         }
 
-        public void Collect(string id)
+        public void CollectHazard(string id)
         {
             Debug.Log("Collected " + id);
 
@@ -130,7 +140,37 @@ namespace Game
             }
 
             _collected.Add(id);
-            _save.Collected.Add(id);
+            _save.HazardsBroken.Add(id);
+            Save();
+        }
+        
+        public void CollectQuip(string id)
+        {
+            Debug.Log("Collected " + id);
+
+            if (HasBeenCollected(id))
+            {
+                Debug.LogError("Attempting to collect collectable that has already been collected.");
+                return;
+            }
+
+            _collected.Add(id);
+            _save.QuipsCollected.Add(id);
+            Save();
+        }
+        
+        public void CollectMcGuffin(string id)
+        {
+            Debug.Log("Collected " + id);
+
+            if (HasBeenCollected(id))
+            {
+                Debug.LogError("Attempting to collect collectable that has already been collected.");
+                return;
+            }
+
+            _collected.Add(id);
+            _save.McGuffinsCollected.Add(id);
             Save();
         }
         
@@ -139,6 +179,8 @@ namespace Game
             return _collected.Contains(id);
         }
         
+        public int McGuffinCount => _save.McGuffinsCollected.Count;
+
         public void Save()
         {
             PlayerPrefs.SetString(_playerPrefsKey, JsonUtility.ToJson(_save));
@@ -235,6 +277,8 @@ namespace Game
             get => EditorPrefs.GetBool("EditorResetOnPlay");
             set => EditorPrefs.SetBool("EditorResetOnPlay", value);
         }
+
+
 
         [MenuItem("Save/ResetCollectablesOnPlay")]
         private static void DebugResetCollectables()
