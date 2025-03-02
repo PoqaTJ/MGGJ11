@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 
   Dialogs:
   - Character: 0
-    Text: Akari! Oh no! Are you ok?
+    Text: Oh no, Akari! Are you ok?
     Side: 0
   - Character: 0
     Text: Wake up!
@@ -24,7 +24,7 @@ MonoBehaviour:
     Text: Ugh... so... exhausted...
     Side: 1
   - Character: 0
-    Text: I've got just the thing! Your favorite tea! Here, drink some!
+    Text: I've got just the thing. Breakfast tea, in my emergency thermos!
     Side: 0
   - Character: 1
     Text: (Glug glug)

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: ButterflyPanic
   Dialogs:
   - Character: 0
-    Text: Butterfly! Where's Akari?
+    Text: Prism! Where's Akari?
     Side: 0
   - Character: 2
     Text: Tomoya! It's terrible!
@@ -39,14 +39,17 @@ MonoBehaviour:
     Text: I'm not qualified as Akari!
     Side: 0
   - Character: 0
-    Text: I'm too jaded with humanity for this gig.
+    Text: I'm too jaded with humanity -- except for Akari -- for this gig.
+    Side: 0
+  - Character: 0
+    Text: I now live for afternoon tea.
     Side: 0
   - Character: 2
-    Text: Pish posh. You want to protect people. You still took up guard duty.
+    Text: But you want to protect Akari. You always show up for portal guard duty.
     Side: 1
   - Character: 2
-    Text: That boots-on-the-ground action shows more dedication than the promises
-      of politicians.
+    Text: That boots-on-the-ground consistency is what we need in leaders. Better
+      than most politicians.
     Side: 1
   - Character: 0
     Text: I didn't take you for a political junkie.
@@ -54,21 +57,6 @@ MonoBehaviour:
   - Character: 2
     Text: Politics is about power!
     Side: 1
-  - Character: 0
-    Text: You're not wrong.
-    Side: 1
   - Character: 2
     Text: The power of magical girls compells you!
-    Side: 1
-  - Character: 0
-    Text: Woah, this feels weird.
-    Side: 0
-  - Character: 0
-    Text: Should I be doing a song or dance or something?
-    Side: 0
-  - Character: 2
-    Text: Let the power spin around you.
-    Side: 1
-  - Character: 2
-    Text: Don't think too hard about it.
     Side: 1
