@@ -7,7 +7,9 @@ namespace Game
     public class DestroyOnStartIfCollected: MonoBehaviour
     {
         [SerializeField] private string _prefix;
-
+        
+        private bool _collected = false;
+        
         void Start()
         {
             if (ServiceLocator.Instance.SaveManager.HasBeenCollected(ID))
@@ -18,6 +20,12 @@ namespace Game
 
         public void Collect(CollectableType type)
         {
+            if (_collected)
+            {
+                return;
+            }
+
+            _collected = true;
             switch (type)
             {
                 case CollectableType.Quip:
