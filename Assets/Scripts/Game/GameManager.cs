@@ -55,12 +55,21 @@ namespace Game
             StartCoroutine(SpawnPlayer(true));
         }
 
+        private bool _spawning = false;
+
         private IEnumerator SpawnPlayer(bool transformed)
         {
+            if (_spawning)
+            {
+                yield return null;
+            }
+
+            _spawning = true;
+            Debug.Log("Starting spawn character coroutine.");
             PlayerSpawner spawner = ChooseSpawner();
             if (_player != null)
             {
-                Destroy(_player.gameObject);                
+                Destroy(_player.gameObject);
             }
 
             GameObject prefab = transformed ? _tomoyaTFPrefab : _tomoyaNormalPrefab;
@@ -73,7 +82,10 @@ namespace Game
             FocusCameraOn(_player.transform);
             yield return new WaitForSeconds(1f);
             _player.Reset();
+
             input.enabled = true;
+
+            _spawning = false;
             OnPlayerSpawn?.Invoke(_player);
         }
 
@@ -151,6 +163,11 @@ namespace Game
             }
             ServiceLocator.Instance.MenuManager.ShowCollectablesUI();
             ServiceLocator.Instance.MenuManager.ShowHealthUI();
+
+            if (ServiceLocator.Instance.SaveManager.FoundAkari && SceneManager.GetActiveScene().name == "Gameplay")
+            {
+                FindAkari();
+            }
         }
         
         public void UnlockDoubleJump()

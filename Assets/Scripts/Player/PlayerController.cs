@@ -275,7 +275,7 @@ namespace Player
             _currentHealth = Mathf.Min(_currentHealth + health, _maxHealth);
             ServiceLocator.Instance.GameManager.OnPlayerHeal?.Invoke();
         }
-
+        
         public void TakeDamage(int dmg, Vector2 location)
         {
             if (_blockMove)
@@ -288,6 +288,7 @@ namespace Player
 
             if (_currentHealth == 0)
             {
+                _blockMove = true;
                 Die();
             }
             else
