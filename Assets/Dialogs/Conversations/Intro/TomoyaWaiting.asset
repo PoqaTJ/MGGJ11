@@ -15,11 +15,11 @@ MonoBehaviour:
   ID: TomoyaWaiting
   Dialogs:
   - Character: 0
-    Text: "(Maybe instead of a tea latte, I should try a caff\xE8 latte?)"
+    Text: "Maybe instead of a tea latte, I should try a caff\xE8 latte?"
     Side: 0
   - Character: 0
-    Text: (As long as it's before 2pm, the caffeine won't mess with my sleep.)
+    Text: As long as it's before 2pm, the caffeine shouldn't mess up my sleep.
     Side: 0
   - Character: 0
-    Text: (Coffee would be a break from our usual tea lattes.)
+    Text: Coffee would be a break from our usual tea lattes.
     Side: 0

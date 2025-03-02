@@ -15,7 +15,10 @@ MonoBehaviour:
   ID: 
   Dialogs:
   - Character: 1
-    Text: OMG Tomoya! You've transformed, finally!
+    Text: Wait, you TRANSFORMED!
+    Side: 1
+  - Character: 1
+    Text: Finally, I get to see it!
     Side: 1
   - Character: 0
     Text: ... how do I look?
@@ -24,7 +27,7 @@ MonoBehaviour:
     Text: Like you were destined for it!
     Side: 1
   - Character: 2
-    Text: Girls, this is nice and all, but we've got bigger things to worry about...
+    Text: This is nice and all, but we've got bigger things to worry about...
     Side: 1
   - Character: 1
     Text: Right! That hazard came out of nowhere and knocked me out!

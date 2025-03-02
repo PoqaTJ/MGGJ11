@@ -21,13 +21,13 @@ MonoBehaviour:
     Text: ...
     Side: 1
   - Character: 2
-    Text: She got knocked out...
+    Text: Akari got knocked out.
     Side: 1
   - Character: 2
     Text: She needs help.
     Side: 1
   - Character: 2
-    Text: You entered the portal before it closed, didn't you?
+    Text: The portal closed, right? Otherwise, you wouldn't have entered.
     Side: 1
   - Character: 0
     Text: How could I not?
