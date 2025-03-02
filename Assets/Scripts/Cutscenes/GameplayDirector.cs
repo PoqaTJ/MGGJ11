@@ -105,7 +105,7 @@ namespace Cutscenes
             ServiceLocator.Instance.GameManager.FindAkari();
             
             // regain control
-            //ServiceLocator.Instance.SaveManager.FoundAkari = true;
+            ServiceLocator.Instance.SaveManager.FoundAkari = true;
             tomoyaInputController.enabled = true;
             tomoya.enabled = true;
             tomoyaMover.enabled = false;

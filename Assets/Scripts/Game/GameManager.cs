@@ -163,6 +163,11 @@ namespace Game
             }
             ServiceLocator.Instance.MenuManager.ShowCollectablesUI();
             ServiceLocator.Instance.MenuManager.ShowHealthUI();
+
+            if (ServiceLocator.Instance.SaveManager.FoundAkari && SceneManager.GetActiveScene().name == "Gameplay")
+            {
+                FindAkari();
+            }
         }
         
         public void UnlockDoubleJump()
