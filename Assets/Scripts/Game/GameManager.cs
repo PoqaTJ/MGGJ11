@@ -28,7 +28,7 @@ namespace Game
         public int PlayerHealth => _player.CurrentHealth;
 
         public int McGuffinCount => ServiceLocator.Instance.SaveManager.McGuffinCount;
-
+        public PlayerController CurrentPlayer => _player;
 
         private PlayerController _player;
 

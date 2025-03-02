@@ -64,5 +64,25 @@ namespace Player
             RIGHT,
             LEFT
         }
+
+        private void Update()
+        {
+            if (_jumping)
+            {
+                _jumping = false;
+                _playerController.OnUpdate(true, false, 0);
+            }
+            else
+            {
+                _playerController.OnUpdate(false, false, 0);
+            }
+        }
+
+        private bool _jumping = false;
+        
+        public void Jump()
+        {
+            _jumping = true;
+        }
     }
 }
