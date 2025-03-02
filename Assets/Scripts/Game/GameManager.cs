@@ -3,11 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
-using Menus;
 using Player;
 using Services;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace Game
@@ -21,6 +19,7 @@ namespace Game
         public Action<PlayerController> OnPlayerSpawn;
         public Action OnPlayerHeal;
         public Action OnMcGuffinFound;
+        public Action OnFoundAkari;
         #endregion
         
         public State CurrentState { get; private set; }
@@ -179,6 +178,11 @@ namespace Game
             _player = playerController;
         }
 
+        public void FindAkari()
+        {
+            OnFoundAkari?.Invoke();
+        }
+        
         private IEnumerator PlayerDiesRoutine()
         {
             yield return null;

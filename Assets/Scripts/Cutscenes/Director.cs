@@ -23,5 +23,12 @@ namespace Cutscenes
         {
             ServiceLocator.Instance.DialogManager.StartConversation(conv, null);
         }
+
+        protected void SnapCharacterTo(PlayerMover mover, Transform loc)
+        {
+            Vector3 newPos = loc.position;
+            newPos.z = mover.transform.position.z;
+            mover.transform.position = newPos;
+        }
     }
 }
