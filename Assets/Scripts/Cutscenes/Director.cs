@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using Dialogs;
 using Player;
+using Services;
 using UnityEngine;
 
 namespace Cutscenes
@@ -15,6 +17,11 @@ namespace Cutscenes
             });
 
             yield return new WaitUntil(() => reached);
+        }
+
+        protected void StartConversation(ConversationDefinition conv)
+        {
+            ServiceLocator.Instance.DialogManager.StartConversation(conv, null);
         }
     }
 }
