@@ -39,6 +39,8 @@ namespace Cutscenes
             
             // Tomoya powers up!
             
+            // enable new quips
+            
             // regain control
         }
     }
