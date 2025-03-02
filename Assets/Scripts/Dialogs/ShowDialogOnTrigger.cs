@@ -10,16 +10,15 @@ namespace Dialogs
         [SerializeField] private ConversationDefinition _conversation;
         [SerializeField] private UnityEvent _onDoneEvent;
 
-        void Start()
-        {
-            if (ServiceLocator.Instance.SaveManager.WatchedIntro)
-            {
-                Debug.Log("Temp way to spawn");
-            }
-        }
+        private bool _showing = false;
         
         private void OnTriggerEnter2D(Collider2D col)
         {
+            if (_showing)
+            {
+                return;
+            }
+
             if (col.CompareTag("Player"))
             {
                 ShowConversation();
@@ -28,6 +27,8 @@ namespace Dialogs
 
         private void ShowConversation()
         {
+            _showing = true;
+
             ServiceLocator.Instance.DialogManager.StartConversation(_conversation, () =>
             {
                 _onDoneEvent?.Invoke();                
