@@ -200,6 +200,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 5426598219236255094, guid: 734ce81c4363056469a6e9956a2d4b88, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426598219236255094, guid: 734ce81c4363056469a6e9956a2d4b88, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426598219236255094, guid: 734ce81c4363056469a6e9956a2d4b88, type: 3}
+      propertyPath: m_Color.r
+      value: 0.38823533
+      objectReference: {fileID: 0}
     - target: {fileID: 5744397246651666032, guid: 734ce81c4363056469a6e9956a2d4b88, type: 3}
       propertyPath: m_Name
       value: Tomoya-magical

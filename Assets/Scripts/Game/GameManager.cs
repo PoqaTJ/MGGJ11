@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
+using Menus;
 using Player;
 using Services;
 using UnityEngine;
@@ -22,6 +23,14 @@ namespace Game
         #endregion
         
         public State CurrentState { get; private set; }
+
+        public int PlayerHealth
+        {
+            get
+            {
+                return _player.CurrentHealth;
+            }
+        }
 
 
         private PlayerController _player;
@@ -104,6 +113,9 @@ namespace Game
             Debug.Log($"Setting state to {state}.");
             
             _spawners.Clear();
+            ServiceLocator.Instance.MenuManager.HideCollectableUI();
+            ServiceLocator.Instance.MenuManager.HideHealthUI();
+
             switch (state)
             {
                 case State.MainMenu:
@@ -137,6 +149,8 @@ namespace Game
             {
                 yield return SpawnPlayer(transformed);
             }
+            ServiceLocator.Instance.MenuManager.ShowCollectablesUI();
+            ServiceLocator.Instance.MenuManager.ShowHealthUI();
         }
         
         public void UnlockDoubleJump()
