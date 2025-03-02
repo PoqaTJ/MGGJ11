@@ -17,7 +17,7 @@ namespace Baddy
             {
                 if (ServiceLocator.Instance.SaveManager.UnlockedBreakHazard)
                 {
-                    _collectable.Collect();
+                    _collectable.Collect(CollectableType.Hazard);
                     Destroy(gameObject);
                 }
                 else

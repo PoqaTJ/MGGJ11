@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Services;
+using UnityEngine;
 
 namespace Game
 {
@@ -8,7 +9,9 @@ namespace Game
 
         protected override void OnContact()
         {
-            _collected.Collect();
+            
+            _collected.Collect(CollectableType.McGuffin);
+            ServiceLocator.Instance.GameManager.FindMecGuffin();
             base.OnContact();
         }
     }

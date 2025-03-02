@@ -14,7 +14,7 @@ namespace Dialogs
         {
             if (col.CompareTag("Player"))
             {
-                _collected.Collect();
+                _collected.Collect(CollectableType.Quip);
                 ServiceLocator.Instance.DialogManager.ShowQuip(_quip);
                 Destroy(gameObject);
             }
