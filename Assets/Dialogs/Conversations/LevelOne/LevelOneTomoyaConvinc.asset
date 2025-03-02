@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: level-one-tomoya-convince
   Dialogs:
   - Character: 0
-    Text: What happened?! Is Akari okay?
+    Text: What happened?!
     Side: 0
   - Character: 2
     Text: ...
@@ -36,5 +36,47 @@ MonoBehaviour:
     Text: Tomoya, you're going to transform now. Are you ready?
     Side: 1
   - Character: 0
-    Text: Ready as I'll ever be...
+    Text: Sorry, what?
+    Side: 1
+  - Character: 2
+    Text: We have no choice now.
+    Side: 1
+  - Character: 2
+    Text: 'We need to go back to the original plan: making you a magical girl.'
+    Side: 1
+  - Character: 0
+    Text: Wait, I already turned this down!
+    Side: 0
+  - Character: 0
+    Text: I'm not qualified as Akari!
+    Side: 0
+  - Character: 0
+    Text: I'm too jaded with humanity to take the powers.
+    Side: 0
+  - Character: 0
+    Text: I now live for tea and sweets.
+    Side: 0
+  - Character: 2
+    Text: But you want to protect Akari.
+    Side: 1
+  - Character: 2
+    Text: You always show up for portal guard duty.
+    Side: 1
+  - Character: 2
+    Text: That boots-on-the-ground consistency is what we need in leaders.
+    Side: 1
+  - Character: 2
+    Text: Better than most politicians.
+    Side: 1
+  - Character: 0
+    Text: I didn't take you for a political junkie.
+    Side: 0
+  - Character: 2
+    Text: Politics is about power!
+    Side: 1
+  - Character: 2
+    Text: The power of the magical girl compells you!
+    Side: 1
+  - Character: 0
+    Text: If it's to save Akari...
     Side: 0
