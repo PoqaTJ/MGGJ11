@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d809b68116449fa87cc9d36d2b7f09, type: 3}
+  m_Name: 02-Bottom
+  m_EditorClassIdentifier: 
+  ID: 
+  Dialogs:
+  - Character: 0
+    Text: I can't believe we're back at the bottom...
+    Side: 0
+  - Character: 0
+    Text: After all that work...
+    Side: 0
+  - Character: 1
+    Text: Tomoya... you've always supported me.
+    Side: 1
+  - Character: 1
+    Text: Time for me to support you.
+    Side: 1
+  - Character: 1
+    Text: Take my magical power. With it, you'll be able to break through those barriers!
+    Side: 1
+  - Character: 0
+    Text: ... I won't let you down, Akari.
+    Side: 1

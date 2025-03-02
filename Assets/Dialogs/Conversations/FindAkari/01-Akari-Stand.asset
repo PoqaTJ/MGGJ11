@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d809b68116449fa87cc9d36d2b7f09, type: 3}
+  m_Name: 01-Akari-Stand
+  m_EditorClassIdentifier: 
+  ID: 
+  Dialogs:
+  - Character: 1
+    Text: YOU'VE TRANSFORMED! Finally!
+    Side: 1
+  - Character: 0
+    Text: ... how do I look?
+    Side: 0
+  - Character: 1
+    Text: Like you were destined for it!
+    Side: 1
+  - Character: 2
+    Text: Girls, this is nice and all, but we've got bigger things to worry about...
+    Side: 1
+  - Character: 2
+    Text: You've gotta get to the top to defeat the evil!
+    Side: 1
+  - Character: 1
+    Text: Oh no! Here it comes again!
+    Side: 1
