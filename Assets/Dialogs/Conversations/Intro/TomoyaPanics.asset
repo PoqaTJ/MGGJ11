@@ -15,14 +15,14 @@ MonoBehaviour:
   ID: TomoyaPanics
   Dialogs:
   - Character: 0
-    Text: (What's taking them so long?)
+    Text: What's taking them so long?
     Side: 0
   - Character: 0
-    Text: (Usually they'd have been back by now.)
+    Text: Usually they'd be back by now.
     Side: 0
   - Character: 0
-    Text: (I can't keep pacing around in a circle like this.)
+    Text: I can't keep pacing around in a circle like this.
     Side: 0
   - Character: 0
-    Text: (If we take too long an adult would notice.)
+    Text: Eventually an adult will notice.
     Side: 0
