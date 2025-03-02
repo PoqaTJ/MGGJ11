@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Dialogs;
 using Player;
+using Services;
 using UnityEngine;
 
 namespace Cutscenes
@@ -10,7 +11,7 @@ namespace Cutscenes
         [SerializeField] private ConversationDefinition _akariStandsConversation;
         [SerializeField] private ConversationDefinition _tomoyaDepressedConversation;
 
-        [SerializeField] private PlayerMover _akariMover;
+        [SerializeField] private PlayerMover _akariNormalMover;
 
         public void StartAkariFoundScene()
         {
@@ -20,11 +21,27 @@ namespace Cutscenes
         private IEnumerator AkariFoundScene()
         {
             // turn off Tomoya controls
+            var tomoya = ServiceLocator.Instance.GameManager.CurrentPlayer;
+            var tomoyaMover = tomoya.GetComponent<PlayerMover>();
+            var tomoyaInputController = tomoya.GetComponent<PlayerInputController>();
+
+            tomoya.StopHorizontalMovement();
+            tomoyaInputController.enabled = false;
+            tomoya.enabled = false;
+            tomoyaMover.enabled = true;
             
             // this starts after Akari has drunk the tea.
             
             yield return null;
             // akari jumps up
+
+            _akariNormalMover.enabled = true;
+            _akariNormalMover.gameObject.GetComponent<Animator>().enabled = true;
+            _akariNormalMover.gameObject.GetComponent<PlayerInputController>().enabled = true;
+            _akariNormalMover.transform.rotation = new Quaternion();
+            _akariNormalMover.Jump();
+
+            yield return new WaitForSeconds(3f);
             StartConversation(_akariStandsConversation); //akari is happy to see Tomoya transformed
             
             // akari and tomoya get knocked down
