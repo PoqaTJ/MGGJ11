@@ -204,7 +204,7 @@ namespace Game
         }
         
 #if UNITY_EDITOR
-        [MenuItem("Save/Delete Save (only when stopped)")]
+        [MenuItem("Save/Delete Save (only when stopped)", false, 100)]
         private static void ClearSave()
         {
             PlayerPrefs.DeleteKey(_playerPrefsKey);
@@ -216,7 +216,7 @@ namespace Game
             return !EditorApplication.isPlaying && PlayerPrefs.HasKey(_playerPrefsKey);
         }
 
-        [MenuItem("Save/EnableWallJump")]
+        [MenuItem("Save/EnableWallJump", false, 1)]
         private static void DebugEnableWallJump()
         {
             ServiceLocator.Instance.SaveManager.UnlockedWallJump = !ServiceLocator.Instance.SaveManager.UnlockedWallJump;
@@ -233,7 +233,7 @@ namespace Game
             return false;
         }
         
-        [MenuItem("Save/EnableDoubleJump")]
+        [MenuItem("Save/EnableDoubleJump", false, 2)]
         private static void DebugEnableDoubleJump()
         {
             ServiceLocator.Instance.SaveManager.UnlockedDoubleJump = !ServiceLocator.Instance.SaveManager.UnlockedDoubleJump;
@@ -250,7 +250,7 @@ namespace Game
             return false;
         }
         
-        [MenuItem("Save/SavedAkari")]
+        [MenuItem("Save/SavedAkari", false, 10)]
         private static void DebugEnableSavedAkari()
         {
             ServiceLocator.Instance.SaveManager.FoundAkari = !ServiceLocator.Instance.SaveManager.FoundAkari;
@@ -267,7 +267,7 @@ namespace Game
             return false;
         }
         
-        [MenuItem("Save/EnableTripleJump")]
+        [MenuItem("Save/EnableTripleJump", false, 3)]
         private static void DebugEnableTripleJump()
         {
             ServiceLocator.Instance.SaveManager.UnlockedTripleJump = !ServiceLocator.Instance.SaveManager.UnlockedTripleJump;
@@ -284,7 +284,7 @@ namespace Game
             return false;
         }
         
-        [MenuItem("Save/EnableBreakHazard")]
+        [MenuItem("Save/EnableBreakHazard", false, 4)]
         private static void DebugEnableBreakHazard()
         {
             ServiceLocator.Instance.SaveManager.UnlockedBreakHazard = !ServiceLocator.Instance.SaveManager.UnlockedBreakHazard;
@@ -306,7 +306,7 @@ namespace Game
             set => EditorPrefs.SetBool("EditorResetOnPlay", value);
         }
 
-        [MenuItem("Save/ResetCollectablesOnPlay")]
+        [MenuItem("Save/ResetCollectablesOnPlay", false, 11)]
         private static void DebugResetCollectables()
         {
             _resetOnPlay = !_resetOnPlay;
@@ -324,7 +324,7 @@ namespace Game
             set => EditorPrefs.SetBool("EditorStartNearAkari", value);
         }
 
-        [MenuItem("Save/StartNearAkari")]
+        [MenuItem("Save/StartNearAkari", false, 12)]
         private static void DebugStartNearAkari()
         {
             _startNearAkari = !_startNearAkari;
