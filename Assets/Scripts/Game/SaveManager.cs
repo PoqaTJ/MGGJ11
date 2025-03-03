@@ -318,6 +318,24 @@ namespace Game
             Menu.SetChecked("Save/ResetCollectablesOnPlay", _resetOnPlay);
             return true;
         }
+        
+        private static bool _startNearAkari {
+            get => EditorPrefs.GetBool("EditorStartNearAkari");
+            set => EditorPrefs.SetBool("EditorStartNearAkari", value);
+        }
+
+        [MenuItem("Save/StartNearAkari")]
+        private static void DebugStartNearAkari()
+        {
+            _startNearAkari = !_startNearAkari;
+        }
+        
+        [MenuItem("Save/StartNearAkari", true)]
+        private static bool DebugStartNearAkariValidate()
+        {
+            Menu.SetChecked("Save/StartNearAkari", _startNearAkari);
+            return true;
+        }
 #endif
     }
 }
