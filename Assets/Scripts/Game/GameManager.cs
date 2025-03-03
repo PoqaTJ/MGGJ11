@@ -91,6 +91,39 @@ namespace Game
 
         private PlayerSpawner ChooseSpawner()
         {
+#if UNITY_EDITOR
+            if (UnityEditor.EditorPrefs.GetBool("EditorStartNearAkari"))
+            {
+                Debug.Log("Overriding default spawner to spawn near Akari!");
+
+                // find akari
+                GameObject akari = GameObject.Find("Akari-prone");
+
+                if (akari == null)
+                {
+                    Debug.Log("Unable to find Akari to spawn near.");
+                }
+                else
+                {
+                    PlayerSpawner s = null;
+                    foreach (var spawnerKey in _spawners.Keys)
+                    {
+                        PlayerSpawner spawner = _spawners[spawnerKey];
+                        if (s == null || 
+                            Vector2.Distance(akari.transform.position, s.transform.position) > Vector2.Distance(akari.transform.position, spawner.transform.position))
+                        {
+                            s = spawner;
+                        }
+                    }
+
+                    if (s != null)
+                    {
+                        return s;                        
+                    }
+                }
+            }
+#endif
+            
             string spawnerID = ServiceLocator.Instance.SaveManager.Spawner;
             if (spawnerID != null && _spawners.ContainsKey(spawnerID))
             {

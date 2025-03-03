@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - WallJumpable
+  - Akari
   layers:
   - Default
   - TransparentFX

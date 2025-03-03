@@ -324,5 +324,21 @@ namespace Player
         {
             _rigidbody2D.velocity = Vector2.zero;
         }
+
+        public void RemoveCollisions()
+        {
+            foreach (var c in GetComponents<Collider2D>())
+            {
+                c.enabled = false;
+            }
+        }
+        
+        public void RestoreCollisions()
+        {
+            foreach (var c in GetComponents<Collider2D>())
+            {
+                c.enabled = true;
+            }
+        }
     }
 }

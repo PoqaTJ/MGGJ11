@@ -21,7 +21,8 @@ namespace Cutscenes
         [SerializeField] private PlayerMover _akariNormalMover;
         [SerializeField] private GameObject _findAkariScene;
         [SerializeField] private GameObject _afterFindAkariQuips;        
-        [SerializeField] private GameObject _beforeFindAkariQuips;    
+        [SerializeField] private GameObject _beforeFindAkariQuips;
+        [SerializeField] private GameObject _rotatingHazard;
         
         private static readonly int StartTransform = Animator.StringToHash("TransformStart");
         private static readonly int StopTransform = Animator.StringToHash("TransformEnd");
@@ -37,6 +38,10 @@ namespace Cutscenes
             _bottomAkari.SetActive(true);
             _afterFindAkariQuips.SetActive(true);
             _beforeFindAkariQuips.SetActive(false);
+            if (_rotatingHazard != null)
+            {
+                _rotatingHazard.SetActive(true);
+            }
         }
         
         public void StartAkariFoundScene()
@@ -50,6 +55,7 @@ namespace Cutscenes
             var tomoya = ServiceLocator.Instance.GameManager.CurrentPlayer;
             var tomoyaMover = tomoya.GetComponent<PlayerMover>();
             var tomoyaInputController = tomoya.GetComponent<PlayerInputController>();
+            tomoya.Heal(3);
 
             tomoya.StopHorizontalMovement();
             tomoyaInputController.enabled = false;
@@ -70,15 +76,23 @@ namespace Cutscenes
             yield return new WaitForSeconds(2f);
             
             StartConversation(_akariOhNoConversation);
-            
+
+            _rotatingHazard.SetActive(true);
             // akari and tomoya get knocked down
-            yield return new WaitForSeconds(3f);
+
+            yield return new WaitUntil(() => _akariNormalMover.CurrentHealth < 3);
 
             
+            // remove akari and tomoya colliders
+            _akariNormalMover.RemoveCollision();
+            tomoyaMover.RemoveCollision();
+
+            yield return new WaitForSeconds(2);
+
             // fade to purple
-            yield return new WaitForSeconds(1f);
 
-            
+            _akariNormalMover.ReenableCollision();
+            tomoyaMover.ReenableCollision();
             // move to bottom of stage
             _bottomAkari.SetActive(true);
             SnapCharacterTo(tomoyaMover, _tomoyaBottomLocation);

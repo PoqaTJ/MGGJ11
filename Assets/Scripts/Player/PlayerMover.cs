@@ -10,6 +10,7 @@ namespace Player
 
         private Action _onArrive;
         private float _minDistance = 0.05f;
+        public int CurrentHealth => _playerController.CurrentHealth;
 
         public void MoveTo(Transform hLocation, Action onArrive)
         {
@@ -83,6 +84,16 @@ namespace Player
         public void Jump()
         {
             _jumping = true;
+        }
+
+        public void RemoveCollision()
+        {
+            _playerController.RemoveCollisions();
+        }
+
+        public void ReenableCollision()
+        {
+            _playerController.RestoreCollisions();
         }
     }
 }

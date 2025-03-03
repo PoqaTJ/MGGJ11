@@ -13,7 +13,7 @@ namespace Baddy
         
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.CompareTag("Player"))
+            if (col.CompareTag("Player") || col.CompareTag("Akari"))
             {
                 if (ServiceLocator.Instance.SaveManager.UnlockedBreakHazard)
                 {
