@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a48453cb85647658ed9d092c933952a, type: 3}
-  m_Name: IrishCoffee
+  m_Name: OatmilkInLatte
   m_EditorClassIdentifier: 
-  ID: IrishCoffee
+  ID: OatmilkInLattes
   dialog:
     Character: 0
-    Text: (I wonder what Irish Coffee is. Maybe it has green foam?)
+    Text: I've heard good things about oatmilk in lattes.
     Side: 0

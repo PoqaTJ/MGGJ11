@@ -35,3 +35,12 @@ MonoBehaviour:
   - Character: 0
     Text: I won't let you down, Akari.
     Side: 0
+  - Character: 0
+    Text: But what am I supposed to do?
+    Side: 0
+  - Character: 1
+    Text: Go up and meet the shade. You'll instinctively know what to do!
+    Side: 1
+  - Character: 0
+    Text: That's too vague.
+    Side: 0

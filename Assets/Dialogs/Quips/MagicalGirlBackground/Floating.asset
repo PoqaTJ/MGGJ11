@@ -15,5 +15,5 @@ MonoBehaviour:
   ID: Floating
   dialog:
     Character: 0
-    Text: Floating down is kind of fun, though.
+    Text: Floating down feels weird.
     Side: 0

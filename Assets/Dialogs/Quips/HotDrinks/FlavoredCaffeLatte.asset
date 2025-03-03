@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a48453cb85647658ed9d092c933952a, type: 3}
-  m_Name: PuerhTea
+  m_Name: FlavoredCaffeLatte
   m_EditorClassIdentifier: 
-  ID: PuerhTea
+  ID: FlavoredCaffeLatte
   dialog:
     Character: 0
-    Text: I've read that puerh tea is fermented. Does that mean it tastes like yogurt?
+    Text: "Should I try a flavored caff\xE8 latte?"
     Side: 0
