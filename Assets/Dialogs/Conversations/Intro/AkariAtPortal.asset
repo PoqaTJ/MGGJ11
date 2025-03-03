@@ -15,8 +15,8 @@ MonoBehaviour:
   ID: akari-at-portal
   Dialogs:
   - Character: 2
-    Text: Open the portal here, Akari! I can feel the evil magic!
+    Text: Open the portal here, Akari! I can feel the shadow magic.
     Side: 0
   - Character: 1
-    Text: All right! It's time to defeat some evil!
+    Text: All right! It's time to defeat the shade!
     Side: 1

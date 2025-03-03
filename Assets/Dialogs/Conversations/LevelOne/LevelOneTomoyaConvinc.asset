@@ -37,7 +37,7 @@ MonoBehaviour:
     Side: 1
   - Character: 0
     Text: Sorry, what?
-    Side: 1
+    Side: 0
   - Character: 2
     Text: We have no choice now.
     Side: 1

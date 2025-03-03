@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a48453cb85647658ed9d092c933952a, type: 3}
-  m_Name: HazelnutLatte
+  m_Name: IrishCoffee
   m_EditorClassIdentifier: 
-  ID: 
+  ID: IrishCoffee
   dialog:
     Character: 0
-    Text: (I've heard good things about oatmilk in lattes.
+    Text: I wonder why Irish Coffee is sold only after 5pm. Coffee is for the morning!
     Side: 0
