@@ -532,6 +532,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1992505178941435066, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4104257512620970403, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
       propertyPath: m_Name
       value: Akari-prone
@@ -539,6 +543,14 @@ PrefabInstance:
     - target: {fileID: 4104257512620970403, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
       propertyPath: m_TagString
       value: Akari
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361460246550723018, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432776220180069613, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4799138886826397709, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
       propertyPath: _rotatingHazard
