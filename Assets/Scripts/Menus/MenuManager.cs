@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Menus
 {
@@ -11,6 +13,7 @@ namespace Menus
         [SerializeField] private RectTransform _clickBlocker;
         [SerializeField] private GameObject _healthUI;
         [SerializeField] private GameObject _collectableUI;
+        [SerializeField] private Image _fadeToColorScreen; 
         
         private Dictionary<MenuType, GameObject> _prefabDict = new();
         
@@ -75,7 +78,27 @@ namespace Menus
         {
             _collectableUI.SetActive(false);
         }
-        
+
+        public void FadeToColor(Color startColor, Color endColor, float durationSeconds, Action onDone)
+        {
+            StartCoroutine(FadeToColorCoroutine(startColor, endColor, durationSeconds, onDone));
+        }
+
+        public IEnumerator FadeToColorCoroutine(Color startColor, Color endColor, float durationSeconds, Action onDone=null)
+        {
+            float elapsedTime = 0f;
+            _fadeToColorScreen.color = startColor;
+            // fade
+            while (_fadeToColorScreen.color != endColor)
+            {
+                _fadeToColorScreen.color = Color.Lerp(startColor, endColor, elapsedTime/durationSeconds);
+                elapsedTime += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+
+            onDone?.Invoke();
+        }
+
         public void HideTop()
         {
             MenuController menu = _menus.Pop();

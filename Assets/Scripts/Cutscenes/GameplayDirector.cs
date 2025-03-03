@@ -87,9 +87,12 @@ namespace Cutscenes
             _akariNormalMover.RemoveCollision();
             tomoyaMover.RemoveCollision();
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
+            
+            
 
             // fade to purple
+            yield return FadeToColorCoroutine(Color.black, 1f);
 
             _akariNormalMover.ReenableCollision();
             tomoyaMover.ReenableCollision();
@@ -99,7 +102,7 @@ namespace Cutscenes
             tomoyaMover.Face(PlayerMover.Direction.LEFT);
             
             // fade back
-            yield return new WaitForSeconds(2f);
+            yield return FadeFromColorCoroutine(Color.black, 1f);
             StartConversation(_tomoyaDepressedConversation);
             
             // Tomoya powers up!

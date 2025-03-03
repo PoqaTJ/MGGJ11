@@ -30,5 +30,19 @@ namespace Cutscenes
             newPos.z = mover.transform.position.z;
             mover.transform.position = newPos;
         }
+
+        protected IEnumerator FadeToColorCoroutine(Color color, float time)
+        {
+            Color startColor = new Color(color.r, color.b, color.g, 0);
+            Color endColor = new Color(color.r, color.b, color.g, 1);
+            yield return ServiceLocator.Instance.MenuManager.FadeToColorCoroutine(startColor, endColor, time);
+        }
+        
+        protected IEnumerator FadeFromColorCoroutine(Color color, float time)
+        {
+            Color startColor = new Color(color.r, color.b, color.g, 1);
+            Color endColor = new Color(color.r, color.b, color.g, 0);
+            yield return ServiceLocator.Instance.MenuManager.FadeToColorCoroutine(startColor, endColor, time);
+        }
     }
 }
