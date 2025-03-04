@@ -41,8 +41,11 @@ namespace Game
         private void Start()
         {
             OnPlayerDied += OnPlayerDeath;
-
-            StartCoroutine(LoadGameplay(SceneManager.GetActiveScene().name != "LevelOne"));
+            bool transformed = SceneManager.GetActiveScene().name != "LevelOne";
+            if (SceneManager.GetActiveScene().name != "Main")
+            {
+                StartCoroutine(LoadGameplay(transformed));                
+            }
         }
 
         private void PlayerSpawned(PlayerController playerController)

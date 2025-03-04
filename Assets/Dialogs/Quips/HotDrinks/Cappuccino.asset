@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Cappuccino
   dialog:
-    Character: 0
+    Character: 3
     Text: A cappucino sounds more fancy than a latte.
     Side: 0
+    Expression: 0
+  Expression: 0

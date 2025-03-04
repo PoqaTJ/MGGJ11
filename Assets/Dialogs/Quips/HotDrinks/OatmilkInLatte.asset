@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: OatmilkInLattes
   dialog:
-    Character: 0
+    Character: 3
     Text: I've heard good things about oatmilk in lattes.
     Side: 0
+    Expression: 0
+  Expression: 0

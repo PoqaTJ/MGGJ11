@@ -15,6 +15,18 @@ namespace Menus
         [SerializeField] private GameObject _collectableUI;
         [SerializeField] private Image _fadeToColorScreen; 
         
+        [SerializeField] private Sprite[] _tomoyaSprites;
+        [SerializeField] private Sprite[] _akariSprites;
+        [SerializeField] private Sprite[] _magicalTomoyaSprites;
+        [SerializeField] private Sprite[] _magicalAkariSprites;
+        [SerializeField] private Sprite _butterflySprite;
+
+        public Sprite[] TomoyaSprites => _tomoyaSprites;
+        public Sprite[] AkariSprites => _akariSprites;
+        public Sprite[] MagicalTomoyaSprites => _magicalTomoyaSprites;
+        public Sprite[] MagicalAkariSprites => _magicalAkariSprites;
+        public Sprite ButterflySprite => _butterflySprite;
+
         private Dictionary<MenuType, GameObject> _prefabDict = new();
         
         private Stack<MenuController> _menus = new();

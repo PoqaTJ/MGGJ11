@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Floating2
   dialog:
-    Character: 0
+    Character: 3
     Text: This almost makes me forget my fear of heights.
     Side: 0
+    Expression: 0
+  Expression: 0

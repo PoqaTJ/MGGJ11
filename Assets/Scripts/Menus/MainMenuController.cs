@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using System;
+using Services;
 using Game;
 using Menus.MenuTypes;
 using TMPro;
@@ -14,10 +15,21 @@ namespace Menus
         [SerializeField] private GameObject _startButton;
         [SerializeField] private GameObject _continueButton;
         [SerializeField] private Button _deleteSaveButton;
+
+        [SerializeField] private Sprite _beforeSprite;
+        [SerializeField] private Sprite _afterSprite;
+
+        [SerializeField] private Image _bgImage;
         
         private void Awake()
         {
             UpdateButtons();
+        }
+
+        private void Start()
+        {
+            Sprite bgSprite = !ServiceLocator.Instance.SaveManager.FoundAkari ? _beforeSprite : _afterSprite;
+            _bgImage.sprite = bgSprite;
         }
 
         private void UpdateButtons()
