@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Landscape
   dialog:
-    Character: 0
+    Character: 3
     Text: This creepy landscape is exactly why I turned down the magical girl gig.
     Side: 0
+    Expression: 0
+  Expression: 0

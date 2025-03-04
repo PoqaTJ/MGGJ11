@@ -353,10 +353,43 @@ MonoBehaviour:
   _leftName: {fileID: 3234138378181212546}
   _rightName: {fileID: 6981900539113635387}
   dialogText: {fileID: 753936722084319112}
-  _tomoyaSprite: {fileID: 21300000, guid: c00508f502da5864daf8b5769080ce3b, type: 3}
-  _akariSprite: {fileID: 21300000, guid: ea2bae2e424593743976c2b31c47bbab, type: 3}
+  _tomoyaSprites:
+  - {fileID: -1132635412, guid: fab5edd8b41803b4c871a69947beb887, type: 3}
+  - {fileID: -1134087124, guid: fab5edd8b41803b4c871a69947beb887, type: 3}
+  - {fileID: -928793660, guid: fab5edd8b41803b4c871a69947beb887, type: 3}
+  - {fileID: 1452276079, guid: fab5edd8b41803b4c871a69947beb887, type: 3}
+  - {fileID: 59324831, guid: fab5edd8b41803b4c871a69947beb887, type: 3}
+  - {fileID: 1222651552, guid: fab5edd8b41803b4c871a69947beb887, type: 3}
+  - {fileID: 971882211, guid: fab5edd8b41803b4c871a69947beb887, type: 3}
+  - {fileID: 345081242, guid: fab5edd8b41803b4c871a69947beb887, type: 3}
+  _akariSprites:
+  - {fileID: 664391209, guid: 9b579797fce42c24e86a52d08b4f9047, type: 3}
+  - {fileID: -1714527681, guid: 9b579797fce42c24e86a52d08b4f9047, type: 3}
+  - {fileID: -1134300338, guid: 9b579797fce42c24e86a52d08b4f9047, type: 3}
+  - {fileID: -1468855018, guid: 9b579797fce42c24e86a52d08b4f9047, type: 3}
+  - {fileID: 1166414394, guid: 9b579797fce42c24e86a52d08b4f9047, type: 3}
+  - {fileID: -1790916670, guid: 9b579797fce42c24e86a52d08b4f9047, type: 3}
+  - {fileID: -249468225, guid: 9b579797fce42c24e86a52d08b4f9047, type: 3}
+  - {fileID: 434880896, guid: 9b579797fce42c24e86a52d08b4f9047, type: 3}
+  _magicalTomoyaSprites:
+  - {fileID: -219856221, guid: b5b828d616ccc4e4c8a5ba1bab6e5f6c, type: 3}
+  - {fileID: -1843870048, guid: b5b828d616ccc4e4c8a5ba1bab6e5f6c, type: 3}
+  - {fileID: 1904053726, guid: b5b828d616ccc4e4c8a5ba1bab6e5f6c, type: 3}
+  - {fileID: -388468004, guid: b5b828d616ccc4e4c8a5ba1bab6e5f6c, type: 3}
+  - {fileID: 1274160343, guid: b5b828d616ccc4e4c8a5ba1bab6e5f6c, type: 3}
+  - {fileID: 526281171, guid: b5b828d616ccc4e4c8a5ba1bab6e5f6c, type: 3}
+  - {fileID: 1103514655, guid: b5b828d616ccc4e4c8a5ba1bab6e5f6c, type: 3}
+  - {fileID: 51347497, guid: b5b828d616ccc4e4c8a5ba1bab6e5f6c, type: 3}
+  _magicalAkariSprites:
+  - {fileID: -1852675903, guid: 1605cafe13eb9fd43ad19fd248375815, type: 3}
+  - {fileID: -1515422991, guid: 1605cafe13eb9fd43ad19fd248375815, type: 3}
+  - {fileID: -1777020466, guid: 1605cafe13eb9fd43ad19fd248375815, type: 3}
+  - {fileID: -1831095587, guid: 1605cafe13eb9fd43ad19fd248375815, type: 3}
+  - {fileID: -428440894, guid: 1605cafe13eb9fd43ad19fd248375815, type: 3}
+  - {fileID: -2145429208, guid: 1605cafe13eb9fd43ad19fd248375815, type: 3}
+  - {fileID: -327987350, guid: 1605cafe13eb9fd43ad19fd248375815, type: 3}
+  - {fileID: 222158026, guid: 1605cafe13eb9fd43ad19fd248375815, type: 3}
   _butterflySprite: {fileID: 21300000, guid: dcbd6a53069ef69429c447d84733c3f3, type: 3}
-  _bigbadSprite: {fileID: 0}
 --- !u!1 &2398983084013091971
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,21 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 
   Dialogs:
-  - Character: 0
+  - Character: 3
     Text: Oh no, Akari! Are you ok?
     Side: 0
-  - Character: 0
+    Expression: 0
+  - Character: 3
     Text: Wake up!
     Side: 0
+    Expression: 0
   - Character: 1
     Text: Ugh... so... exhausted...
     Side: 1
-  - Character: 0
+    Expression: 0
+  - Character: 3
     Text: I've got just the thing. Breakfast tea in my emergency thermos!
     Side: 0
+    Expression: 0
   - Character: 1
     Text: (Glug glug)
     Side: 1
+    Expression: 0
   - Character: 1
     Text: Ahhh! I feel so much better...
     Side: 1
+    Expression: 0

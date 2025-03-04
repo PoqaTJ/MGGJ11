@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Floating3
   dialog:
-    Character: 0
+    Character: 3
     Text: Oh no, I'm getting used to this.
     Side: 0
+    Expression: 0
+  Expression: 0

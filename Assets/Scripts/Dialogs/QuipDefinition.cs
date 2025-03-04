@@ -1,4 +1,5 @@
 ﻿using System;
+using Menus.MenuTypes;
 using UnityEngine;
 
 namespace Dialogs
@@ -8,5 +9,6 @@ namespace Dialogs
     {
         public string ID = "";
         public DialogDefinition dialog;
+        public SpriteFace Expression;
     }
 }

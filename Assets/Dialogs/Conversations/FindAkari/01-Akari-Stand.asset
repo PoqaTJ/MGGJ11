@@ -17,21 +17,28 @@ MonoBehaviour:
   - Character: 1
     Text: Wait, you TRANSFORMED!
     Side: 1
+    Expression: 0
   - Character: 1
     Text: Finally, I get to see it!
     Side: 1
-  - Character: 0
+    Expression: 0
+  - Character: 3
     Text: ... how do I look?
     Side: 0
+    Expression: 0
   - Character: 1
     Text: Like you were destined for it!
     Side: 1
+    Expression: 0
   - Character: 2
     Text: This is nice and all, but we've got bigger things to worry about...
     Side: 0
+    Expression: 0
   - Character: 1
     Text: Right! That shade came out of nowhere and knocked me out!
     Side: 1
+    Expression: 0
   - Character: 1
     Text: Oh no! Here it comes again!
     Side: 1
+    Expression: 0

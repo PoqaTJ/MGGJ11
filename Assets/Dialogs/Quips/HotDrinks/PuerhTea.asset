@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: PuerhTea
   dialog:
-    Character: 0
+    Character: 3
     Text: I've heard that puerh tea is fermented. Does it taste like yogurt?
     Side: 0
+    Expression: 0
+  Expression: 0

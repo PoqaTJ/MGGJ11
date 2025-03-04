@@ -17,13 +17,7 @@ namespace Menus.MenuTypes
         [SerializeField] private TMP_Text _leftName;
         [SerializeField] private TMP_Text _rightName;
         [SerializeField] private TMP_Text dialogText;
-        
-        // temp hopefully
-        [SerializeField] private Sprite _tomoyaSprite;
-        [SerializeField] private Sprite _akariSprite;
-        [SerializeField] private Sprite _butterflySprite;
-        [SerializeField] private Sprite _bigbadSprite;
-        
+
         private ConversationMenuContext _context;
         
         private int _index = 0;
@@ -51,7 +45,7 @@ namespace Menus.MenuTypes
                     _leftName.enabled = true;
                     _leftImage.color = new Color(1f, 1f, 1f, 1f);
                     _rightImage.color = new Color(1f, 1f, 1f, 0.5f);
-                    _leftImage.sprite = GetImage(character);
+                    _leftImage.sprite = GetImage(character, dialog.Expression);
                     _leftName.text = GetName(character);
                     break;
                 case DialogSide.Right:
@@ -59,7 +53,7 @@ namespace Menus.MenuTypes
                     _rightName.enabled = true;
                     _rightImage.color = new Color(1f, 1f, 1f, 1f);
                     _leftImage.color = new Color(1f, 1f, 1f, 0.5f);
-                    _rightImage.sprite = GetImage(character);
+                    _rightImage.sprite = GetImage(character, dialog.Expression);
                     _rightName.text = GetName(character);
                     break;
             }
@@ -67,22 +61,26 @@ namespace Menus.MenuTypes
             dialogText.text = dialog.Text;
         }
 
-        private Sprite GetImage(DialogCharacter character)
+        private Sprite GetImage(DialogCharacter character, SpriteFace expression)
         {
             Sprite ret = null;
+            int expressionInt = (int)expression;
             switch (character)
             {
                 case DialogCharacter.Akari:
-                    ret = _akariSprite;
+                    ret = ServiceLocator.Instance.MenuManager.AkariSprites[expressionInt];
+                    break;
+                case DialogCharacter.MagicalAkari:
+                    ret = ServiceLocator.Instance.MenuManager.MagicalAkariSprites[expressionInt];
                     break;
                 case DialogCharacter.Tomoya:
-                    ret = _tomoyaSprite;
+                    ret = ServiceLocator.Instance.MenuManager.TomoyaSprites[expressionInt];
+                    break;
+                case DialogCharacter.MagicalTomoya:
+                    ret = ServiceLocator.Instance.MenuManager.MagicalTomoyaSprites[expressionInt];
                     break;
                 case DialogCharacter.Butterfly:
-                    ret = _butterflySprite;
-                    break;
-                case DialogCharacter.BigBad:
-                    ret = _bigbadSprite;
+                    ret = ServiceLocator.Instance.MenuManager.ButterflySprite;
                     break;
             }
 
@@ -112,5 +110,17 @@ namespace Menus.MenuTypes
     {
         public Action OnFinish;
         public ConversationDefinition Conversation;
+    }
+
+    public enum SpriteFace
+    {
+        Normal = 0,
+        SideEye,
+        WideEyed,
+        PikachuFace,
+        Crying,
+        Happy,
+        Glad,
+        Mischievous
     }
 }

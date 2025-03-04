@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: FlavoredCaffeLatte
   dialog:
-    Character: 0
+    Character: 3
     Text: "Should I try a flavored caff\xE8 latte?"
     Side: 0
+    Expression: 0
+  Expression: 0

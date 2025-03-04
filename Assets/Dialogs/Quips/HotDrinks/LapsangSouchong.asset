@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: LapsangSouchong
   dialog:
-    Character: 0
+    Character: 3
     Text: I liked the Lapsang Souchong latte, but Akari said it like bacon.
     Side: 0
+    Expression: 0
+  Expression: 0

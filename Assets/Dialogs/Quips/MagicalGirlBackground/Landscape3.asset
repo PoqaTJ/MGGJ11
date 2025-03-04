@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Landscape3
   dialog:
-    Character: 0
+    Character: 3
     Text: Cliffs are Nature's version of the horror genre.
     Side: 0
+    Expression: 0
+  Expression: 0

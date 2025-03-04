@@ -1,5 +1,7 @@
 ﻿using System;
 using Dialogs;
+using Menus.MenuTypes;
+using Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,13 +16,9 @@ namespace Menus.Quips
         
         private const float _showDuration = 2f;
         private float hideTime = 0f;
-        
-        // temp hopefully
-        [SerializeField] private Sprite _tomoyaSprite;
-        [SerializeField] private Sprite _akariSprite;
-        [SerializeField] private Sprite _butterflySprite;
-        [SerializeField] private Sprite _bigbadSprite;
-        
+
+        [SerializeField] private ConversationMenu _conversationMenu;
+
         public void Show(string text, Sprite image)
         {
             _characterImage.sprite = image;
@@ -39,25 +37,29 @@ namespace Menus.Quips
 
         public void Show(QuipDefinition definition)
         {
-            Show(definition.dialog.Text, GetImage(definition.dialog.Character));
+            Show(definition.dialog.Text, GetImage(definition.dialog.Character, definition.Expression));
         }
         
-        private Sprite GetImage(DialogCharacter character)
+        private Sprite GetImage(DialogCharacter character, SpriteFace expression)
         {
             Sprite ret = null;
+            int expressionInt = (int)expression;
             switch (character)
             {
                 case DialogCharacter.Akari:
-                    ret = _akariSprite;
+                    ret = ServiceLocator.Instance.MenuManager.AkariSprites[expressionInt];
+                    break;
+                case DialogCharacter.MagicalAkari:
+                    ret = ServiceLocator.Instance.MenuManager.MagicalAkariSprites[expressionInt];
                     break;
                 case DialogCharacter.Tomoya:
-                    ret = _tomoyaSprite;
+                    ret = ServiceLocator.Instance.MenuManager.TomoyaSprites[expressionInt];
+                    break;
+                case DialogCharacter.MagicalTomoya:
+                    ret = ServiceLocator.Instance.MenuManager.MagicalTomoyaSprites[expressionInt];
                     break;
                 case DialogCharacter.Butterfly:
-                    ret = _butterflySprite;
-                    break;
-                case DialogCharacter.BigBad:
-                    ret = _bigbadSprite;
+                    ret = ServiceLocator.Instance.MenuManager.ButterflySprite;
                     break;
             }
 

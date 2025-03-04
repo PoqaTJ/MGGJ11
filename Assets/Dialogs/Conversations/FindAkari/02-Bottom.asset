@@ -14,33 +14,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 
   Dialogs:
-  - Character: 0
+  - Character: 3
     Text: I can't believe we're back at the bottom.
     Side: 0
-  - Character: 0
+    Expression: 0
+  - Character: 3
     Text: After all that work...
     Side: 0
+    Expression: 0
   - Character: 1
     Text: Tomoya, you've always supported me.
     Side: 1
+    Expression: 0
   - Character: 1
     Text: Time for me to support you.
     Side: 1
+    Expression: 0
   - Character: 1
     Text: I'm too drained anyway to go on.
     Side: 1
+    Expression: 0
   - Character: 1
     Text: Take my magical power. With it, you'll be able to break through those barriers!
     Side: 1
+    Expression: 0
   - Character: 0
     Text: I won't let you down, Akari.
     Side: 0
+    Expression: 0
   - Character: 0
     Text: But what am I supposed to do?
     Side: 0
+    Expression: 0
   - Character: 1
     Text: Go up and meet the shade. You'll instinctively know what to do!
     Side: 1
-  - Character: 0
+    Expression: 0
+  - Character: 3
     Text: That's too vague.
     Side: 0
+    Expression: 0

@@ -184,7 +184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6bb5c7a765899c247b63ce16735f089e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38e19110b9a73e74baa963ab7c966cb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1121,6 +1121,9 @@ MonoBehaviour:
   _startButton: {fileID: 516102829}
   _continueButton: {fileID: 12337376}
   _deleteSaveButton: {fileID: 1451161869}
+  _beforeSprite: {fileID: 21300000, guid: 38e19110b9a73e74baa963ab7c966cb7, type: 3}
+  _afterSprite: {fileID: 21300000, guid: 8c27c343a76450f4c88d732dcefdef94, type: 3}
+  _bgImage: {fileID: 16307318}
 --- !u!114 &1451161869 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1491700326902938616, guid: fa608efcab5b44eee9fb88f53c8c6a1e, type: 3}
