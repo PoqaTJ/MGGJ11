@@ -127,5 +127,40 @@ namespace Cutscenes
             tomoya.enabled = true;
             tomoyaMover.enabled = false;
         }
+        
+        public void StartStageEndScene()
+        {
+            StartCoroutine(StageEndScene());
+        }
+
+        [SerializeField]
+        private ConversationDefinition _endingConversation1;
+        
+        [SerializeField]
+        private ConversationDefinition _endingConversation2;
+
+        private IEnumerator StageEndScene()
+        {
+            // start evil realm collapsing effect
+            
+            // conversation with prism
+            StartConversation(_endingConversation1);
+            
+            // Tomoya jumps down, camera remains still
+
+            // fade to black
+            yield return FadeToColorCoroutine(Color.black, 1f);
+            
+            // move Tomoya next to Akari. move camera
+            
+            // fade back in
+            yield return FadeFromColorCoroutine(Color.black, 1f);
+
+            StartConversation(_endingConversation2);
+            
+            // Tomoya creates a portal
+            
+            // both leave through the portal
+        }
     }
 }
