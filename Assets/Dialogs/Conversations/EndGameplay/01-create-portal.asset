@@ -13,4 +13,16 @@ MonoBehaviour:
   m_Name: 01-create-portal
   m_EditorClassIdentifier: 
   ID: create-portal
-  Dialogs: []
+  Dialogs:
+  - Character: 2
+    Text: You passively collected all this magic for me!
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: I can now rebuild the portal.
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: Here goes!
+    Side: 1
+    Expression: 0
