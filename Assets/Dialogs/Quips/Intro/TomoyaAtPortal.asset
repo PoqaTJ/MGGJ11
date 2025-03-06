@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d809b68116449fa87cc9d36d2b7f09, type: 3}
+  m_Name: TomoyaAtPortal
+  m_EditorClassIdentifier: 
+  ID: akari-at-portal
+  Dialogs:
+  - Character: 0
+    Text: Good luck!
+    Side: 0
+  - Character: 0
+    Text: When you're all done, let's go to this cute cafe I found!
+    Side: 0
+  - Character: 0
+    Text: They have lattes and donuts of all sorts.
+    Side: 0
+  - Character: 1
+    Text: That sounds great! I'd love some kind of tea latte.
+    Side: 1
+  - Character: 2
+    Text: I want a cinnamon-sugar donut!
+    Side: 1
+  - Character: 2
+    Text: Just the cinnamon-sugar, actually. Not so much the donut.
+    Side: 1
+  - Character: 0
+    Text: We can get a donut to share!
+    Side: 0
+  - Character: 0
+    Text: I'll be here guarding the portal, as always.
+    Side: 0
+  - Character: 1
+    Text: See you soon!
+    Side: 1
