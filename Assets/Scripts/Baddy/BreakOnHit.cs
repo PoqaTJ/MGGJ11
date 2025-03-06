@@ -15,14 +15,16 @@ namespace Baddy
         {
             if (col.CompareTag("Player") || col.CompareTag("Akari"))
             {
-                if (ServiceLocator.Instance.SaveManager.UnlockedBreakHazard)
+                PlayerController pc = col.GetComponent<PlayerController>();
+
+                if (ServiceLocator.Instance.SaveManager.UnlockedBreakHazard &&
+                    col == pc.BreakHazardCollider)
                 {
                     _collectable.Collect(CollectableType.Hazard);
                     Destroy(gameObject);
                 }
                 else
                 {
-                    PlayerController pc = col.GetComponent<PlayerController>();
                     pc.TakeDamage(_damage, transform.position);                    
                 }
             }
