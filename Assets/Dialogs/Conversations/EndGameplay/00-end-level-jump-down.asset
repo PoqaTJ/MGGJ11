@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: 00-end-level-jump-down
   m_EditorClassIdentifier: 
   ID: end-level-jump-down
-  Dialogs: []
+  Dialogs:
+  - Character: 3
+    Text: Finally, we're done!
+    Side: 0
+    Expression: 0
+  - Character: 2
+    Text: It's the final jump down!
+    Side: 1
+    Expression: 0

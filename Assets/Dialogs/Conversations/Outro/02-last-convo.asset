@@ -13,4 +13,97 @@ MonoBehaviour:
   m_Name: 02-last-convo
   m_EditorClassIdentifier: 
   ID: 
-  Dialogs: []
+  Dialogs:
+  - Character: 2
+    Text: Now onto cinnamon-sugar!
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: Is the donut shop still open?
+    Side: 1
+    Expression: 0
+  - Character: 1
+    Text: Actually, it looks like it just closed.
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: Aww, i was looking forward to it...
+    Side: 1
+    Expression: 0
+  - Character: 0
+    Text: How about that one coffee shop that closes late?
+    Side: 0
+    Expression: 0
+  - Character: 0
+    Text: They have extra cinnamon-sugar in a shaker at their sugar-and-cream station.
+    Side: 0
+    Expression: 0
+  - Character: 2
+    Text: Extra cinnamon-sugar? At no extra cost?!
+    Side: 1
+    Expression: 0
+  - Character: 1
+    Text: Well we still would need to buy a drink first.
+    Side: 1
+    Expression: 0
+  - Character: 0
+    Text: But we can probably sprinkle some onto a napkin for you, Prism.
+    Side: 0
+    Expression: 0
+  - Character: 2
+    Text: Hurray! Best day ever!
+    Side: 1
+    Expression: 0
+  - Character: 0
+    Text: Aside the whole heights thing.
+    Side: 0
+    Expression: 0
+  - Character: 2
+    Text: You'll be fine. Akari was before scared of the dark.
+    Side: 1
+    Expression: 0
+  - Character: 1
+    Text: Hey! Stop giving embarassing tidbits out willy-nilly!
+    Side: 1
+    Expression: 2
+  - Character: 0
+    Text: ...
+    Side: 0
+    Expression: 2
+  - Character: 0
+    Text: Wow, you really did a lot for this magical girl gig.
+    Side: 0
+    Expression: 4
+  - Character: 0
+    Text: Wow, you really did a lot for this magical girl gig.
+    Side: 0
+    Expression: 4
+  - Character: 1
+    Text: I did it because I cared about this world, and about you!
+    Side: 1
+    Expression: 6
+  - Character: 1
+    Text: I feel more strength now that we can share the burden together.
+    Side: 1
+    Expression: 7
+  - Character: 0
+    Text: Oh Akari...
+    Side: 0
+    Expression: 6
+  - Character: 0
+    Text: I'm so happy to be your friend!
+    Side: 0
+    Expression: 4
+  - Character: 1
+    Text: Me too!
+    Side: 1
+    Expression: 4
+  - Character: 2
+    Text: Alright alright, stop with the cuteness. We now go on a new journey! To
+      sweets!
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: With a bigger and better team!
+    Side: 1
+    Expression: 0
