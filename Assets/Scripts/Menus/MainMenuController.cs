@@ -20,16 +20,10 @@ namespace Menus
         [SerializeField] private Sprite _afterSprite;
 
         [SerializeField] private Image _bgImage;
-        
-        private void Awake()
-        {
-            UpdateButtons();
-        }
 
         private void Start()
         {
-            Sprite bgSprite = !ServiceLocator.Instance.SaveManager.FoundAkari ? _beforeSprite : _afterSprite;
-            _bgImage.sprite = bgSprite;
+            UpdateButtons();
         }
 
         private void UpdateButtons()
@@ -47,6 +41,9 @@ namespace Menus
                 _continueButton.SetActive(false); 
                 _deleteSaveButton.interactable = false;
             }
+            
+            Sprite bgSprite = !ServiceLocator.Instance.SaveManager.FoundAkari ? _beforeSprite : _afterSprite;
+            _bgImage.sprite = bgSprite;
         }
 
         public void StartPressed()
@@ -73,6 +70,7 @@ namespace Menus
                 UpdateButtons();
             };
             ServiceLocator.Instance.MenuManager.Show(MenuType.PopupTwoButtons, context);
+            UpdateButtons();
         }
     }
 }
