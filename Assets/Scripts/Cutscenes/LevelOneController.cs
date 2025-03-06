@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Cinemachine;
 using Dialogs;
 using Player;
 using Services;
@@ -46,17 +47,21 @@ namespace Cutscenes
         
         private IEnumerator TransformationRoutine()
         {
+            float cameraSetting = _virtualCamera.m_Lens.OrthographicSize;
+            yield return ZoomCamera(cameraSetting, 3f, 1f);
+            
             // stop tomoya input
             _tomoyaNormalInput.enabled = false;
             PlayerMover tomoyaMover = _tomoyaNormalInput.gameObject.GetComponent<PlayerMover>();
             tomoyaMover.enabled = true;
 
             yield return MoveCharacterTo(tomoyaMover, _transformationLocation);
-            
+            yield return null;
+            tomoyaMover.Face(PlayerMover.Direction.RIGHT);
+
             // fly to Tomoya
             bool reached = false;
             _butterflyController.MoveTo(_butterflyLocation1, () => reached = true);
-            tomoyaMover.Face(PlayerMover.Direction.RIGHT);
 
             yield return new WaitUntil(() => reached);
             
@@ -68,7 +73,6 @@ namespace Cutscenes
             reached = false;
             _butterflyController.MoveTo(_butterflyLocation2, () => reached = true);
             yield return new WaitUntil(() => reached);
-            
 
             // fly above her
             _butterflyLocation2.position= tomoyaMover.transform.position + new Vector3(0f, 2, 0);
@@ -93,6 +97,8 @@ namespace Cutscenes
             _tomoyaParticleEmitter.Play();
             _tomoyaMagicalInput.transform.position = _tomoyaNormalInput.transform.position;
             _tomoyaNormalInput.gameObject.SetActive(false);
+            yield return FadeToColorCoroutine(_tomoyaColor, 0.2f);
+            yield return FadeFromColorCoroutine(_tomoyaColor, 0.2f);
 
             //yield return FlashBlue();
             yield return new WaitForSeconds(1.5f);
@@ -102,9 +108,10 @@ namespace Cutscenes
             ServiceLocator.Instance.GameManager.FocusCameraOn(_tomoyaMagicalAnimator.gameObject.transform);
             yield return new WaitForSeconds(1f);
             
+            yield return ZoomCamera(_virtualCamera.m_Lens.OrthographicSize, cameraSetting, 1f);
             _tomoyaMagicalInput.enabled = true;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             ServiceLocator.Instance.DialogManager.ShowQuip(_afterTF1);
         }
     }

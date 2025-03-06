@@ -67,6 +67,11 @@ namespace Game
                 yield return null;
             }
 
+            Color fromColor = new Color(0, 0, 0, 0);
+            Color toColor = new Color(0, 0, 0, 1);
+            
+            yield return ServiceLocator.Instance.MenuManager.FadeToColorCoroutine(fromColor, toColor, 0.3f);
+            
             _spawning = true;
             Debug.Log("Starting spawn character coroutine.");
             PlayerSpawner spawner = ChooseSpawner();
@@ -83,7 +88,7 @@ namespace Game
             _player.transform.position = new Vector3(spawner.transform.position.x, spawner.transform.position.y + 0.2f,
                 _player.transform.position.z);
             FocusCameraOn(_player.transform);
-            yield return new WaitForSeconds(1f);
+            yield return ServiceLocator.Instance.MenuManager.FadeToColorCoroutine(toColor, fromColor, 0.3f);
             _player.Reset();
 
             input.enabled = true;
@@ -136,9 +141,19 @@ namespace Game
             return _defaultSpawner;
         }
 
-        public void FocusCameraOn(Transform t)
+        public void FocusCameraOn(Transform t, bool snap=true)
         {
-            GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>().Follow = t;
+            var virtualCameraControl = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
+            if (snap)
+            {
+                virtualCameraControl.Follow = null;
+                virtualCameraControl.Follow = t;
+            }
+            else
+            {
+                virtualCameraControl.Follow = t;                
+            }
+
         }
         
         public void SetState(State state)
