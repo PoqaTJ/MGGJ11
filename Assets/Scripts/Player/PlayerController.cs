@@ -20,6 +20,10 @@ namespace Player
         [SerializeField] private BoxCollider2D _wallCollider;
         [SerializeField] private float _wallCheckLength = 0.05f;
 
+        [SerializeField] private Collider2D _breakHazardCollider;
+
+        public Collider2D BreakHazardCollider => _breakHazardCollider;
+        
         private Vector2 _moveVelocity;
         private bool _facingRight = true;
         private bool _grounded;
