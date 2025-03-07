@@ -132,9 +132,6 @@ namespace Cutscenes
         {
             StartCoroutine(StageEndScene());
         }
-
-        [SerializeField]
-        private ConversationDefinition _endingConversation1;
         
         [SerializeField]
         private ConversationDefinition _endingConversation2;
@@ -153,9 +150,6 @@ namespace Cutscenes
             tomoyaInputController.enabled = false;
             tomoya.enabled = false;
             tomoyaMover.enabled = true;
-
-            // "That should be it!
-            StartConversation(_endingConversation1);
 
             // Tomoya jumps down, camera remains still
 
