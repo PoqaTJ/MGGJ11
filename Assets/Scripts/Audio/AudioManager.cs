@@ -72,32 +72,31 @@ namespace Audio
                 {
                     _gameplayBGMIndex = 0;
                 }
-                _audioSource.clip = _gameplayBGMs[_gameplayBGMIndex];
-                _audioSource.Play();
+                Play(_gameplayBGMs[_gameplayBGMIndex], false);
             }
         }
         
         private void PlayMainMenuBGM()
         {
-            _audioSource.loop = true;
             _playingGameplay = false;
-            _audioSource.clip = _mainmenuBGM;
-            _audioSource.Play();
-        }
+            Play(_mainmenuBGM, true);        }
         
         private void PlayIntroBGM()
         {
-            _audioSource.loop = true;
             _playingGameplay = false;
-            _audioSource.clip = _introBGM;
-            _audioSource.Play();
+            Play(_introBGM, true);
         }
         
         private void PlayOutroBGM()
         {
-            _audioSource.loop = true;
             _playingGameplay = false;
-            _audioSource.clip = _outroBGM;
+            Play(_outroBGM, true);
+        }
+
+        private void Play(AudioClip audioClip, bool looping)
+        {
+            _audioSource.loop = looping;
+            _audioSource.clip = audioClip;
             _audioSource.Play();
         }
     }
