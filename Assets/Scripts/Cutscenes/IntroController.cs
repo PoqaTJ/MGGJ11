@@ -39,11 +39,7 @@ namespace Cutscenes
         [SerializeField] private ParticleSystem _akariParticleEmitter;
         
         [SerializeField] private Image _blackScreen;
-        private static readonly int Close = Animator.StringToHash("Close");
-        private static readonly int StartClosing = Animator.StringToHash("StartClosing");
-        
-        private static readonly int StartTransform = Animator.StringToHash("TransformStart");
-        private static readonly int StopTransform = Animator.StringToHash("TransformEnd");
+
         
         private void Start()
         {

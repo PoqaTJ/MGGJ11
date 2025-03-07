@@ -12,9 +12,14 @@ namespace Cutscenes
     {
         [SerializeField] protected CinemachineVirtualCamera _virtualCamera;
         
+        protected static readonly int Close = Animator.StringToHash("Close");
+        protected static readonly int StartClosing = Animator.StringToHash("StartClosing");
+        
+        protected static readonly int StartTransform = Animator.StringToHash("TransformStart");
+        protected static readonly int StopTransform = Animator.StringToHash("TransformEnd");
+        
         protected Color _akariColor = new Color(1, .227f, .035f); // FF3A09
         protected Color _tomoyaColor = new Color(0.388f, 0.612f, .906f); // 639CE7
-
 
         protected IEnumerator ZoomCamera(float from, float to, float durationSeconds)
         {
