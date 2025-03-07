@@ -96,7 +96,9 @@ namespace Cutscenes
             _akariTransformed.transform.position = _akariNormal.transform.position;
             _akariNormal.gameObject.SetActive(false);
 
-            yield return FlashRed();
+            yield return FadeToColorCoroutine(_akariColor, 0.1f);
+            yield return FadeFromColorCoroutine(_akariColor, 0.1f);
+
             yield return new WaitForSeconds(1.5f);
             
             _akariAnimator2.SetTrigger(StopTransform);
@@ -110,10 +112,12 @@ namespace Cutscenes
             _akariTransformed.gameObject.SetActive(false);
             yield return new WaitForSeconds(1f);
 
-            yield return FadeToBlack();
+            yield return FadeToColorCoroutine(Color.black, 1f);
             yield return new WaitForSeconds(2f);
-
-            yield return FadeFromBlack();
+            
+            // IF there's time, show Akari jumping off into the distance!
+            
+            yield return FadeFromColorCoroutine(Color.black, 1f);
 
             yield return MoveCharacterTo(_tomoyaNormal, _tomoyaPosition2);
             yield return new WaitForSeconds(0.1f);
@@ -142,56 +146,10 @@ namespace Cutscenes
             _portalController.SetTrigger(Close);
 
             yield return new WaitForSeconds(1f);
-            yield return FadeToBlack();
+            yield return FadeToColorCoroutine(Color.black, 1f);
 
             ServiceLocator.Instance.SaveManager.WatchedIntro = true;
             ServiceLocator.Instance.GameManager.SetState(State.Gameplay);
-        }
-        
-
-
-        private IEnumerator FlashRed()
-        {
-            Color originalColor = _blackScreen.color;
-            _blackScreen.color = new Color(1f, 0.2f, 0.04f, 0f);
-            while (_blackScreen.color.a < 1)
-            {
-                Color color = _blackScreen.color;
-                color.a +=.05f;
-                _blackScreen.color = color;
-                yield return new WaitForEndOfFrame();
-            }
-            while (_blackScreen.color.a > 0)
-            {
-                Color color = _blackScreen.color;
-                color.a -= .05f;
-                _blackScreen.color = color;
-                yield return new WaitForEndOfFrame();
-            }
-
-            _blackScreen.color = originalColor;
-        }
-        
-        private IEnumerator FadeToBlack()
-        {
-            while (_blackScreen.color.a < 1)
-            {
-                Color color = _blackScreen.color;
-                color.a += .01f;
-                _blackScreen.color = color;
-                yield return new WaitForEndOfFrame();
-            }
-        }
-
-        private IEnumerator FadeFromBlack()
-        {
-            while (_blackScreen.color.a > 0)
-            {
-                Color color = _blackScreen.color;
-                color.a -= .01f;
-                _blackScreen.color = color;
-                yield return new WaitForEndOfFrame();
-            }
         }
     }
 }

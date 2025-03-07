@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Dialogs;
 using Menus.MenuTypes;
 using Services;
@@ -19,6 +20,10 @@ namespace Menus.Quips
 
         [SerializeField] private ConversationMenu _conversationMenu;
 
+        private Queue<QuipDefinition> _pendingQuips = new();
+
+        private bool showingQuip = false;
+        
         public void Show(string text, Sprite image)
         {
             _characterImage.sprite = image;
@@ -31,13 +36,33 @@ namespace Menus.Quips
         {
             if (_quipUI.activeInHierarchy && Time.timeSinceLevelLoad > hideTime)
             {
+                showingQuip = false;
                 _quipUI.SetActive(false);
+                PollQueue();
             }
+        }
+
+        private void PollQueue()
+        {
+            if (_pendingQuips.Count == 0)
+            {
+                return;
+            }
+            var nextQuip = _pendingQuips.Dequeue();
+            Show(nextQuip);
         }
 
         public void Show(QuipDefinition definition)
         {
-            Show(definition.dialog.Text, GetImage(definition.dialog.Character, definition.Expression));
+            if (showingQuip)
+            {
+                _pendingQuips.Enqueue(definition);
+            }
+            else
+            {
+                Show(definition.dialog.Text, GetImage(definition.dialog.Character, definition.Expression));
+                showingQuip = true;                
+            }
         }
         
         private Sprite GetImage(DialogCharacter character, SpriteFace expression)
