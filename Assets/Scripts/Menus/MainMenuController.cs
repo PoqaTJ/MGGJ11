@@ -34,16 +34,19 @@ namespace Menus
                 _startButton.SetActive(false);                
                 _continueButton.SetActive(true);
                 _deleteSaveButton.interactable = true;
+                _continueButton.transform.SetSiblingIndex(0);
             }
             else
             {                
                 _startButton.SetActive(true);                
                 _continueButton.SetActive(false); 
                 _deleteSaveButton.interactable = false;
+                _startButton.transform.SetSiblingIndex(0);
             }
             
             Sprite bgSprite = !ServiceLocator.Instance.SaveManager.FoundAkari ? _beforeSprite : _afterSprite;
             _bgImage.sprite = bgSprite;
+
         }
 
         public void StartPressed()
