@@ -88,6 +88,11 @@ namespace Cutscenes
             ServiceLocator.Instance.DialogManager.StartConversation(_convinceConversation2, null);
 
             yield return new WaitForSeconds(0.2f);
+
+            if (_tomoyaNormalAnimator == null)
+            {
+                _tomoyaNormalAnimator = tomoyaMover.GetComponent<Animator>();
+            }
             
             _tomoyaNormalAnimator.SetTrigger(StartTransform);
             _tomoyaMagicalAnimator.SetTrigger(StartTransform);
