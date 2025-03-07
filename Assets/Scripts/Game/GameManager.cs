@@ -42,7 +42,7 @@ namespace Game
         {
             OnPlayerDied += OnPlayerDeath;
             bool transformed = SceneManager.GetActiveScene().name != "LevelOne";
-            if (SceneManager.GetActiveScene().name != "Main")
+            if (SceneManager.GetActiveScene().name == "Gameplay" || SceneManager.GetActiveScene().name == "LevelOne")
             {
                 StartCoroutine(LoadGameplay(transformed));                
             }
@@ -188,6 +188,9 @@ namespace Game
                 case State.Intro:
                     yield return SceneManager.LoadSceneAsync("Intro");
                     break;
+                case State.Outro:
+                    yield return SceneManager.LoadSceneAsync("Outro");
+                    break;
                 case State.Gameplay:
                     int level = ServiceLocator.Instance.SaveManager.Level;
                     if (level == 0)
@@ -200,6 +203,9 @@ namespace Game
                         yield return SceneManager.LoadSceneAsync("Gameplay");
                         yield return LoadGameplay(true);
                     }
+                    break; 
+                case State.Credits:
+                    yield return SceneManager.LoadSceneAsync("Credits");
                     break;
             }
         }
@@ -288,6 +294,8 @@ namespace Game
     {
         MainMenu,
         Gameplay,
-        Intro
+        Intro,
+        Outro,
+        Credits
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Menus;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -58,6 +59,8 @@ namespace Audio
                 case "Outro":
                     PlayOutroBGM();
                     break;
+                case "Credits":
+                    break; // keep playing outro music
             }
         }
 

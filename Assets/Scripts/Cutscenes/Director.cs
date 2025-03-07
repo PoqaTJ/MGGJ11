@@ -53,11 +53,11 @@ namespace Cutscenes
             ServiceLocator.Instance.DialogManager.StartConversation(conv, null);
         }
 
-        protected void SnapCharacterTo(PlayerMover mover, Transform loc)
+        protected void SnapCharacterTo(GameObject obj, Transform loc)
         {
             Vector3 newPos = loc.position;
-            newPos.z = mover.transform.position.z;
-            mover.transform.position = newPos;
+            newPos.z = obj.transform.position.z;
+            obj.transform.position = newPos;
         }
 
         protected IEnumerator FadeToColorCoroutine(Color color, float time)

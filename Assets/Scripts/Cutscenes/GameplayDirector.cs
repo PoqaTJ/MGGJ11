@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Dialogs;
+using Game;
 using Menus;
 using Menus.MenuTypes;
 using Player;
@@ -98,7 +98,7 @@ namespace Cutscenes
             tomoyaMover.ReenableCollision();
             // move to bottom of stage
             _bottomAkari.SetActive(true);
-            SnapCharacterTo(tomoyaMover, _tomoyaBottomLocation);
+            SnapCharacterTo(tomoyaMover.gameObject, _tomoyaBottomLocation);
             tomoyaMover.Face(PlayerMover.Direction.LEFT);
             
             // fade back
@@ -139,28 +139,63 @@ namespace Cutscenes
         [SerializeField]
         private ConversationDefinition _endingConversation2;
 
+        [SerializeField] private Transform _tomoyaEndingLoc1;
+        [SerializeField] private Animator _exitPortal;
+        
         private IEnumerator StageEndScene()
         {
             // start evil realm collapsing effect
+            var tomoya = ServiceLocator.Instance.GameManager.CurrentPlayer;
+            var tomoyaMover = tomoya.GetComponent<PlayerMover>();
+            var tomoyaInputController = tomoya.GetComponent<PlayerInputController>();
             
-            // conversation with prism
+            tomoya.StopHorizontalMovement();
+            tomoyaInputController.enabled = false;
+            tomoya.enabled = false;
+            tomoyaMover.enabled = true;
+
+            // "That should be it!
             StartConversation(_endingConversation1);
-            
+
             // Tomoya jumps down, camera remains still
 
+            _virtualCamera.Follow = null;
+            
+            tomoya.RemoveCollisions();
+
+            yield return new WaitForSeconds(0.25f);
+            
             // fade to black
             yield return FadeToColorCoroutine(Color.black, 1f);
             
             // move Tomoya next to Akari. move camera
-            
+            tomoya.RestoreCollisions();
+            SnapCharacterTo(tomoya.gameObject, _tomoyaEndingLoc1);
+            _virtualCamera.Follow = tomoya.gameObject.transform;
+
             // fade back in
             yield return FadeFromColorCoroutine(Color.black, 1f);
 
             StartConversation(_endingConversation2);
             
             // Tomoya creates a portal
-            
+            _exitPortal.gameObject.SetActive(true);
+
             // both leave through the portal
+            tomoyaMover.MoveTo(_exitPortal.transform, () => tomoyaMover.gameObject.SetActive(false));
+            _akariNormalMover.MoveTo(_exitPortal.transform, () => _akariNormalMover.gameObject.SetActive(false));
+            
+            yield return FadeToColorCoroutine(Color.black, 2f);
+
+            ServiceLocator.Instance.GameManager.SetState(State.Outro);
         }
+        
+#if UNITY_EDITOR
+        [UnityEditor.MenuItem("Save/TriggerEnding")]
+        private static void TriggerEnding()
+        {
+            FindObjectOfType<GameplayDirector>().StartStageEndScene();
+        }
+#endif
     }
 }

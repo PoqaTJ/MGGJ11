@@ -61,11 +61,9 @@ namespace Player
         private float _unblockMoveTime;
 
         private bool _groundedLastFrame = false;
-
+        
         private void Start()
         {
-            ServiceLocator.Instance.GameManager.RegisterPlayer(this);
-            
             Reset();
         }
 
