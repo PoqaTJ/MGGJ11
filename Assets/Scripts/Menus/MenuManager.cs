@@ -128,5 +128,10 @@ namespace Menus
                 _clickBlocker.SetSiblingIndex(1);
             }
         }
+
+        public void SetScreenColor(Color color)
+        {
+            _fadeToColorScreen.color = color;
+        }
     }
 }
