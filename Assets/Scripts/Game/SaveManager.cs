@@ -364,6 +364,24 @@ namespace Game
             Menu.SetChecked("Save/StartNearAkari", _startNearAkari);
             return true;
         }
+        
+        private static bool _startNearEnding {
+            get => EditorPrefs.GetBool("EditorStartNearEnding");
+            set => EditorPrefs.SetBool("EditorStartNearEnding", value);
+        }
+        
+        [MenuItem("Save/StartNearEnding", false, 13)]
+        private static void DebugStartNearEnding()
+        {
+            _startNearEnding = !_startNearEnding;
+        }
+        
+        [MenuItem("Save/StartNearEnding", true)]
+        private static bool DebugStartNearEndingValidate()
+        {
+            Menu.SetChecked("Save/StartNearEnding", _startNearEnding);
+            return true;
+        }
 #endif
     }
 }

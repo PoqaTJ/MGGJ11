@@ -133,7 +133,37 @@ namespace Game
         private PlayerSpawner ChooseSpawner()
         {
 #if UNITY_EDITOR
-            if (UnityEditor.EditorPrefs.GetBool("EditorStartNearAkari"))
+            if (UnityEditor.EditorPrefs.GetBool("EditorStartNearEnding"))
+            {
+                Debug.Log("Overriding default spawner to spawn near Ending!");
+
+                // find ending
+                GameObject endZone = GameObject.Find("EndZone");
+
+                if (endZone == null)
+                {
+                    Debug.Log("Unable to find EndZone to spawn near.");
+                }
+                else
+                {
+                    PlayerSpawner s = null;
+                    foreach (var spawnerKey in _spawners.Keys)
+                    {
+                        PlayerSpawner spawner = _spawners[spawnerKey];
+                        if (s == null || 
+                            Vector2.Distance(endZone.transform.position, s.transform.position) > Vector2.Distance(endZone.transform.position, spawner.transform.position))
+                        {
+                            s = spawner;
+                        }
+                    }
+
+                    if (s != null)
+                    {
+                        return s;                        
+                    }
+                }
+            }
+            else if (UnityEditor.EditorPrefs.GetBool("EditorStartNearAkari"))
             {
                 Debug.Log("Overriding default spawner to spawn near Akari!");
 
