@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
+using Menus;
 using Player;
 using Services;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,6 +39,8 @@ namespace Game
         [SerializeField] GameObject _tomoyaTFPrefab;
         [SerializeField] PlayerSpawner _defaultSpawner = null;
         private Dictionary<string, PlayerSpawner> _spawners = new();
+
+        private bool _paused = false;
         
         private void Start()
         {
@@ -292,6 +296,25 @@ namespace Game
                 Debug.LogError("No default spawners found. Using the first one.");
                 _defaultSpawner = _spawners.ToArray()[0].Value;
             }
+        }
+
+        public void Pause()
+        {
+            if (!_paused)
+            {
+                _paused = true;
+            
+                Time.timeScale = 0f;
+                
+                ServiceLocator.Instance.MenuManager.Show(MenuType.PauseMenu, null);                
+            }
+        }
+        
+        public void Unpause()
+        {
+            _paused = false;
+            
+            Time.timeScale = 1f;
         }
     }
 
