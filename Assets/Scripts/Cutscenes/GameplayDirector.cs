@@ -77,12 +77,24 @@ namespace Cutscenes
             _akariNormalMover.transform.rotation = new Quaternion();
             _akariNormalMover.Face(PlayerMover.Direction.LEFT);
             _akariNormalMover.Jump();
+            
+            // fix akari face
+            _akariNormalMover.gameObject.transform.Find("torso/head/mouth").GetComponent<SpriteRenderer>().enabled = true;
+            _akariNormalMover.gameObject.transform.Find("torso/head/frown").gameObject.SetActive(false);
 
+            _akariNormalMover.gameObject.transform.Find("torso/head/eye-right").GetComponent<SpriteRenderer>().enabled = true;
+            _akariNormalMover.gameObject.transform.Find("torso/head/eye-left").GetComponent<SpriteRenderer>().enabled = true;
+            
+            _akariNormalMover.gameObject.transform.Find("torso/head/eye-right-closed").gameObject.SetActive(false);
+            _akariNormalMover.gameObject.transform.Find("torso/head/eye-left-closed").gameObject.SetActive(false);
             yield return new WaitForSeconds(2f);
             
             StartConversation(_akariOhNoConversation);
 
             _rotatingHazard.SetActive(true);
+            
+            _akariNormalMover.Face(PlayerMover.Direction.LEFT);
+            
             // akari and tomoya get knocked down
 
             yield return new WaitUntil(() => _akariNormalMover.CurrentHealth < 3);
