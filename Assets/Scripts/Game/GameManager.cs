@@ -55,12 +55,12 @@ namespace Game
 
         private void OnPlayerDeath()
         {
-            StartCoroutine(SpawnPlayer(true));
+            StartCoroutine(SpawnPlayer(true, true));
         }
 
         private bool _spawning = false;
 
-        private IEnumerator SpawnPlayer(bool transformed)
+        private IEnumerator SpawnPlayer(bool transformed, bool fadeToBlack)
         {
             if (_spawning)
             {
@@ -69,9 +69,12 @@ namespace Game
 
             Color fromColor = new Color(0, 0, 0, 0);
             Color toColor = new Color(0, 0, 0, 1);
-            
-            yield return ServiceLocator.Instance.MenuManager.FadeToColorCoroutine(fromColor, toColor, 0.3f);
-            
+
+            if (fadeToBlack)
+            {
+                yield return ServiceLocator.Instance.MenuManager.FadeToColorCoroutine(fromColor, toColor, 0.3f);                
+            }
+
             _spawning = true;
             Debug.Log("Starting spawn character coroutine.");
             PlayerSpawner spawner = ChooseSpawner();
@@ -214,9 +217,11 @@ namespace Game
         {
             _player = null;
             GatherSpawners();
+
+            ServiceLocator.Instance.MenuManager.SetScreenColor(Color.black);
             if (_defaultSpawner != null)
             {
-                yield return SpawnPlayer(transformed);
+                yield return SpawnPlayer(transformed, false);
             }
             ServiceLocator.Instance.MenuManager.ShowCollectablesUI();
             ServiceLocator.Instance.MenuManager.ShowHealthUI();

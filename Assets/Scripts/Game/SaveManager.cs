@@ -9,7 +9,7 @@ namespace Game
     public class SaveManager: MonoBehaviour
     {
         private SaveGame _save;
-        private static readonly string _playerPrefsKey = "save_game_beta_1";
+        private static readonly string _playerPrefsKey = "save_game_rc_1";
         private HashSet<string> _collected = new ();
 
         private void Awake()
@@ -129,6 +129,16 @@ namespace Game
             }
         }
 
+        public bool UnlockedRespawn
+        {
+            get => _save.UnlockedRespawn;
+            set
+            {
+                _save.UnlockedRespawn = value;
+                Save();
+            }
+        }  
+        
         public void CollectHazard(string id)
         {
             Debug.Log("Collected " + id);
@@ -202,7 +212,7 @@ namespace Game
             _save = new SaveGame();
             Save();
         }
-        
+
 #if UNITY_EDITOR
         [MenuItem("Save/Delete Save (only when stopped)", false, 100)]
         private static void ClearSave()
@@ -284,6 +294,23 @@ namespace Game
             return false;
         }
         
+        [MenuItem("Save/EnableRespawn", false, 8)]
+        private static void DebugEnableRespawn()
+        {
+            ServiceLocator.Instance.SaveManager.UnlockedRespawn = !ServiceLocator.Instance.SaveManager.UnlockedRespawn;
+        }
+        
+        [MenuItem("Save/EnableRespawn", true)]
+        private static bool DebugEnableRespawnValidate()
+        {
+            if (EditorApplication.isPlaying)
+            {
+                Menu.SetChecked("Save/EnableRespawn", ServiceLocator.Instance.SaveManager.UnlockedRespawn);
+                return true;
+            }
+            return false;
+        }
+        
         [MenuItem("Save/EnableBreakHazard", false, 4)]
         private static void DebugEnableBreakHazard()
         {
@@ -323,6 +350,7 @@ namespace Game
             get => EditorPrefs.GetBool("EditorStartNearAkari");
             set => EditorPrefs.SetBool("EditorStartNearAkari", value);
         }
+
 
         [MenuItem("Save/StartNearAkari", false, 12)]
         private static void DebugStartNearAkari()

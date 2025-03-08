@@ -10,6 +10,7 @@ namespace Player
         public float Deceleration = 5f;
         public float AirAcceleration = 3f;
         public float AirDeceleration = 5f;
+        public float WalledMaxSpeed = 3f;
         public float MaxSpeed = 10f;
 
         // jump

@@ -61,6 +61,8 @@ namespace Player
         private float _unblockMoveTime;
 
         private bool _groundedLastFrame = false;
+
+        private bool _respawnUnlocked => ServiceLocator.Instance.SaveManager.UnlockedRespawn;
         
         private void Start()
         {
@@ -180,8 +182,9 @@ namespace Player
             float yVelocity = _rigidbody2D.velocity.y;
             if (_walled)
             {
-                //yVelocity = 0;
+                yVelocity = Mathf.Max(-_stats.WalledMaxSpeed, yVelocity);
             }
+
             _rigidbody2D.velocity = new Vector2(_moveVelocity.x, yVelocity);
             
             _anim.SetBool(_groundedParam, _grounded);
@@ -306,7 +309,10 @@ namespace Player
 
         public void Respawn()
         {
-            Die();
+            if (_respawnUnlocked)
+            {
+                Die();                
+            }
         }
         
         public void Die()

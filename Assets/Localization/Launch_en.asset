@@ -154,6 +154,18 @@ MonoBehaviour:
     m_Localized: Nice!
     m_Metadata:
       m_Items: []
+  - m_Id: 9537463363264512
+    m_Localized: Yes!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9537552991346688
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9537598898003968
+    m_Localized: You can now press ESC to return to the previous checkpoint!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
