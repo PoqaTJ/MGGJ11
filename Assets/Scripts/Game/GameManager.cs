@@ -192,12 +192,6 @@ namespace Game
         
         public void SetState(State state)
         {
-            if (CurrentState == state)
-            {
-                Debug.LogError($"Tried to set state to {state}, but that was already the current state.");
-                return;
-            }
-
             StartCoroutine(SetStateRoutine(state));
         }
 
