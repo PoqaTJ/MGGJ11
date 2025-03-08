@@ -37,7 +37,12 @@ namespace Menus.MenuTypes
         public void Close()
         {
             ServiceLocator.Instance.MenuManager.HideTop();
+        }
+
+        protected override void OnHide()
+        {
             ServiceLocator.Instance.GameManager.Unpause();
+            base.OnHide();
         }
     }
 }
