@@ -109,8 +109,14 @@ namespace Cutscenes
             StartConversation(_tomoyaDepressedConversation);
             
             // Tomoya powers up!
-            tomoya.GetComponent<Animator>().SetTrigger(StartTransform);
-            yield return new WaitForSeconds(1.5f);
+            var akariAnimator = _bottomAkari.GetComponent<Animator>();
+            var tomoyaAnimator = tomoya.GetComponent<Animator>();
+            tomoyaAnimator.SetTrigger(StartTransform);
+            akariAnimator.SetTrigger(StartTransform);
+            yield return new WaitForSeconds(0.5f);
+            
+            yield return FlyParticlesTo(ParticleType.AkariMagic, _bottomAkari.transform.GetChild(0), tomoya.transform.GetChild(0), 1.5f);
+
             var context = new PopupMenuOneButton.PopupMenuOneButtonContext();
             context.titleLocString = "dialog-powerup-break-hazards-title";
             context.bodyLocString = "dialog-powerup-break-hazards-body";
@@ -119,7 +125,8 @@ namespace Cutscenes
             yield return new WaitForSeconds(1f);
 
             ServiceLocator.Instance.SaveManager.UnlockedBreakHazard = true;
-            tomoya.GetComponent<Animator>().SetTrigger(StopTransform);
+            tomoyaAnimator.SetTrigger(StopTransform);
+            akariAnimator.SetTrigger(StopTransform);
             
             // enable new quips
             ServiceLocator.Instance.GameManager.FindAkari();

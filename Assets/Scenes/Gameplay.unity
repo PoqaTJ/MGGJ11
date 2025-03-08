@@ -6368,6 +6368,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6370870577369915916, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8031776430784440506, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
       propertyPath: m_Name
       value: Level
