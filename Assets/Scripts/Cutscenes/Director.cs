@@ -2,6 +2,7 @@
 using System.Collections;
 using Cinemachine;
 using Dialogs;
+using Effects;
 using Player;
 using Services;
 using UnityEngine;
@@ -72,6 +73,15 @@ namespace Cutscenes
             Color startColor = new Color(color.r, color.b, color.g, 1);
             Color endColor = new Color(color.r, color.b, color.g, 0);
             yield return ServiceLocator.Instance.MenuManager.FadeToColorCoroutine(startColor, endColor, time);
+        }
+        
+        protected IEnumerator FlyParticlesTo(ParticleType particles, Transform from, Transform to, float time)
+        {
+            bool done = false;
+
+            ServiceLocator.Instance.ParticleManager.FlyParticles(particles, from, to, time, () => done = true);
+
+            yield return new WaitUntil(() => done == true);
         }
     }
 }

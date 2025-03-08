@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Dialogs;
+using Effects;
 using Game;
 using Menus;
 using Menus.MenuTypes;
@@ -43,6 +44,10 @@ namespace Cutscenes
         
         private void Start()
         {
+            if (ServiceLocator.Instance == null)
+            {
+                Debug.Log("Kick start service locator.");
+            };
             StartCoroutine(PlayIntro());
         }
 
@@ -100,6 +105,10 @@ namespace Cutscenes
             _akariAnimator2.SetTrigger(StopTransform);
             
             yield return new WaitForSeconds(1.5f);
+            
+            // particles fly to the teleporter location
+            yield return FlyParticlesTo(ParticleType.AkariMagic,
+                _akariAnimator2.transform, _portalController.transform, 1f);
             
             _portalController.gameObject.SetActive(true);
             yield return new WaitForSeconds(1.5f);

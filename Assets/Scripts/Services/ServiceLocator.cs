@@ -1,6 +1,6 @@
-﻿using System;
-using Audio;
+﻿using Audio;
 using Dialogs;
+using Effects;
 using Game;
 using Menus;
 using UnityEngine;
@@ -45,5 +45,6 @@ namespace Services
         public DialogManager DialogManager;
         public SaveManager SaveManager;
         public AudioManager AudioManager;
+        public ParticleManager ParticleManager;
     }
 }
