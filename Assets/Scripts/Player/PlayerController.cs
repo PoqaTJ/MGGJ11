@@ -61,6 +61,8 @@ namespace Player
         private float _unblockMoveTime;
 
         private bool _groundedLastFrame = false;
+
+        private bool _respawnUnlocked => ServiceLocator.Instance.SaveManager.UnlockedRespawn;
         
         private void Start()
         {
@@ -306,7 +308,10 @@ namespace Player
 
         public void Respawn()
         {
-            Die();
+            if (_respawnUnlocked)
+            {
+                Die();                
+            }
         }
         
         public void Die()

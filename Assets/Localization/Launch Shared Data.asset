@@ -151,6 +151,18 @@ MonoBehaviour:
     m_Key: dialog-powerup-break-hazards-button
     m_Metadata:
       m_Items: []
+  - m_Id: 9537463363264512
+    m_Key: dialog-powerup-respawn-button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9537552991346688
+    m_Key: dialog-powerup-respawn-title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9537598898003968
+    m_Key: dialog-powerup-respawn-body
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
