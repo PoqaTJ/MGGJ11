@@ -182,8 +182,9 @@ namespace Player
             float yVelocity = _rigidbody2D.velocity.y;
             if (_walled)
             {
-                //yVelocity = 0;
+                yVelocity = Mathf.Max(-_stats.WalledMaxSpeed, yVelocity);
             }
+
             _rigidbody2D.velocity = new Vector2(_moveVelocity.x, yVelocity);
             
             _anim.SetBool(_groundedParam, _grounded);
