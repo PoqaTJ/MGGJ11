@@ -92,7 +92,8 @@ namespace Cutscenes
             StartConversation(_akariOhNoConversation);
 
             _rotatingHazard.SetActive(true);
-            
+
+            tomoyaMover.Face(PlayerMover.Direction.LEFT);
             _akariNormalMover.Face(PlayerMover.Direction.LEFT);
             
             // akari and tomoya get knocked down
@@ -129,6 +130,9 @@ namespace Cutscenes
             
             yield return FlyParticlesTo(ParticleType.AkariMagic, _bottomAkari.transform.GetChild(0), tomoya.transform.GetChild(0), 1.5f);
 
+            FadeToColorCoroutine(_mixedColor, 0.1f);
+            FadeFromColorCoroutine(_mixedColor, 0.1f);
+            
             var context = new PopupMenuOneButton.PopupMenuOneButtonContext();
             context.titleLocString = "dialog-powerup-break-hazards-title";
             context.bodyLocString = "dialog-powerup-break-hazards-body";

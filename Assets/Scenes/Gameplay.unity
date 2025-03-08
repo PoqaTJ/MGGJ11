@@ -6627,6 +6627,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3727771887843959155, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727771887843959155, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3949021751225966419, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6675,6 +6683,14 @@ PrefabInstance:
       propertyPath: _endingConversation2
       value: 
       objectReference: {fileID: 11400000, guid: 6fac262975bbc3b4ba9590cdc2c4beca, type: 2}
+    - target: {fileID: 4852467819306846463, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.477
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852467819306846463, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.407
+      objectReference: {fileID: 0}
     - target: {fileID: 5358255135123169274, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
       propertyPath: m_LocalScale.x
       value: 100
