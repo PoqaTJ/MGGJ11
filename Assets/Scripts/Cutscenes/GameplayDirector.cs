@@ -184,14 +184,14 @@ namespace Cutscenes
             StartConversation(_endingConversation2);
             
             // Tomoya creates a portal
-            yield return FlyParticlesTo(ParticleType.TomoyaMagic, tomoya.transform, _exitPortal.transform, 1f);
+            yield return FlyParticlesTo(ParticleType.TomoyaMagic, tomoya.transform, _exitPortal.transform, 1.5f);
             _exitPortal.gameObject.SetActive(true);
 
             yield return new WaitForSeconds(1f);
             _akariNormalMover.enabled = true;
             _akariNormalMover.MoveTo(_exitPortal.transform, () => _akariNormalMover.gameObject.SetActive(false));
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.5f);
             // both leave through the portal
             tomoyaMover.MoveTo(_exitPortal.transform, () => tomoyaMover.gameObject.SetActive(false));
 

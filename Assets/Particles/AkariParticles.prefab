@@ -165,6 +165,10 @@ PrefabInstance:
       value: 0.22745098
       objectReference: {fileID: 0}
     - target: {fileID: 3490695926215889127, guid: d9533e40175171347ac1fd9e353d1e11, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490695926215889127, guid: d9533e40175171347ac1fd9e353d1e11, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 0
       objectReference: {fileID: 0}
@@ -281,7 +285,8 @@ PrefabInstance:
       value: AkariParticles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8259410436282913155, guid: d9533e40175171347ac1fd9e353d1e11, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3694453130636863011, guid: d9533e40175171347ac1fd9e353d1e11, type: 3}
       insertIndex: -1
