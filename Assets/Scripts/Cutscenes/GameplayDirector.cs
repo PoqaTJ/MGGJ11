@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Dialogs;
+using Effects;
 using Game;
 using Menus;
 using Menus.MenuTypes;
@@ -183,6 +184,7 @@ namespace Cutscenes
             StartConversation(_endingConversation2);
             
             // Tomoya creates a portal
+            yield return FlyParticlesTo(ParticleType.TomoyaMagic, tomoya.transform, _exitPortal.transform, 1f);
             _exitPortal.gameObject.SetActive(true);
 
             yield return new WaitForSeconds(1f);
