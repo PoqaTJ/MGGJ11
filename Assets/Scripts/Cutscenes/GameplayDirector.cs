@@ -92,8 +92,6 @@ namespace Cutscenes
             tomoyaMover.RemoveCollision();
 
             yield return new WaitForSeconds(1);
-            
-            
 
             // fade to purple
             yield return FadeToColorCoroutine(Color.black, 1f);
@@ -130,6 +128,8 @@ namespace Cutscenes
             tomoyaInputController.enabled = true;
             tomoya.enabled = true;
             tomoyaMover.enabled = false;
+            
+            _bottomAkari.GetComponent<AkariCheerController>().enabled = true;
         }
         
         public void StartStageEndScene()
@@ -146,6 +146,7 @@ namespace Cutscenes
         private IEnumerator StageEndScene()
         {
             _akariNormalMover = _bottomAkari.GetComponent<PlayerMover>();
+            _bottomAkari.GetComponent<AkariCheerController>().enabled = false;
             
             // start evil realm collapsing effect
             var tomoya = ServiceLocator.Instance.GameManager.CurrentPlayer;
