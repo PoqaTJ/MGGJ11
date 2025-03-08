@@ -24,6 +24,10 @@ namespace Player
 
         private void Update()
         {
+            if (Time.timeScale == 0)
+            {
+                return;
+            }
             bool jumpTriggered =  _jumpAction.triggered;
 
             bool jumpReleased = _jumpAction.WasReleasedThisFrame();
@@ -43,6 +47,10 @@ namespace Player
 
         private void FixedUpdate()
         {
+            if (Time.timeScale == 0)
+            {
+                return;
+            }
             float xDir = _moveAction.ReadValue<Vector2>().x;
             _playerController.OnFixedUpdate(xDir);
         }
