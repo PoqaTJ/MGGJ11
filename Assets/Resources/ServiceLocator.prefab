@@ -35,6 +35,7 @@ Transform:
   - {fileID: 903063720797230726}
   - {fileID: 9200782452175626305}
   - {fileID: 2766554440085435950}
+  - {fileID: 2968567894937999998}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4230188555626643279
@@ -54,6 +55,7 @@ MonoBehaviour:
   DialogManager: {fileID: 1911181924338511649}
   SaveManager: {fileID: 5569201276941469350}
   AudioManager: {fileID: 5614612238751089088}
+  ParticleManager: {fileID: 2738386775075243055}
 --- !u!1 &902414321168247210
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +233,54 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2152001706820607263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2968567894937999998}
+  - component: {fileID: 2738386775075243055}
+  m_Layer: 0
+  m_Name: ParticleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2968567894937999998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152001706820607263}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5952562522130286490}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2738386775075243055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152001706820607263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ee704e82574b9fad2639f2d1cb4b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _akariMagicParticles: {fileID: 8065654473896193328, guid: 24192d5e5ba9d514eb2298a3ceb23542, type: 3}
+  _tomoyaMagicParticles: {fileID: 4038515369208919260, guid: 1d2b13f133a3bbb4eaa2bbdc41652981, type: 3}
+  _akariJumpParticles: {fileID: 9000672845191513280, guid: 6e8564f4b8fbf2147a49259f90f8e4a9, type: 3}
+  _tomoyaJumpParticles: {fileID: 7494243399563470339, guid: d9533e40175171347ac1fd9e353d1e11, type: 3}
 --- !u!1 &2565848807009204187
 GameObject:
   m_ObjectHideFlags: 0
