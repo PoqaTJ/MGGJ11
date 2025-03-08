@@ -50,6 +50,33 @@ namespace Game
             {
                 StartCoroutine(LoadGameplay(transformed));                
             }
+
+            DiscoverInitialState();
+        }
+
+        private void DiscoverInitialState()
+        {
+            switch (SceneManager.GetActiveScene().name)
+            {
+                case "Main":
+                    CurrentState = State.MainMenu;
+                    break;
+                case "LevelOne":
+                    CurrentState = State.Gameplay;
+                    break;
+                case "Intro":
+                    CurrentState = State.Intro;
+                    break;
+                case "Outro":
+                    CurrentState = State.Outro;
+                    break;
+                case "Credits":
+                    CurrentState = State.Credits;
+                    break;
+                case "Gameplay":
+                    CurrentState = State.Gameplay;
+                    break;
+            }
         }
 
         private void PlayerSpawned(PlayerController playerController)
@@ -182,6 +209,8 @@ namespace Game
         private IEnumerator SetStateRoutine(State state)
         {
             Debug.Log($"Setting state to {state}.");
+
+            CurrentState = state;
             
             _spawners.Clear();
             ServiceLocator.Instance.MenuManager.HideCollectableUI();

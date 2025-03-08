@@ -166,6 +166,22 @@ MonoBehaviour:
     m_Localized: You can now press ESC to return to the previous checkpoint!
     m_Metadata:
       m_Items: []
+  - m_Id: 9573582100455424
+    m_Localized: Return to Main Menu?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9573659154014208
+    m_Localized: You may lose some progress.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9573661356023808
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9573662979219456
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
