@@ -21,7 +21,8 @@ namespace Cutscenes
         
         protected Color _akariColor = new Color(1, .227f, .035f); // FF3A09
         protected Color _tomoyaColor = new Color(0.388f, 0.612f, .906f); // 639CE7
-
+        protected Color _mixedColor = new Color(0.694f, 0.420f, 0.471f);
+        
         protected IEnumerator ZoomCamera(float from, float to, float durationSeconds)
         {
             float elapsedTime = 0f;
