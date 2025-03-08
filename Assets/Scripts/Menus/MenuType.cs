@@ -5,6 +5,7 @@
         PopupOneButton,
         PopupTwoButtons,
         ConversationMenu,
-        CreditsMenu
+        CreditsMenu,
+        PauseMenu
     }
 }
