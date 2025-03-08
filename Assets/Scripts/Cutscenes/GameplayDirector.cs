@@ -34,7 +34,10 @@ namespace Cutscenes
 
         private void AkariFoundDone()
         {
-            _findAkariScene.SetActive(false);
+            if (_findAkariScene != null)
+            {
+                _findAkariScene.SetActive(false);                
+            }
             _bottomAkari.SetActive(true);
             _afterFindAkariQuips.SetActive(true);
             _beforeFindAkariQuips.SetActive(false);
