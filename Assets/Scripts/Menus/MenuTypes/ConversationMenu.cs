@@ -89,7 +89,21 @@ namespace Menus.MenuTypes
 
         private string GetName(DialogCharacter character)
         {
-            return LocalizationSettings.StringDatabase.GetLocalizedString("Launch", character.ToString());
+            switch (character)
+            {
+                case DialogCharacter.Akari:
+                case DialogCharacter.MagicalAkari:
+                    return "Akari";
+                    break;
+                case DialogCharacter.Tomoya:
+                case DialogCharacter.MagicalTomoya:
+                    return "Tomoya";
+                    break;
+                case DialogCharacter.Butterfly:
+                    return "Prism";
+            }
+
+            return "";
         }
 
         public void OnProgress()

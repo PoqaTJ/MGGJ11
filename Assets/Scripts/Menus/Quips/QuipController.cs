@@ -60,7 +60,7 @@ namespace Menus.Quips
             }
             else
             {
-                Show(definition.dialog.Text, GetImage(definition.dialog.Character, definition.Expression));
+                Show(definition.dialog.Text, GetImage(definition.dialog.Character, definition.dialog.Expression));
                 showingQuip = true;                
             }
         }
