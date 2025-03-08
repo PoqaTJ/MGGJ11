@@ -6,6 +6,7 @@ using Menus.MenuTypes;
 using Player;
 using Services;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Cutscenes
 {
@@ -144,6 +145,8 @@ namespace Cutscenes
         
         private IEnumerator StageEndScene()
         {
+            _akariNormalMover = _bottomAkari.GetComponent<PlayerMover>();
+            
             // start evil realm collapsing effect
             var tomoya = ServiceLocator.Instance.GameManager.CurrentPlayer;
             var tomoyaMover = tomoya.GetComponent<PlayerMover>();
@@ -163,26 +166,33 @@ namespace Cutscenes
             yield return new WaitForSeconds(0.25f);
             
             // fade to black
-            yield return FadeToColorCoroutine(Color.black, 1f);
+            yield return FadeToColorCoroutine(Color.black, 2f);
             
             // move Tomoya next to Akari. move camera
             tomoya.RestoreCollisions();
             SnapCharacterTo(tomoya.gameObject, _tomoyaEndingLoc1);
             _virtualCamera.Follow = tomoya.gameObject.transform;
-
+            tomoyaMover.Face(PlayerMover.Direction.LEFT);
+            
+            yield return new WaitForSeconds(2f);
+            
             // fade back in
-            yield return FadeFromColorCoroutine(Color.black, 1f);
+            yield return FadeFromColorCoroutine(Color.black, 2f);
 
             StartConversation(_endingConversation2);
             
             // Tomoya creates a portal
             _exitPortal.gameObject.SetActive(true);
 
+            yield return new WaitForSeconds(1f);
+            _akariNormalMover.enabled = true;
+            _akariNormalMover.MoveTo(_exitPortal.transform, () => _akariNormalMover.gameObject.SetActive(false));
+
+            yield return new WaitForSeconds(2f);
             // both leave through the portal
             tomoyaMover.MoveTo(_exitPortal.transform, () => tomoyaMover.gameObject.SetActive(false));
-            _akariNormalMover.MoveTo(_exitPortal.transform, () => _akariNormalMover.gameObject.SetActive(false));
-            
-            yield return FadeToColorCoroutine(Color.black, 2f);
+
+            yield return FadeToColorCoroutine(Color.black, 1f);
 
             ServiceLocator.Instance.GameManager.SetState(State.Outro);
         }

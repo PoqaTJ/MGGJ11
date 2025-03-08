@@ -9,6 +9,5 @@ namespace Dialogs
     {
         public string ID = "";
         public DialogDefinition dialog;
-        public SpriteFace Expression;
     }
 }

@@ -163,7 +163,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9537598898003968
-    m_Localized: You can now press ESC to return to the previous checkpoint!
+    m_Localized: You can now press ENTER to return to the previous checkpoint!
     m_Metadata:
       m_Items: []
   - m_Id: 9573582100455424
