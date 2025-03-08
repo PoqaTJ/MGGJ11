@@ -327,7 +327,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 706965418979135154, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -504,6 +505,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5588700879059013528}
+    - target: {fileID: 2758350087975956526, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClickMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 5285585879653595546, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
       propertyPath: m_Name
       value: MainMenuButton
@@ -592,7 +597,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 706965418979135154, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -614,6 +620,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5588700879059013528}
+    - target: {fileID: 2758350087975956526, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClickSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 5285585879653595546, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
       propertyPath: m_Name
       value: SettingsButton
@@ -702,7 +712,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 706965418979135154, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

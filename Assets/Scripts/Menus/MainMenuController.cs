@@ -75,5 +75,10 @@ namespace Menus
             ServiceLocator.Instance.MenuManager.Show(MenuType.PopupTwoButtons, context);
             UpdateButtons();
         }
+
+        public void SettingsPressed()
+        {
+            ServiceLocator.Instance.MenuManager.Show(MenuType.SettingsMenu, null);
+        }
     }
 }

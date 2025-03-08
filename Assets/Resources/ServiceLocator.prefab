@@ -53,6 +53,7 @@ MonoBehaviour:
   MenuManager: {fileID: 2818760229761130931}
   DialogManager: {fileID: 1911181924338511649}
   SaveManager: {fileID: 5569201276941469350}
+  AudioManager: {fileID: 5614612238751089088}
 --- !u!1 &902414321168247210
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +731,7 @@ MonoBehaviour:
   - {fileID: 548611250209742146, guid: 1d474dd1bf8c94148b87d6ea5d69a6b9, type: 3}
   - {fileID: 7260341159255338486, guid: def944d9a548ce04a8c1b1e8348247d3, type: 3}
   - {fileID: 7260341159255338486, guid: 3c79f40017b0088469648da814bfc7b6, type: 3}
+  - {fileID: 7260341159255338486, guid: 62157f5ba0341394ead58da387f25ec8, type: 3}
   _clickBlocker: {fileID: 5112255911157512935}
   _healthUI: {fileID: 6212692050843026263}
   _collectableUI: {fileID: 4412713781589683069}

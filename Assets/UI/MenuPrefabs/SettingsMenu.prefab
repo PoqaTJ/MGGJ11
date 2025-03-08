@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 1564810930437985615}
   - component: {fileID: 5333246932059806520}
   - component: {fileID: 6584187546011406457}
-  - component: {fileID: 5588700879059013528}
+  - component: {fileID: 732550878342301587}
   m_Layer: 5
   m_Name: SettingsMenu
   m_TagString: Untagged
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5588700879059013528
+--- !u!114 &732550878342301587
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -797,9 +797,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7260341159255338486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 133df70f48a74251846655a36de31b92, type: 3}
+  m_Script: {fileID: 11500000, guid: a2b7c519e2034ee0b894d85e03372d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _musicVolumeSlider: {fileID: 5682652893929896103}
 --- !u!1 &8303896778955782278
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +902,15 @@ PrefabInstance:
     - target: {fileID: 2758350087975956526, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5588700879059013528}
+      objectReference: {fileID: 732550878342301587}
+    - target: {fileID: 2758350087975956526, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickClose
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758350087975956526, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Menus.MenuTypes.SettingsMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5285585879653595546, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
       propertyPath: m_Name
       value: CloseButton
@@ -986,7 +995,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 706965418979135154, guid: c9e0b4b4c8db0c042a0b0c5e08b5eb22, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

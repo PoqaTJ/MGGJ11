@@ -6,6 +6,7 @@
         PopupTwoButtons,
         ConversationMenu,
         CreditsMenu,
-        PauseMenu
+        PauseMenu,
+        SettingsMenu
     }
 }

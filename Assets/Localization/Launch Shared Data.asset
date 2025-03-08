@@ -163,6 +163,22 @@ MonoBehaviour:
     m_Key: dialog-powerup-respawn-body
     m_Metadata:
       m_Items: []
+  - m_Id: 9573582100455424
+    m_Key: dialog-return-mm-title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9573659154014208
+    m_Key: dialog-return-mm-body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9573661356023808
+    m_Key: dialog-return-mm-left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9573662979219456
+    m_Key: dialog-return-mm-right
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

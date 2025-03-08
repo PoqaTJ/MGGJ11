@@ -1,4 +1,5 @@
 ﻿using System;
+using Audio;
 using Dialogs;
 using Game;
 using Menus;
@@ -29,7 +30,7 @@ namespace Services
                 return _instance;
             }
         }
-
+        
         private static ServiceLocator _instance;
 #endregion
 
@@ -43,5 +44,6 @@ namespace Services
         public MenuManager MenuManager;
         public DialogManager DialogManager;
         public SaveManager SaveManager;
+        public AudioManager AudioManager;
     }
 }
