@@ -184,6 +184,13 @@ namespace Player
             {
                 yVelocity = Mathf.Max(-_stats.WalledMaxSpeed, yVelocity);
             }
+            else
+            {
+                if (yVelocity < 0)
+                {
+                    yVelocity = Mathf.Max(-_stats.MaxFallSpeed, yVelocity);
+                }
+            }
 
             _rigidbody2D.velocity = new Vector2(_moveVelocity.x, yVelocity);
             
