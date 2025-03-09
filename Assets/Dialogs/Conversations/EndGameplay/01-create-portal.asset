@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: create-portal
   Dialogs:
   - Character: 2
-    Text: You passively collected all this magic for me!
+    Text: You picked up all this extra stray magic for me!
     Side: 1
     Expression: 0
   - Character: 2
