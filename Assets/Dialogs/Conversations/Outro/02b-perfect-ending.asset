@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d809b68116449fa87cc9d36d2b7f09, type: 3}
+  m_Name: 02b-perfect-ending
+  m_EditorClassIdentifier: 
+  ID: perfect-ending
+  Dialogs:
+  - Character: 2
+    Text: And good news!
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: You got all the leftover stray magic while in there.
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: With it, I can transform both of you at the same time!
+    Side: 1
+    Expression: 0
+  - Character: 1
+    Text: We can do the portal visits together?
+    Side: 1
+    Expression: 5
+  - Character: 0
+    Text: What about guarding the portal, though?
+    Side: 0
+    Expression: 1
+  - Character: 0
+    Text: There's still so many nosy adults.
+    Side: 0
+    Expression: 1
+  - Character: 2
+    Text: We'll probably need to look at recruiting someone else for guarding the
+      portal.
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: But with both of you working together, you'll be able to clear them out
+      more quickly!
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: You'll be each other's backup in there.
+    Side: 1
+    Expression: 0
+  - Character: 1
+    Text: Hurray! We'll get to hang out in the portals, too!
+    Side: 1
+    Expression: 5
+  - Character: 0
+    Text: Oh, okay...
+    Side: 0
+    Expression: 3

@@ -10,39 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6d809b68116449fa87cc9d36d2b7f09, type: 3}
-  m_Name: 00-take-turns
+  m_Name: 01-exiting-portal
   m_EditorClassIdentifier: 
-  ID: take_turns
+  ID: exiting-portal
   Dialogs:
   - Character: 0
     Text: Finally, we're out!
     Side: 0
     Expression: 5
-  - Character: 1
-    Text: And now that you can transform, we can take turns in dimension-crawling!
-    Side: 1
-    Expression: 7
   - Character: 0
-    Text: The heights were so scary, though!
+    Text: So why did the portal close?
     Side: 0
-    Expression: 4
-  - Character: 2
-    Text: You did so well!
+    Expression: 0
+  - Character: 1
+    Text: I got burnt out. Stress.
     Side: 1
     Expression: 0
   - Character: 1
-    Text: Yeah you were great!
-    Side: 1
-    Expression: 0
-  - Character: 1
-    Text: Which is why we can now take turns!
-    Side: 1
-    Expression: 7
-  - Character: 2
-    Text: Yeah, turns!
+    Text: If the stress is too much, your magic burns out, too.
     Side: 1
     Expression: 0
   - Character: 0
-    Text: What? You've got to be joking.
+    Text: That's horrible!
     Side: 0
-    Expression: 2
+    Expression: 0
+  - Character: 0
+    Text: You can't be a magical girl anymore.
+    Side: 0
+    Expression: 0
+  - Character: 1
+    Text: If not me, then who? Hmm?
+    Side: 1
+    Expression: 7
