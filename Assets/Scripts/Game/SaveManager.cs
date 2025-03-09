@@ -14,6 +14,11 @@ namespace Game
 
         private void Awake()
         {
+            InitialLoad();
+        }
+        
+        private void InitialLoad(){
+            
             if (!PlayerPrefs.HasKey(_playerPrefsKey))
             {
                 _save = new SaveGame();
@@ -211,6 +216,8 @@ namespace Game
         {
             _save = new SaveGame();
             Save();
+            
+            InitialLoad();
         }
 
 #if UNITY_EDITOR
