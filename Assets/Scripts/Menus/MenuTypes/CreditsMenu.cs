@@ -11,6 +11,10 @@ namespace Menus.MenuTypes
         public void OnBack()
         {
             ServiceLocator.Instance.MenuManager.HideTop();
+        }
+
+        public void ReturnToMain()
+        {
             ServiceLocator.Instance.GameManager.SetState(State.MainMenu);
         }
     }
