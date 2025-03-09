@@ -1516,6 +1516,13 @@ MonoBehaviour:
   _gameplayBGMs:
   - {fileID: 8300000, guid: 3573b947467127a489b0ddb6d90d8f3c, type: 3}
   - {fileID: 8300000, guid: 661efe728ea10cb4ca1c20fbaf7d5973, type: 3}
+  _jumpAudioSource: {fileID: 4874271580035914448}
+  _breakHazardAudioSource: {fileID: 1136206615499462607}
+  _collectMcGuffinAudioSource: {fileID: 3255068107554988053}
+  _jumpClips:
+  - {fileID: 0}
+  _breakHazardClips: []
+  _collectClips: []
 --- !u!82 &4874271580035914448
 AudioSource:
   m_ObjectHideFlags: 0
