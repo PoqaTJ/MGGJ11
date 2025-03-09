@@ -234,6 +234,7 @@ namespace Player
             
             if (jump)
             {
+                ServiceLocator.Instance.AudioManager.PlayJumpSFX();
                 if (wallJump)
                 {
 

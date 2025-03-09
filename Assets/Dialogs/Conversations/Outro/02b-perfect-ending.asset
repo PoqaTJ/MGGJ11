@@ -30,11 +30,11 @@ MonoBehaviour:
     Text: We can do the portal visits together?
     Side: 1
     Expression: 5
-  - Character: 0
+  - Character: 3
     Text: What about guarding the portal, though?
     Side: 0
     Expression: 1
-  - Character: 0
+  - Character: 3
     Text: There's still so many nosy adults.
     Side: 0
     Expression: 1
@@ -56,7 +56,7 @@ MonoBehaviour:
     Text: Hurray! We'll get to hang out in the portals, too!
     Side: 1
     Expression: 5
-  - Character: 0
+  - Character: 3
     Text: Oh, okay...
     Side: 0
     Expression: 3
