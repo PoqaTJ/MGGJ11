@@ -20,10 +20,19 @@ namespace Menus.MenuTypes
         protected override void OnSetup(DialogContext context)
         {
             this.context = context as PopupMenuOneButtonContext;
-            
-            titleString.text = LocalizationSettings.StringDatabase.GetLocalizedString("Launch", this.context.titleLocString);;
-            bodyString.text = LocalizationSettings.StringDatabase.GetLocalizedString("Launch", this.context.bodyLocString);;
-            buttonString.text = LocalizationSettings.StringDatabase.GetLocalizedString("Launch", this.context.buttonLocString);;
+
+            if (this.context.UseLocSystem)
+            {
+                titleString.text = LocalizationSettings.StringDatabase.GetLocalizedString("Launch", this.context.titleLocString);
+                bodyString.text = LocalizationSettings.StringDatabase.GetLocalizedString("Launch", this.context.bodyLocString);
+                buttonString.text = LocalizationSettings.StringDatabase.GetLocalizedString("Launch", this.context.buttonLocString);;               
+            }
+            else
+            {
+                titleString.text = this.context.titleLocString;
+                bodyString.text = this.context.bodyLocString;
+                buttonString.text = this.context.buttonLocString;
+            }
         }
 
         protected override void OnShow()
@@ -44,6 +53,7 @@ namespace Menus.MenuTypes
 
         public class PopupMenuOneButtonContext : Menus.MenuController.DialogContext
         {
+            public bool UseLocSystem = true;
             public Action OnCloseAction;
             public string titleLocString;
             public string bodyLocString;
