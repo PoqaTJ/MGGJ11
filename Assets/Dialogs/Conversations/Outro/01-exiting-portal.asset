@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d809b68116449fa87cc9d36d2b7f09, type: 3}
+  m_Name: 01-exiting-portal
+  m_EditorClassIdentifier: 
+  ID: exiting-portal
+  Dialogs:
+  - Character: 0
+    Text: Finally, we're out!
+    Side: 0
+    Expression: 5
+  - Character: 0
+    Text: So why did the portal close?
+    Side: 0
+    Expression: 0
+  - Character: 1
+    Text: I got burnt out. Stress.
+    Side: 1
+    Expression: 0
+  - Character: 1
+    Text: If the stress is too much, your magic burns out, too.
+    Side: 1
+    Expression: 0
+  - Character: 0
+    Text: That's horrible!
+    Side: 0
+    Expression: 0
+  - Character: 0
+    Text: You can't be a magical girl anymore.
+    Side: 0
+    Expression: 0
+  - Character: 1
+    Text: If not me, then who? Hmm?
+    Side: 1
+    Expression: 7

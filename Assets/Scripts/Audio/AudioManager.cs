@@ -7,30 +7,21 @@ namespace Audio
 {
     public class AudioManager: MonoBehaviour
     {
-        [SerializeField] AudioSource _audioSource;
-        
+        [SerializeField] AudioSource _bgnAudioSource;
         [SerializeField] AudioClip _mainmenuBGM;
         [SerializeField] AudioClip _introBGM;
         [SerializeField] AudioClip _outroBGM;
         [SerializeField] AudioClip[] _gameplayBGMs;
 
-        private string _volumeKey = "setting_volume";
+        private string _bgmVolumeKey = "setting_bgm_volume";
+        private string _sfxVolumeKey = "setting_sfx_volume";
         private float _defaultVolume = 0.7f;
-        private float _volume
-        {
-            get
-            {
-                if (!PlayerPrefs.HasKey(_volumeKey))
-                {
-                    PlayerPrefs.SetFloat(_volumeKey, _defaultVolume);
-                }
-                return PlayerPrefs.GetFloat(_volumeKey);
-            }
-            set => PlayerPrefs.SetFloat(_volumeKey, value);
-        }
 
-        public float GetVolume => _volume;
-
+        private float _bgmVolume;
+        private float _sfxVolume;
+        public float GetBGMVolume => _bgmVolume;
+        public float GetSFXVolume => _sfxVolume;
+        
         private int _gameplayBGMIndex = 0;
         private bool _playingGameplay = false;
         
@@ -38,9 +29,24 @@ namespace Audio
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
             _gameplayBGMIndex = Random.Range(0, _gameplayBGMs.Length - 1);
-            RefreshVolume();
+            Load();
         }
 
+        private void Load()
+        {
+            if (!PlayerPrefs.HasKey(_sfxVolumeKey))
+            {
+                PlayerPrefs.SetFloat(_sfxVolumeKey, _defaultVolume);
+            }
+            _sfxVolume = PlayerPrefs.GetFloat(_sfxVolumeKey);
+            
+            if (!PlayerPrefs.HasKey(_bgmVolumeKey))
+            {
+                PlayerPrefs.SetFloat(_bgmVolumeKey, _defaultVolume);
+            }
+            _bgmVolume = PlayerPrefs.GetFloat(_bgmVolumeKey);
+        }
+        
         private void Start()
         {
             ChooseSong(SceneManager.GetActiveScene().name);
@@ -48,7 +54,7 @@ namespace Audio
 
         private void Update()
         {
-            if (_playingGameplay && !_audioSource.isPlaying)
+            if (_playingGameplay && !_bgnAudioSource.isPlaying)
             {
                 _playingGameplay = false;
                 ChooseGameplayBGM();
@@ -84,7 +90,7 @@ namespace Audio
 
         private void ChooseGameplayBGM()
         {
-            _audioSource.loop = false;
+            _bgnAudioSource.loop = false;
             if (!_playingGameplay)
             {
                 _playingGameplay = true;
@@ -116,20 +122,27 @@ namespace Audio
 
         private void Play(AudioClip audioClip, bool looping)
         {
-            _audioSource.loop = looping;
-            _audioSource.clip = audioClip;
-            _audioSource.Play();
+            _bgnAudioSource.loop = looping;
+            _bgnAudioSource.clip = audioClip;
+            _bgnAudioSource.Play();
         }
 
-        public void SetVolume(float volume)
+        public void SetSFXVolume(float volume)
         {
-            _volume = volume;
-            RefreshVolume();
+            _sfxVolume = volume;
+            Save();
+        }
+        
+        public void SetBGMVolume(float volume)
+        {
+            _bgmVolume = volume;
+            Save();
         }
 
-        private void RefreshVolume()
+        private void Save()
         {
-            AudioListener.volume = _volume;
+            PlayerPrefs.SetFloat(_bgmVolumeKey, _bgmVolume);
+            PlayerPrefs.SetFloat(_sfxVolumeKey, _sfxVolume);
         }
     }
 }

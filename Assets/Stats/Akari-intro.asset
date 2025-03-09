@@ -16,7 +16,9 @@ MonoBehaviour:
   Deceleration: 10
   AirAcceleration: 1.5
   AirDeceleration: 5
+  WalledMaxSpeed: 3
   MaxSpeed: 3
+  MaxFallSpeed: 12
   JumpVelocity: 5
   JumpShort: 3
   CoyoteDuration: 0.1
