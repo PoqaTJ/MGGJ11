@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6d809b68116449fa87cc9d36d2b7f09, type: 3}
-  m_Name: 03-off-to-cafe
+  m_Name: 03-perfectl-off-to-cafe
   m_EditorClassIdentifier: 
   ID: off-to-cafe
   Dialogs:
@@ -22,7 +22,7 @@ MonoBehaviour:
     Text: Is the donut shop still open?
     Side: 1
     Expression: 0
-  - Character: 1
+  - Character: 4
     Text: Actually, it looks like it just closed.
     Side: 1
     Expression: 0
@@ -30,11 +30,11 @@ MonoBehaviour:
     Text: Aww, i was looking forward to it...
     Side: 1
     Expression: 0
-  - Character: 0
+  - Character: 3
     Text: How about that one coffee shop that closes late?
     Side: 0
     Expression: 0
-  - Character: 0
+  - Character: 3
     Text: They have cinnamon sugar in self-serve shakers.
     Side: 0
     Expression: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
     Text: Hurray! Best day ever!
     Side: 1
     Expression: 0
-  - Character: 0
+  - Character: 3
     Text: Aside all those heights.
     Side: 0
     Expression: 0
@@ -54,31 +54,31 @@ MonoBehaviour:
     Text: Akari is afraid of the dark.
     Side: 1
     Expression: 0
-  - Character: 1
+  - Character: 4
     Text: Hey! Stop giving embarassing tidbits out willy-nilly!
     Side: 1
     Expression: 2
-  - Character: 0
+  - Character: 3
     Text: Wow, you really did a lot for this gig.
     Side: 0
     Expression: 3
-  - Character: 0
+  - Character: 3
     Text: It was pitch-black in there.
     Side: 0
     Expression: 0
-  - Character: 1
+  - Character: 4
     Text: Hey, I care about this world, because you're in it!
     Side: 1
     Expression: 5
-  - Character: 1
+  - Character: 4
     Text: Now we can share the burden, together.
     Side: 1
     Expression: 6
-  - Character: 0
+  - Character: 3
     Text: I'm so happy to be your friend!
     Side: 0
     Expression: 6
-  - Character: 1
+  - Character: 4
     Text: Me too!
     Side: 1
     Expression: 6

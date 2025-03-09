@@ -27,7 +27,7 @@ MonoBehaviour:
       can come in.
     Side: 1
     Expression: 0
-  - Character: 0
+  - Character: 3
     Text: I don't like the thought of facing those heights again...
     Side: 0
     Expression: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     Text: Thats really impressive.
     Side: 1
     Expression: 0
-  - Character: 0
+  - Character: 3
     Text: It was still so scary!
     Side: 0
     Expression: 0

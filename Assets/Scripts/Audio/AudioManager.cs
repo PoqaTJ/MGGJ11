@@ -13,6 +13,14 @@ namespace Audio
         [SerializeField] AudioClip _outroBGM;
         [SerializeField] AudioClip[] _gameplayBGMs;
 
+        [SerializeField] AudioSource _jumpAudioSource;
+        [SerializeField] AudioSource _breakHazardAudioSource;
+        [SerializeField] AudioSource _collectMcGuffinAudioSource;
+
+        [SerializeField] private AudioClip[] _jumpClips;
+        [SerializeField] private AudioClip[] _breakHazardClips;
+        [SerializeField] private AudioClip[] _collectClips;
+
         private string _bgmVolumeKey = "setting_bgm_volume";
         private string _sfxVolumeKey = "setting_sfx_volume";
         private float _defaultVolume = 0.7f;
@@ -45,6 +53,11 @@ namespace Audio
                 PlayerPrefs.SetFloat(_bgmVolumeKey, _defaultVolume);
             }
             _bgmVolume = PlayerPrefs.GetFloat(_bgmVolumeKey);
+            
+            _bgnAudioSource.volume = _bgmVolume;
+            _jumpAudioSource.volume = _sfxVolume;
+            _breakHazardAudioSource.volume = _sfxVolume;
+            _collectMcGuffinAudioSource.volume = _sfxVolume;
         }
         
         private void Start()
@@ -141,8 +154,33 @@ namespace Audio
 
         private void Save()
         {
+            _bgnAudioSource.volume = _bgmVolume;
+            _jumpAudioSource.volume = _sfxVolume;
+            _breakHazardAudioSource.volume = _sfxVolume;
+            _collectMcGuffinAudioSource.volume = _sfxVolume;
             PlayerPrefs.SetFloat(_bgmVolumeKey, _bgmVolume);
             PlayerPrefs.SetFloat(_sfxVolumeKey, _sfxVolume);
+        }
+
+        public void PlayJumpSFX()
+        {
+            _jumpAudioSource.Stop();
+            _jumpAudioSource.clip = _jumpClips[Random.Range(0, _jumpClips.Length - 1)];
+            _jumpAudioSource.Play();
+        }
+        
+        public void PlayBreakHazardSFX()
+        {
+            _jumpAudioSource.Stop();
+            _jumpAudioSource.clip = _breakHazardClips[Random.Range(0, _breakHazardClips.Length - 1)];
+            _jumpAudioSource.Play();
+        }
+        
+        public void PlayCollectSFX()
+        {
+            _jumpAudioSource.Stop();
+            _jumpAudioSource.clip = _collectClips[Random.Range(0, _collectClips.Length - 1)];
+            _jumpAudioSource.Play();
         }
     }
 }

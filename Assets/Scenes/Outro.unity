@@ -203,6 +203,7 @@ Transform:
   - {fileID: 551686825}
   - {fileID: 1803559419}
   - {fileID: 619004290}
+  - {fileID: 1278186487}
   - {fileID: 678022134}
   - {fileID: 146253229}
   m_Father: {fileID: 0}
@@ -788,6 +789,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5a1a65561d37a41bfb1935deef356d, type: 3}
+--- !u!1 &1278186486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1278186487}
+  m_Layer: 0
+  m_Name: ButterflySpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1278186487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278186486}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.05, y: 2.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 458712167}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1411790849 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1314770641047902441, guid: 6479317569b72c546b5f97d26ed4ad61, type: 3}
@@ -1135,14 +1167,15 @@ MonoBehaviour:
   _markOneAkari: {fileID: 551686825}
   _markOneTomoya: {fileID: 1803559419}
   _markOnePrism: {fileID: 619004290}
+  _prismAppearPoint: {fileID: 0}
   _finalMark: {fileID: 678022134}
   _butterflyFinalMark: {fileID: 146253229}
   _conversationAfterExitingPortal: {fileID: 11400000, guid: eb2fc5477377eeb4ebb05b77f4f4da26, type: 2}
   _conversationNormalEndingTakeTurns: {fileID: 11400000, guid: 70529a8f732564c6594f6d20f15a24e7, type: 2}
   _conversationNormalEndingTea: {fileID: 11400000, guid: 957e86bf9c6680f4f9f739ed3fc2c5b4, type: 2}
   _conversationPerfectBothCanTransform: {fileID: 11400000, guid: d1a4226b7dc6645589a81badaed454dd, type: 2}
-  _conversationPerfectYay: {fileID: 11400000, guid: 957e86bf9c6680f4f9f739ed3fc2c5b4, type: 2}
-  _conversationPerfectEndingTea: {fileID: 11400000, guid: 957e86bf9c6680f4f9f739ed3fc2c5b4, type: 2}
+  _conversationPerfectYay: {fileID: 11400000, guid: 4399e38738bc89048957f4d1d44b6c46, type: 2}
+  _conversationPerfectEndingTea: {fileID: 11400000, guid: c89ebfe514bb432469fc70135f709fd0, type: 2}
 --- !u!198 &2061305509 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8865274913815523013, guid: 1d01564ae1591dc4ca1c900745336928, type: 3}
@@ -1200,6 +1233,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particles
       objectReference: {fileID: 0}
+    - target: {fileID: 7139645397954107657, guid: 1d01564ae1591dc4ca1c900745336928, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 8865274913815523013, guid: 1d01564ae1591dc4ca1c900745336928, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.03529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865274913815523013, guid: 1d01564ae1591dc4ca1c900745336928, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.22745098
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1215,15 +1260,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2667650986126783047, guid: e21439f0c1810484587a3764b0951641, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.492
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 2667650986126783047, guid: e21439f0c1810484587a3764b0951641, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.68
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 2667650986126783047, guid: e21439f0c1810484587a3764b0951641, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.49999994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2667650986126783047, guid: e21439f0c1810484587a3764b0951641, type: 3}
       propertyPath: m_LocalRotation.w

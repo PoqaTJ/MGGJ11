@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: exiting-portal
   Dialogs:
-  - Character: 0
+  - Character: 3
     Text: Finally, we're out!
     Side: 0
     Expression: 5
-  - Character: 0
+  - Character: 3
     Text: So why did the portal close?
     Side: 0
     Expression: 0
@@ -30,11 +30,11 @@ MonoBehaviour:
     Text: If the stress is too much, your magic burns out, too.
     Side: 1
     Expression: 0
-  - Character: 0
+  - Character: 3
     Text: That's horrible!
     Side: 0
     Expression: 0
-  - Character: 0
+  - Character: 3
     Text: You can't be a magical girl anymore.
     Side: 0
     Expression: 0
