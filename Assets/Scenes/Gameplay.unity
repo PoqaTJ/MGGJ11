@@ -566,6 +566,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1728407358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &691693064 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 730556707851577733, guid: 109c1816faa9d4440ab109096be36d36, type: 3}
+  m_PrefabInstance: {fileID: 3557555226577497666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &845805073
 GameObject:
   m_ObjectHideFlags: 0
@@ -6835,6 +6840,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virtual Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6355062397067886317, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355062397067886317, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120123340131847126, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 691693064}
     - target: {fileID: 7645643926280979448, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
