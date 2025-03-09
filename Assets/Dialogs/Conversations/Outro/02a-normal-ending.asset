@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: normal-ending
   Dialogs:
   - Character: 2
-    Text: 'Given the circustances, I propose the following:'
+    Text: 'I propose the following:'
     Side: 1
     Expression: 0
   - Character: 2
@@ -23,16 +23,15 @@ MonoBehaviour:
     Side: 1
     Expression: 0
   - Character: 2
-    Text: This will prevent burnout, and if one person falls like today, the other
-      can come in.
+    Text: It would protect both of you from burnout.
     Side: 1
     Expression: 0
   - Character: 3
-    Text: I don't like the thought of facing those heights again...
+    Text: I was already so nervous. You want me to do that again?
     Side: 0
     Expression: 0
   - Character: 1
-    Text: But you did great, despite your fear of heights!
+    Text: But you did great, despite your fears!
     Side: 1
     Expression: 5
   - Character: 1
@@ -43,11 +42,3 @@ MonoBehaviour:
     Text: It was still so scary!
     Side: 0
     Expression: 0
-  - Character: 2
-    Text: Well Akari had to deal with her fear of the dark.
-    Side: 1
-    Expression: 0
-  - Character: 1
-    Text: Stop saying unnecessary things!
-    Side: 1
-    Expression: 2

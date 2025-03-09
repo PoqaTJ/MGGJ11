@@ -38,11 +38,11 @@ MonoBehaviour:
     Text: Take my magical power. With it, you'll be able to break through those barriers!
     Side: 1
     Expression: 0
-  - Character: 0
+  - Character: 3
     Text: I won't let you down, Akari.
     Side: 0
     Expression: 0
-  - Character: 0
+  - Character: 3
     Text: But what am I supposed to do?
     Side: 0
     Expression: 0
