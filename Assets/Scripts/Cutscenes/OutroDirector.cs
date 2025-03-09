@@ -20,6 +20,7 @@ namespace Cutscenes
         [SerializeField] private Transform _markOneAkari;
         [SerializeField] private Transform _markOneTomoya;
         [SerializeField] private Transform _markOnePrism;
+        [SerializeField] private Transform _prismAppearPoint;
 
         [SerializeField] private Transform _finalMark;
         [SerializeField] private Transform _butterflyFinalMark;
@@ -95,7 +96,7 @@ namespace Cutscenes
             _butterflyMover.gameObject.SetActive(true);
 
             // TODO: Move this up a bit.
-            SnapCharacterTo(_butterflyMover.gameObject, _tomoyaMagicalMover.transform);
+            //SnapCharacterTo(_butterflyMover.gameObject, _prismAppearPoint);
             _butterflyMover.Appear();
 
             bool moved = false;
@@ -109,6 +110,8 @@ namespace Cutscenes
             _akariMover.MoveTo(_finalMark, null);
 
             _butterflyMover.MoveTo(_butterflyFinalMark, null);
+
+            StartConversation(_conversationNormalEndingTakeTurns);
 
             yield return new WaitForSeconds(1.5f);
             
@@ -126,7 +129,7 @@ namespace Cutscenes
             _butterflyMover.gameObject.SetActive(true);
 
             // TODO: Move this up a bit.
-            SnapCharacterTo(_butterflyMover.gameObject, _tomoyaMagicalMover.transform);
+            //SnapCharacterTo(_butterflyMover.gameObject, _tomoyaMagicalMover.transform);
             _butterflyMover.Appear();
 
             bool moved = false;

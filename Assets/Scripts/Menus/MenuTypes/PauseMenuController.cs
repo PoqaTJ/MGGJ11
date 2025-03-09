@@ -1,11 +1,18 @@
 ﻿using Game;
 using Services;
+using TMPro;
+using UnityEngine;
 
 namespace Menus.MenuTypes
 {
     public class PauseMenuController: MenuController
     {
         public override MenuType GetMenuType() => MenuType.PauseMenu;
+        
+        [SerializeField] private TMP_Text _doubleJumpText;
+        [SerializeField] private TMP_Text _tripleJumpText;
+        [SerializeField] private TMP_Text _wallJumpText;
+        [SerializeField] private TMP_Text _returnText;
 
         protected override void OnShow()
         {
