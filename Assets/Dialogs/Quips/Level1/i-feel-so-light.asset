@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: i-feel-so-light
   dialog:
-    Character: 0
+    Character: 3
     Text: I feel so light!
     Side: 0
+    Expression: 0
