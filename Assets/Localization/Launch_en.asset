@@ -167,11 +167,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9573582100455424
-    m_Localized: Return to Main Menu?
+    m_Localized: Exit?
     m_Metadata:
       m_Items: []
   - m_Id: 9573659154014208
-    m_Localized: You may lose some progress.
+    m_Localized: Exit to main menu? Your data has been saved.
     m_Metadata:
       m_Items: []
   - m_Id: 9573661356023808
@@ -179,7 +179,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9573662979219456
-    m_Localized: Main Menu
+    m_Localized: Exit
     m_Metadata:
       m_Items: []
   references:
