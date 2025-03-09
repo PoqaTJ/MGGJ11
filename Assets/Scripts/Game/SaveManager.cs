@@ -277,6 +277,8 @@ namespace Game
             return false;
         }
         
+        
+
         [MenuItem("Save/EnableTripleJump", false, 3)]
         private static void DebugEnableTripleJump()
         {
@@ -380,6 +382,24 @@ namespace Game
         private static bool DebugStartNearEndingValidate()
         {
             Menu.SetChecked("Save/StartNearEnding", _startNearEnding);
+            return true;
+        }
+        
+        public static bool ForcePerfectEnding{
+            get => EditorPrefs.GetBool("EditorForcePerfectEnding");
+            set => EditorPrefs.SetBool("EditorForcePerfectEnding", value);
+        }
+        
+        [MenuItem("Save/ForcePerfectEnding", false, 16)]
+        private static void DebugForcePerfectEnding()
+        {
+            ForcePerfectEnding = !ForcePerfectEnding;
+        }
+        
+        [MenuItem("Save/ForcePerfectEnding", true)]
+        private static bool DebugForcePerfectEndingValidate()
+        {
+            Menu.SetChecked("Save/ForcePerfectEnding", ForcePerfectEnding);
             return true;
         }
 #endif
