@@ -34,7 +34,7 @@ namespace Menus.HUD
 
         private void RefreshUI()
         {
-            _counter.text = "" + ServiceLocator.Instance.GameManager.McGuffinCount;
+            _counter.text = $"{ServiceLocator.Instance.GameManager.McGuffinCount} / {ServiceLocator.Instance.GameManager.TotalMcGuffinCount}";
         }
     }
 }
