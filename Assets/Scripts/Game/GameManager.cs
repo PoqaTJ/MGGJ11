@@ -29,7 +29,7 @@ namespace Game
 
         public int McGuffinCount => ServiceLocator.Instance.SaveManager.McGuffinCount;
         public PlayerController CurrentPlayer => _player;
-        public static int TotalMcGuffinCount = 100; // this is wrong
+        public static int TotalMcGuffinCount = 58; // this is wrong
 
         private PlayerController _player;
 
@@ -371,6 +371,15 @@ namespace Game
             
             Time.timeScale = 1f;
         }
+        
+#if UNITY_EDITOR
+        [UnityEditor.MenuItem("Level/CountMcGuffins")]
+        private static void DebugCountMcGuffins()
+        {
+            var obs = GameObject.FindObjectsOfType<McGuffin>(true);
+            Debug.Log("Count: " + obs.Length);
+        }
+#endif
     }
 
     public enum State
