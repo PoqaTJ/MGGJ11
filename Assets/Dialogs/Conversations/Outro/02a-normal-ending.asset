@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d809b68116449fa87cc9d36d2b7f09, type: 3}
+  m_Name: 02a-normal-ending
+  m_EditorClassIdentifier: 
+  ID: normal-ending
+  Dialogs:
+  - Character: 2
+    Text: 'Given the circustances, I propose the following:'
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: How about you take turns for the magical girl duties?
+    Side: 1
+    Expression: 0
+  - Character: 2
+    Text: This will prevent burnout, and if one person falls like today, the other
+      can come in.
+    Side: 1
+    Expression: 0
+  - Character: 0
+    Text: I don't like the thought of facing those heights again...
+    Side: 0
+    Expression: 0
+  - Character: 1
+    Text: But you did great, despite your fear of heights!
+    Side: 1
+    Expression: 5
+  - Character: 1
+    Text: Thats really impressive.
+    Side: 1
+    Expression: 0
+  - Character: 0
+    Text: It was still so scary!
+    Side: 0
+    Expression: 0
+  - Character: 2
+    Text: Well Akari had to deal with her fear of the dark.
+    Side: 1
+    Expression: 0
+  - Character: 1
+    Text: Stop saying unnecessary things!
+    Side: 1
+    Expression: 2
