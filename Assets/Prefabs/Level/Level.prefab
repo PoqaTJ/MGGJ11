@@ -8372,6 +8372,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4048038273146797544, guid: 8f47e82cbc1469144ba70b9432c2b8b9, type: 3}
+      propertyPath: _speed
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5799915793049316266, guid: 8f47e82cbc1469144ba70b9432c2b8b9, type: 3}
       propertyPath: m_Name
       value: RotatingHazard (1)
@@ -18732,7 +18736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4048038273146797544, guid: 8f47e82cbc1469144ba70b9432c2b8b9, type: 3}
       propertyPath: _speed
-      value: 0.35
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5799915793049316266, guid: 8f47e82cbc1469144ba70b9432c2b8b9, type: 3}
       propertyPath: m_Name
