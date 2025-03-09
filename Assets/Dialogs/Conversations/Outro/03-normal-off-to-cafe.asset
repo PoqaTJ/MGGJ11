@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: off-to-cafe
   Dialogs:
   - Character: 2
-    Text: Now onto cinnamon-sugar!
+    Text: Now onto cinnamon sugar!
     Side: 1
     Expression: 0
   - Character: 2
@@ -27,7 +27,7 @@ MonoBehaviour:
     Side: 1
     Expression: 0
   - Character: 2
-    Text: Aww, i was looking forward to it...
+    Text: Aww, I was looking forward to it.
     Side: 1
     Expression: 0
   - Character: 3
