@@ -78,7 +78,7 @@ namespace Cutscenes
             }
 #endif
             if (ServiceLocator.Instance.GameManager.McGuffinCount >=
-                ServiceLocator.Instance.GameManager.TotalMcGuffinCount)
+                GameManager.TotalMcGuffinCount)
             {
                 yield return PerfectEnding();
             }
@@ -159,7 +159,7 @@ namespace Cutscenes
             
             yield return new WaitForSeconds(1.5f);
             
-            StartConversation(_conversationPerfectYay);
+            //StartConversation(_conversationPerfectYay);
             
             // transform!
             _tomoyaMagicalMover.MoveTo(_finalMark, null);

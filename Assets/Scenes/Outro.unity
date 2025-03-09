@@ -1137,9 +1137,12 @@ MonoBehaviour:
   _markOnePrism: {fileID: 619004290}
   _finalMark: {fileID: 678022134}
   _butterflyFinalMark: {fileID: 146253229}
-  _conversationTakeTurns: {fileID: 11400000, guid: 69bffcac84b3b2a43ae6fd48c64f5577, type: 2}
-  _conversationPrism: {fileID: 11400000, guid: eb2fc5477377eeb4ebb05b77f4f4da26, type: 2}
-  _conversationFinal: {fileID: 11400000, guid: 957e86bf9c6680f4f9f739ed3fc2c5b4, type: 2}
+  _conversationAfterExitingPortal: {fileID: 11400000, guid: eb2fc5477377eeb4ebb05b77f4f4da26, type: 2}
+  _conversationNormalEndingTakeTurns: {fileID: 11400000, guid: 70529a8f732564c6594f6d20f15a24e7, type: 2}
+  _conversationNormalEndingTea: {fileID: 11400000, guid: 957e86bf9c6680f4f9f739ed3fc2c5b4, type: 2}
+  _conversationPerfectBothCanTransform: {fileID: 11400000, guid: d1a4226b7dc6645589a81badaed454dd, type: 2}
+  _conversationPerfectYay: {fileID: 11400000, guid: 957e86bf9c6680f4f9f739ed3fc2c5b4, type: 2}
+  _conversationPerfectEndingTea: {fileID: 11400000, guid: 957e86bf9c6680f4f9f739ed3fc2c5b4, type: 2}
 --- !u!198 &2061305509 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8865274913815523013, guid: 1d01564ae1591dc4ca1c900745336928, type: 3}

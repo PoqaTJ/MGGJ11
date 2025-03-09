@@ -1,4 +1,5 @@
 ﻿using System;
+using Game;
 using Player;
 using Services;
 using TMPro;
@@ -34,7 +35,7 @@ namespace Menus.HUD
 
         private void RefreshUI()
         {
-            _counter.text = $"{ServiceLocator.Instance.GameManager.McGuffinCount} / {ServiceLocator.Instance.GameManager.TotalMcGuffinCount}";
+            _counter.text = $"{ServiceLocator.Instance.GameManager.McGuffinCount} / {GameManager.TotalMcGuffinCount}";
         }
     }
 }

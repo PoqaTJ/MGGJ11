@@ -29,7 +29,7 @@ namespace Game
 
         public int McGuffinCount => ServiceLocator.Instance.SaveManager.McGuffinCount;
         public PlayerController CurrentPlayer => _player;
-        public int TotalMcGuffinCount = 10; // this is wrong
+        public static int TotalMcGuffinCount = 100; // this is wrong
 
         private PlayerController _player;
 
