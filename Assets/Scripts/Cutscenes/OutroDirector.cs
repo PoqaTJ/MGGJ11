@@ -24,10 +24,17 @@ namespace Cutscenes
         [SerializeField] private Transform _finalMark;
         [SerializeField] private Transform _butterflyFinalMark;
 
-        [SerializeField] private ConversationDefinition _conversationTakeTurns;
-        [SerializeField] private ConversationDefinition _conversationPrism;
-        [SerializeField] private ConversationDefinition _conversationFinal;
+        [SerializeField] private ConversationDefinition _conversationAfterExitingPortal; // same for both endings // wow, that was fun/scary/whatever
         
+        // normal only
+        [SerializeField] private ConversationDefinition _conversationNormalEndingTakeTurns;
+        [SerializeField] private ConversationDefinition _conversationNormalEndingTea;
+        
+        // perfect
+        [SerializeField] private ConversationDefinition _conversationPerfectBothCanTransform;
+        [SerializeField] private ConversationDefinition _conversationPerfectYay;
+        [SerializeField] private ConversationDefinition _conversationPerfectEndingTea;
+
         private void Start()
         {
             StartCoroutine(Play());
@@ -36,7 +43,6 @@ namespace Cutscenes
         private IEnumerator Play()
         {
             yield return FadeFromColorCoroutine(Color.black, 2f);
-
 
             bool akariReached1 = false;
             bool tomoyaReached1 = false;
@@ -58,13 +64,28 @@ namespace Cutscenes
                 akariReached1 = true;
             });
 
-            yield return new WaitUntil(()=> akariReached1 && tomoyaReached1);
+            yield return new WaitUntil(() => akariReached1 && tomoyaReached1);
 
             _portalAnimator.SetTrigger(Close);
 
             yield return new WaitForSeconds(2f);
-            
-            StartConversation(_conversationTakeTurns);
+
+            if (ServiceLocator.Instance.GameManager.McGuffinCount >=
+                ServiceLocator.Instance.GameManager.TotalMcGuffinCount)
+            {
+                yield return PerfectEnding();
+
+
+            }
+            else
+            {
+                yield return NormalEnding();
+            }
+        }
+
+        private IEnumerator NormalEnding(){
+
+            StartConversation(_conversationAfterExitingPortal);
             
             _butterflyMover.gameObject.SetActive(true);
 
@@ -77,6 +98,40 @@ namespace Cutscenes
 
             yield return new WaitUntil(() => moved == true);
             
+            yield return new WaitForSeconds(0.5f);
+            
+            _tomoyaMagicalMover.MoveTo(_finalMark, null);
+            _akariMover.MoveTo(_finalMark, null);
+
+            _butterflyMover.MoveTo(_butterflyFinalMark, null);
+
+            yield return new WaitForSeconds(1.5f);
+            
+            StartConversation(_conversationNormalEndingTea);
+            yield return new WaitForSeconds(1f);
+            yield return FadeToColorCoroutine(Color.black, 3f);
+
+            ServiceLocator.Instance.GameManager.SetState(State.Credits);
+        }
+
+        private IEnumerator PerfectEnding()
+        {
+            StartConversation(_conversationAfterExitingPortal);
+            
+            _butterflyMover.gameObject.SetActive(true);
+
+            // TODO: Move this up a bit.
+            SnapCharacterTo(_butterflyMover.gameObject, _tomoyaMagicalMover.transform);
+            _butterflyMover.Appear();
+
+            bool moved = false;
+            _butterflyMover.MoveTo(_markOnePrism, () => moved = true);
+
+
+            yield return new WaitUntil(() => moved == true);
+
+            StartConversation(_conversationPerfectBothCanTransform);
+
             yield return new WaitForSeconds(0.5f);
 
             _akariMagicalaMover.Face(PlayerMover.Direction.LEFT);
@@ -99,7 +154,7 @@ namespace Cutscenes
             
             yield return new WaitForSeconds(1.5f);
             
-            StartConversation(_conversationPrism);
+            StartConversation(_conversationPerfectYay);
             
             // transform!
             _tomoyaMagicalMover.MoveTo(_finalMark, null);
@@ -109,7 +164,7 @@ namespace Cutscenes
 
             yield return new WaitForSeconds(1.5f);
             
-            StartConversation(_conversationFinal);
+            StartConversation(_conversationPerfectEndingTea);
             yield return new WaitForSeconds(1f);
             yield return FadeToColorCoroutine(Color.black, 3f);
 
