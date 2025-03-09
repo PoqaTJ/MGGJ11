@@ -12,6 +12,7 @@ namespace Game
             
             _collected.Collect(CollectableType.McGuffin);
             ServiceLocator.Instance.GameManager.FindMecGuffin();
+            ServiceLocator.Instance.AudioManager.PlayCollectSFX();
             base.OnContact();
         }
     }

@@ -20,6 +20,7 @@ namespace Baddy
                 if (ServiceLocator.Instance.SaveManager.UnlockedBreakHazard &&
                     col == pc.BreakHazardCollider)
                 {
+                    ServiceLocator.Instance.AudioManager.PlayJumpSFX();
                     _collectable.Collect(CollectableType.Hazard);
                     Destroy(gameObject);
                 }
