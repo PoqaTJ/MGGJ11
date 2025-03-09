@@ -1509,11 +1509,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 2588403614440010871}
   _mainmenuBGM: {fileID: 8300000, guid: 196286f8af4c83b41902e8aaa74fcd40, type: 3}
-  _introBGM: {fileID: 8300000, guid: a2b47b2a29d07424e8a1609582921270, type: 3}
-  _outroBGM: {fileID: 8300000, guid: a2b47b2a29d07424e8a1609582921270, type: 3}
+  _introBGM: {fileID: 8300000, guid: 669dcba9b8e398248b8975bb59766bce, type: 3}
+  _outroBGM: {fileID: 8300000, guid: f42d70bf8c8c0c04ba58e954186e8f42, type: 3}
   _gameplayBGMs:
-  - {fileID: 8300000, guid: 71554a1567642f3489d82b62b213f528, type: 3}
-  - {fileID: 8300000, guid: ba1cf60d60391c54581a4c993e041b94, type: 3}
+  - {fileID: 8300000, guid: 3573b947467127a489b0ddb6d90d8f3c, type: 3}
+  - {fileID: 8300000, guid: 661efe728ea10cb4ca1c20fbaf7d5973, type: 3}
 --- !u!1 &8269779421543400656
 GameObject:
   m_ObjectHideFlags: 0
