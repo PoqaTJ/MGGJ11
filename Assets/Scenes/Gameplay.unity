@@ -6841,8 +6841,32 @@ PrefabInstance:
       value: Virtual Camera
       objectReference: {fileID: 0}
     - target: {fileID: 5847043159489775212, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
+      propertyPath: m_XDamping
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847043159489775212, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
+      propertyPath: m_YDamping
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847043159489775212, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
+      propertyPath: m_DeadZoneWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847043159489775212, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
+      propertyPath: m_LookaheadTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847043159489775212, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
+      propertyPath: m_LookaheadIgnoreY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847043159489775212, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
+      propertyPath: m_LookaheadSmoothing
+      value: 13.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847043159489775212, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
       propertyPath: m_TrackedObjectOffset.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6355062397067886317, guid: 53b9997575126254a9cea3ee2400c55a, type: 3}
       propertyPath: m_Follow
