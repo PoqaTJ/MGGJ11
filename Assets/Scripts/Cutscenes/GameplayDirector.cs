@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using Dialogs;
+using Effects;
 using Game;
 using Menus;
 using Menus.MenuTypes;
 using Player;
 using Services;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Cutscenes
 {
@@ -34,7 +36,10 @@ namespace Cutscenes
 
         private void AkariFoundDone()
         {
-            _findAkariScene.SetActive(false);
+            if (_findAkariScene != null)
+            {
+                _findAkariScene.SetActive(false);                
+            }
             _bottomAkari.SetActive(true);
             _afterFindAkariQuips.SetActive(true);
             _beforeFindAkariQuips.SetActive(false);
@@ -72,12 +77,25 @@ namespace Cutscenes
             _akariNormalMover.transform.rotation = new Quaternion();
             _akariNormalMover.Face(PlayerMover.Direction.LEFT);
             _akariNormalMover.Jump();
+            
+            // fix akari face
+            _akariNormalMover.gameObject.transform.Find("torso/head/mouth").GetComponent<SpriteRenderer>().enabled = true;
+            _akariNormalMover.gameObject.transform.Find("torso/head/frown").gameObject.SetActive(false);
 
+            _akariNormalMover.gameObject.transform.Find("torso/head/eye-right").GetComponent<SpriteRenderer>().enabled = true;
+            _akariNormalMover.gameObject.transform.Find("torso/head/eye-left").GetComponent<SpriteRenderer>().enabled = true;
+            
+            _akariNormalMover.gameObject.transform.Find("torso/head/eye-right-closed").gameObject.SetActive(false);
+            _akariNormalMover.gameObject.transform.Find("torso/head/eye-left-closed").gameObject.SetActive(false);
             yield return new WaitForSeconds(2f);
             
             StartConversation(_akariOhNoConversation);
 
             _rotatingHazard.SetActive(true);
+
+            tomoyaMover.Face(PlayerMover.Direction.LEFT);
+            _akariNormalMover.Face(PlayerMover.Direction.LEFT);
+            
             // akari and tomoya get knocked down
 
             yield return new WaitUntil(() => _akariNormalMover.CurrentHealth < 3);
@@ -88,8 +106,6 @@ namespace Cutscenes
             tomoyaMover.RemoveCollision();
 
             yield return new WaitForSeconds(1);
-            
-            
 
             // fade to purple
             yield return FadeToColorCoroutine(Color.black, 1f);
@@ -106,8 +122,17 @@ namespace Cutscenes
             StartConversation(_tomoyaDepressedConversation);
             
             // Tomoya powers up!
-            tomoya.GetComponent<Animator>().SetTrigger(StartTransform);
-            yield return new WaitForSeconds(1.5f);
+            var akariAnimator = _bottomAkari.GetComponent<Animator>();
+            var tomoyaAnimator = tomoya.GetComponent<Animator>();
+            tomoyaAnimator.SetTrigger(StartTransform);
+            akariAnimator.SetTrigger(StartTransform);
+            yield return new WaitForSeconds(0.5f);
+            
+            yield return FlyParticlesTo(ParticleType.AkariMagic, _bottomAkari.transform.GetChild(0), tomoya.transform.GetChild(0), 1.5f);
+
+            FadeToColorCoroutine(_mixedColor, 0.1f);
+            FadeFromColorCoroutine(_mixedColor, 0.1f);
+            
             var context = new PopupMenuOneButton.PopupMenuOneButtonContext();
             context.titleLocString = "dialog-powerup-break-hazards-title";
             context.bodyLocString = "dialog-powerup-break-hazards-body";
@@ -116,7 +141,8 @@ namespace Cutscenes
             yield return new WaitForSeconds(1f);
 
             ServiceLocator.Instance.SaveManager.UnlockedBreakHazard = true;
-            tomoya.GetComponent<Animator>().SetTrigger(StopTransform);
+            tomoyaAnimator.SetTrigger(StopTransform);
+            akariAnimator.SetTrigger(StopTransform);
             
             // enable new quips
             ServiceLocator.Instance.GameManager.FindAkari();
@@ -126,6 +152,8 @@ namespace Cutscenes
             tomoyaInputController.enabled = true;
             tomoya.enabled = true;
             tomoyaMover.enabled = false;
+            
+            _bottomAkari.GetComponent<AkariCheerController>().enabled = true;
         }
         
         public void StartStageEndScene()
@@ -141,6 +169,9 @@ namespace Cutscenes
         
         private IEnumerator StageEndScene()
         {
+            _akariNormalMover = _bottomAkari.GetComponent<PlayerMover>();
+            _bottomAkari.GetComponent<AkariCheerController>().enabled = false;
+            
             // start evil realm collapsing effect
             var tomoya = ServiceLocator.Instance.GameManager.CurrentPlayer;
             var tomoyaMover = tomoya.GetComponent<PlayerMover>();
@@ -160,26 +191,34 @@ namespace Cutscenes
             yield return new WaitForSeconds(0.25f);
             
             // fade to black
-            yield return FadeToColorCoroutine(Color.black, 1f);
+            yield return FadeToColorCoroutine(Color.black, 2f);
             
             // move Tomoya next to Akari. move camera
             tomoya.RestoreCollisions();
             SnapCharacterTo(tomoya.gameObject, _tomoyaEndingLoc1);
             _virtualCamera.Follow = tomoya.gameObject.transform;
-
+            tomoyaMover.Face(PlayerMover.Direction.LEFT);
+            
+            yield return new WaitForSeconds(2f);
+            
             // fade back in
-            yield return FadeFromColorCoroutine(Color.black, 1f);
+            yield return FadeFromColorCoroutine(Color.black, 2f);
 
             StartConversation(_endingConversation2);
             
             // Tomoya creates a portal
+            yield return FlyParticlesTo(ParticleType.TomoyaMagic, tomoya.transform, _exitPortal.transform, 1.5f);
             _exitPortal.gameObject.SetActive(true);
 
+            yield return new WaitForSeconds(1f);
+            _akariNormalMover.enabled = true;
+            _akariNormalMover.MoveTo(_exitPortal.transform, () => _akariNormalMover.gameObject.SetActive(false));
+
+            yield return new WaitForSeconds(0.5f);
             // both leave through the portal
             tomoyaMover.MoveTo(_exitPortal.transform, () => tomoyaMover.gameObject.SetActive(false));
-            _akariNormalMover.MoveTo(_exitPortal.transform, () => _akariNormalMover.gameObject.SetActive(false));
-            
-            yield return FadeToColorCoroutine(Color.black, 2f);
+
+            yield return FadeToColorCoroutine(Color.black, 1f);
 
             ServiceLocator.Instance.GameManager.SetState(State.Outro);
         }

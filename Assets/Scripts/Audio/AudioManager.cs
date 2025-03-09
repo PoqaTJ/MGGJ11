@@ -14,6 +14,23 @@ namespace Audio
         [SerializeField] AudioClip _outroBGM;
         [SerializeField] AudioClip[] _gameplayBGMs;
 
+        private string _volumeKey = "setting_volume";
+        private float _defaultVolume = 0.7f;
+        private float _volume
+        {
+            get
+            {
+                if (!PlayerPrefs.HasKey(_volumeKey))
+                {
+                    PlayerPrefs.SetFloat(_volumeKey, _defaultVolume);
+                }
+                return PlayerPrefs.GetFloat(_volumeKey);
+            }
+            set => PlayerPrefs.SetFloat(_volumeKey, value);
+        }
+
+        public float GetVolume => _volume;
+
         private int _gameplayBGMIndex = 0;
         private bool _playingGameplay = false;
         
@@ -21,6 +38,7 @@ namespace Audio
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
             _gameplayBGMIndex = Random.Range(0, _gameplayBGMs.Length - 1);
+            RefreshVolume();
         }
 
         private void Start()
@@ -101,6 +119,17 @@ namespace Audio
             _audioSource.loop = looping;
             _audioSource.clip = audioClip;
             _audioSource.Play();
+        }
+
+        public void SetVolume(float volume)
+        {
+            _volume = volume;
+            RefreshVolume();
+        }
+
+        private void RefreshVolume()
+        {
+            AudioListener.volume = _volume;
         }
     }
 }

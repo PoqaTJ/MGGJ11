@@ -1083,6 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c70ee8621cb4968ab80a5a53af0774d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _virtualCamera: {fileID: 0}
   _akariNormal: {fileID: 8153330295205263836}
   _akariTransformed: {fileID: 6203647888390198609}
   _tomoyaNormal: {fileID: 274818588}
@@ -1153,6 +1154,18 @@ PrefabInstance:
     - target: {fileID: 6310943929562939421, guid: 1d01564ae1591dc4ca1c900745336928, type: 3}
       propertyPath: m_Name
       value: Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139645397954107657, guid: 1d01564ae1591dc4ca1c900745336928, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 8865274913815523013, guid: 1d01564ae1591dc4ca1c900745336928, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.03529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865274913815523013, guid: 1d01564ae1591dc4ca1c900745336928, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.22745098
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

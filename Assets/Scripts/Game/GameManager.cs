@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
+using Menus;
 using Player;
 using Services;
 using UnityEngine;
@@ -28,6 +29,7 @@ namespace Game
 
         public int McGuffinCount => ServiceLocator.Instance.SaveManager.McGuffinCount;
         public PlayerController CurrentPlayer => _player;
+        public int TotalMcGuffinCount = 10; // this is wrong
 
         private PlayerController _player;
 
@@ -37,6 +39,8 @@ namespace Game
         [SerializeField] GameObject _tomoyaTFPrefab;
         [SerializeField] PlayerSpawner _defaultSpawner = null;
         private Dictionary<string, PlayerSpawner> _spawners = new();
+
+        private bool _paused = false;
         
         private void Start()
         {
@@ -45,6 +49,33 @@ namespace Game
             if (SceneManager.GetActiveScene().name == "Gameplay" || SceneManager.GetActiveScene().name == "LevelOne")
             {
                 StartCoroutine(LoadGameplay(transformed));                
+            }
+
+            DiscoverInitialState();
+        }
+
+        private void DiscoverInitialState()
+        {
+            switch (SceneManager.GetActiveScene().name)
+            {
+                case "Main":
+                    CurrentState = State.MainMenu;
+                    break;
+                case "LevelOne":
+                    CurrentState = State.Gameplay;
+                    break;
+                case "Intro":
+                    CurrentState = State.Intro;
+                    break;
+                case "Outro":
+                    CurrentState = State.Outro;
+                    break;
+                case "Credits":
+                    CurrentState = State.Credits;
+                    break;
+                case "Gameplay":
+                    CurrentState = State.Gameplay;
+                    break;
             }
         }
 
@@ -103,7 +134,37 @@ namespace Game
         private PlayerSpawner ChooseSpawner()
         {
 #if UNITY_EDITOR
-            if (UnityEditor.EditorPrefs.GetBool("EditorStartNearAkari"))
+            if (UnityEditor.EditorPrefs.GetBool("EditorStartNearEnding"))
+            {
+                Debug.Log("Overriding default spawner to spawn near Ending!");
+
+                // find ending
+                GameObject endZone = GameObject.Find("EndZone");
+
+                if (endZone == null)
+                {
+                    Debug.Log("Unable to find EndZone to spawn near.");
+                }
+                else
+                {
+                    PlayerSpawner s = null;
+                    foreach (var spawnerKey in _spawners.Keys)
+                    {
+                        PlayerSpawner spawner = _spawners[spawnerKey];
+                        if (s == null || 
+                            Vector2.Distance(endZone.transform.position, s.transform.position) > Vector2.Distance(endZone.transform.position, spawner.transform.position))
+                        {
+                            s = spawner;
+                        }
+                    }
+
+                    if (s != null)
+                    {
+                        return s;                        
+                    }
+                }
+            }
+            else if (UnityEditor.EditorPrefs.GetBool("EditorStartNearAkari"))
             {
                 Debug.Log("Overriding default spawner to spawn near Akari!");
 
@@ -161,12 +222,6 @@ namespace Game
         
         public void SetState(State state)
         {
-            if (CurrentState == state)
-            {
-                Debug.LogError($"Tried to set state to {state}, but that was already the current state.");
-                return;
-            }
-
             StartCoroutine(SetStateRoutine(state));
         }
 
@@ -178,11 +233,14 @@ namespace Game
         private IEnumerator SetStateRoutine(State state)
         {
             Debug.Log($"Setting state to {state}.");
+
+            CurrentState = state;
             
             _spawners.Clear();
             ServiceLocator.Instance.MenuManager.HideCollectableUI();
             ServiceLocator.Instance.MenuManager.HideHealthUI();
-
+            ServiceLocator.Instance.MenuManager.HideControlsUI();
+            
             switch (state)
             {
                 case State.MainMenu:
@@ -225,6 +283,7 @@ namespace Game
             }
             ServiceLocator.Instance.MenuManager.ShowCollectablesUI();
             ServiceLocator.Instance.MenuManager.ShowHealthUI();
+            ServiceLocator.Instance.MenuManager.ShowControlsUI();
 
             if (ServiceLocator.Instance.SaveManager.FoundAkari && SceneManager.GetActiveScene().name == "Gameplay")
             {
@@ -292,6 +351,25 @@ namespace Game
                 Debug.LogError("No default spawners found. Using the first one.");
                 _defaultSpawner = _spawners.ToArray()[0].Value;
             }
+        }
+
+        public void Pause()
+        {
+            if (!_paused)
+            {
+                _paused = true;
+            
+                Time.timeScale = 0f;
+                
+                ServiceLocator.Instance.MenuManager.Show(MenuType.PauseMenu, null);                
+            }
+        }
+        
+        public void Unpause()
+        {
+            _paused = false;
+            
+            Time.timeScale = 1f;
         }
     }
 

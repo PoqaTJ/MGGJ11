@@ -13,6 +13,7 @@ namespace Menus
         [SerializeField] private RectTransform _clickBlocker;
         [SerializeField] private GameObject _healthUI;
         [SerializeField] private GameObject _collectableUI;
+        [SerializeField] private GameObject _controlsUI;
         [SerializeField] private Image _fadeToColorScreen; 
         
         [SerializeField] private Sprite[] _tomoyaSprites;
@@ -89,6 +90,16 @@ namespace Menus
         public void HideCollectableUI()
         {
             _collectableUI.SetActive(false);
+        }
+
+        public void ShowControlsUI()
+        {
+            _controlsUI.SetActive(true);
+        }
+
+        public void HideControlsUI()
+        {
+            _controlsUI.SetActive(false);
         }
 
         public void FadeToColor(Color startColor, Color endColor, float durationSeconds, Action onDone)

@@ -67,6 +67,8 @@ namespace Cutscenes
             StartConversation(_conversationTakeTurns);
             
             _butterflyMover.gameObject.SetActive(true);
+
+            // TODO: Move this up a bit.
             SnapCharacterTo(_butterflyMover.gameObject, _tomoyaMagicalMover.transform);
             _butterflyMover.Appear();
 
@@ -77,6 +79,8 @@ namespace Cutscenes
             
             yield return new WaitForSeconds(0.5f);
 
+            _akariMagicalaMover.Face(PlayerMover.Direction.LEFT);
+            
             _akariMover.GetComponent<Animator>().SetTrigger(StartTransform);
             _akariMagicalaMover.GetComponent<Animator>().SetTrigger(StartTransform);
 

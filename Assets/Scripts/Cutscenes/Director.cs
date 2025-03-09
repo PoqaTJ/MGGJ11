@@ -2,6 +2,7 @@
 using System.Collections;
 using Cinemachine;
 using Dialogs;
+using Effects;
 using Player;
 using Services;
 using UnityEngine;
@@ -20,7 +21,8 @@ namespace Cutscenes
         
         protected Color _akariColor = new Color(1, .227f, .035f); // FF3A09
         protected Color _tomoyaColor = new Color(0.388f, 0.612f, .906f); // 639CE7
-
+        protected Color _mixedColor = new Color(0.694f, 0.420f, 0.471f);
+        
         protected IEnumerator ZoomCamera(float from, float to, float durationSeconds)
         {
             float elapsedTime = 0f;
@@ -72,6 +74,15 @@ namespace Cutscenes
             Color startColor = new Color(color.r, color.b, color.g, 1);
             Color endColor = new Color(color.r, color.b, color.g, 0);
             yield return ServiceLocator.Instance.MenuManager.FadeToColorCoroutine(startColor, endColor, time);
+        }
+        
+        protected IEnumerator FlyParticlesTo(ParticleType particles, Transform from, Transform to, float time)
+        {
+            bool done = false;
+
+            ServiceLocator.Instance.ParticleManager.FlyParticles(particles, from, to, time, () => done = true);
+
+            yield return new WaitUntil(() => done == true);
         }
     }
 }

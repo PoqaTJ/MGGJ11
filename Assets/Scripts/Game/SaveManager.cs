@@ -9,7 +9,7 @@ namespace Game
     public class SaveManager: MonoBehaviour
     {
         private SaveGame _save;
-        private static readonly string _playerPrefsKey = "save_game_rc_1";
+        private static readonly string _playerPrefsKey = "save_game_rc_2";
         private HashSet<string> _collected = new ();
 
         private void Awake()
@@ -362,6 +362,24 @@ namespace Game
         private static bool DebugStartNearAkariValidate()
         {
             Menu.SetChecked("Save/StartNearAkari", _startNearAkari);
+            return true;
+        }
+        
+        private static bool _startNearEnding {
+            get => EditorPrefs.GetBool("EditorStartNearEnding");
+            set => EditorPrefs.SetBool("EditorStartNearEnding", value);
+        }
+        
+        [MenuItem("Save/StartNearEnding", false, 13)]
+        private static void DebugStartNearEnding()
+        {
+            _startNearEnding = !_startNearEnding;
+        }
+        
+        [MenuItem("Save/StartNearEnding", true)]
+        private static bool DebugStartNearEndingValidate()
+        {
+            Menu.SetChecked("Save/StartNearEnding", _startNearEnding);
             return true;
         }
 #endif
