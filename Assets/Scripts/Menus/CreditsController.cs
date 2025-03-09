@@ -5,5 +5,6 @@ namespace Menus
 {
     public class CreditsController: MenuController
     {
+        
     }
 }

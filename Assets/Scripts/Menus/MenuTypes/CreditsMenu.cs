@@ -1,4 +1,6 @@
 ﻿using Services;
+using Unity.VisualScripting;
+using State = Game.State;
 
 namespace Menus.MenuTypes
 {
@@ -9,6 +11,11 @@ namespace Menus.MenuTypes
         public void OnBack()
         {
             ServiceLocator.Instance.MenuManager.HideTop();
+        }
+
+        public void ReturnToMain()
+        {
+            ServiceLocator.Instance.GameManager.SetState(State.MainMenu);
         }
     }
 }
