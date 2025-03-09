@@ -30,7 +30,7 @@ MonoBehaviour:
     Side: 1
     Expression: 0
   - Character: 0
-    Text: That's horrid! Akari, you need to stop being a magical girl!
+    Text: That's awful! Akari, you need to stop being a magical girl!
     Side: 0
     Expression: 0
   - Character: 0
@@ -38,17 +38,17 @@ MonoBehaviour:
     Side: 0
     Expression: 4
   - Character: 1
-    Text: No! If not me, then who else is going to be a magical girl?
+    Text: If not me, then who else is going to be a magical girl?
     Side: 1
-    Expression: 2
+    Expression: 1
   - Character: 0
     Text: Uh...
     Side: 0
     Expression: 2
   - Character: 4
-    Text: Hmm...
+    Text: Hmm?
     Side: 1
-    Expression: 1
+    Expression: 7
   - Character: 2
     Text: Hm...
     Side: 1
@@ -103,13 +103,14 @@ MonoBehaviour:
     Side: 1
     Expression: 5
   - Character: 0
-    Text: Oh no... I mean, oh yes, that's bad...
+    Text: Oh yeah, that's bad...
     Side: 0
     Expression: 2
   - Character: 2
-    Text: And magical girl power is dependent on positive thoughts!
+    Text: Magicaly girl power fluctuates on not just love and hope, but also stress
+      levels.
     Side: 1
-    Expression: 5
+    Expression: 0
   - Character: 1
     Text: I'm already bad at studying, and you're so organized, Tomoya.
     Side: 0
@@ -131,6 +132,6 @@ MonoBehaviour:
     Side: 1
     Expression: 6
   - Character: 2
-    Text: And I have two magical girls on my roster! This will be great!
+    Text: And I have two magical girls on my roster!
     Side: 1
     Expression: 6

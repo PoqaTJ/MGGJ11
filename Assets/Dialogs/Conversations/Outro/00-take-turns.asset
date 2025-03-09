@@ -30,48 +30,19 @@ MonoBehaviour:
     Text: You did so well!
     Side: 1
     Expression: 0
-  - Character: 0
-    Text: It's still felt so unnatural! I'm not cut out for this.
-    Side: 0
+  - Character: 1
+    Text: Yeah you were great!
+    Side: 1
     Expression: 0
   - Character: 1
     Text: Which is why we can now take turns!
     Side: 1
     Expression: 7
-  - Character: 1
-    Text: You'll get used to it the more you practice.
-    Side: 1
-    Expression: 5
-  - Character: 1
-    Text: Honestly, I was getting a little tired due to doing it constantly.
-    Side: 1
-    Expression: 1
-  - Character: 1
-    Text: No breaks, not enough sleep to do my homework, my grades dropping...
-    Side: 1
-    Expression: 1
-  - Character: 1
-    Text: Right, Tomoya, I needed to talk to you about that.
-    Side: 1
-    Expression: 1
-  - Character: 1
-    Text: Secondly, you're might friend, not my gopher!
-    Side: 1
-    Expression: 2
-  - Character: 1
-    Text: I want us to be on equal footing, and both of us to have breaks.
+  - Character: 2
+    Text: Yeah, turns!
     Side: 1
     Expression: 0
-  - Character: 1
-    Text: You just proved that you're a great magical girl.
-    Side: 1
-    Expression: 0
-  - Character: 1
-    Text: I know you've insisted on the support role, but can't I once in a while
-      do that for you?
-    Side: 1
-    Expression: 7
   - Character: 0
-    Text: I... I suppose.
+    Text: What? You've got to be joking.
     Side: 0
-    Expression: 3
+    Expression: 2
