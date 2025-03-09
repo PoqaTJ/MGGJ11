@@ -47,10 +47,14 @@ MonoBehaviour:
     Side: 0
     Expression: 0
   - Character: 1
-    Text: Go up and meet the shade. You'll instinctively know what to do!
+    Text: Push upward.
     Side: 1
     Expression: 0
   - Character: 3
     Text: That's too vague.
     Side: 0
-    Expression: 0
+    Expression: 1
+  - Character: 1
+    Text: You'll know what to do once you get there.
+    Side: 1
+    Expression: 5

@@ -17,27 +17,36 @@ MonoBehaviour:
   - Character: 0
     Text: Good luck!
     Side: 0
+    Expression: 0
   - Character: 0
     Text: When you're all done, let's go to this cute cafe I found!
     Side: 0
+    Expression: 0
   - Character: 0
     Text: They have lattes and donuts of all sorts.
     Side: 0
+    Expression: 0
   - Character: 1
     Text: That sounds great! I'd love some kind of tea latte.
     Side: 1
+    Expression: 0
   - Character: 2
-    Text: I want a cinnamon-sugar donut!
+    Text: I want a cinnamon sugar donut!
     Side: 1
+    Expression: 0
   - Character: 2
-    Text: Just the cinnamon-sugar, actually. Not so much the donut.
+    Text: Just the cinnamon sugar, actually. Not so much the donut.
     Side: 1
+    Expression: 0
   - Character: 0
     Text: We can get a donut to share!
     Side: 0
+    Expression: 0
   - Character: 0
     Text: I'll be here guarding the portal, as always.
     Side: 0
+    Expression: 0
   - Character: 1
     Text: See you soon!
     Side: 1
+    Expression: 0
