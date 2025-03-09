@@ -29,6 +29,7 @@ namespace Game
 
         public int McGuffinCount => ServiceLocator.Instance.SaveManager.McGuffinCount;
         public PlayerController CurrentPlayer => _player;
+        public int TotalMcGuffinCount = 10; // this is wrong
 
         private PlayerController _player;
 
@@ -238,7 +239,8 @@ namespace Game
             _spawners.Clear();
             ServiceLocator.Instance.MenuManager.HideCollectableUI();
             ServiceLocator.Instance.MenuManager.HideHealthUI();
-
+            ServiceLocator.Instance.MenuManager.HideControlsUI();
+            
             switch (state)
             {
                 case State.MainMenu:
@@ -281,6 +283,7 @@ namespace Game
             }
             ServiceLocator.Instance.MenuManager.ShowCollectablesUI();
             ServiceLocator.Instance.MenuManager.ShowHealthUI();
+            ServiceLocator.Instance.MenuManager.ShowControlsUI();
 
             if (ServiceLocator.Instance.SaveManager.FoundAkari && SceneManager.GetActiveScene().name == "Gameplay")
             {
