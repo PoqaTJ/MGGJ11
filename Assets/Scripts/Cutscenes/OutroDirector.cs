@@ -70,12 +70,17 @@ namespace Cutscenes
 
             yield return new WaitForSeconds(2f);
 
+#if UNITY_EDITOR
+            if (SaveManager.ForcePerfectEnding)
+            {
+                yield return PerfectEnding();
+                yield break;
+            }
+#endif
             if (ServiceLocator.Instance.GameManager.McGuffinCount >=
                 ServiceLocator.Instance.GameManager.TotalMcGuffinCount)
             {
                 yield return PerfectEnding();
-
-
             }
             else
             {
