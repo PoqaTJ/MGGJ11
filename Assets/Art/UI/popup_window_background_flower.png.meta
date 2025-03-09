@@ -45,11 +45,11 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 22, y: 21, z: 22, w: 22}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -108,18 +108,216 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: popup_window_background_flower_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66.66667
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c171b6cfa52d29459684f957772c2fc
+      internalID: -183312274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: popup_window_background_flower_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 66.66667
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200e0720a4749924cb00e19016ea8789
+      internalID: -1536052003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: popup_window_background_flower_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 66.66667
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f046f4b31bf7b5439e636ab6e405b85
+      internalID: -1738105421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: popup_window_background_flower_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33.666668
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0c75a06b8c2e444bf48c154f54126b
+      internalID: 306185263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: popup_window_background_flower_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 33.666668
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8760582ea228d9d46865d46ed9da854e
+      internalID: 353597953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: popup_window_background_flower_5
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 33.666668
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd0b665a3b391f4bb4088a2efa03477
+      internalID: -1563710139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: popup_window_background_flower_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66666794
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3784efbc1024a3445beca5a73af35188
+      internalID: 535297228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: popup_window_background_flower_7
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0.66666794
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46545e9f6695913439293992e0e3b011
+      internalID: 1485205259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: popup_window_background_flower_8
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0.66666794
+        width: 33.333332
+        height: 33.333332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8932739dc9e5c642b06b8e8f421eba5
+      internalID: 352176251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      popup_window_background_flower_0: -183312274
+      popup_window_background_flower_1: -1536052003
+      popup_window_background_flower_2: -1738105421
+      popup_window_background_flower_3: 306185263
+      popup_window_background_flower_4: 353597953
+      popup_window_background_flower_5: -1563710139
+      popup_window_background_flower_6: 535297228
+      popup_window_background_flower_7: 1485205259
+      popup_window_background_flower_8: 352176251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
